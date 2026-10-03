@@ -1,182 +1,243 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="es" class="scroll-smooth">
 <head>
-<meta charset="UTF-8"/>
-<meta name="viewport" content="width=device-width,initial-scale=1"/>
-<title>Términos de Uso — Cuotela</title>
-<meta name="description" content="Términos y condiciones de uso de la plataforma Cuotela S.A.S. Conforme a la legislación colombiana."/>
-<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'><rect width='64' height='64' rx='14' fill='%231a3a6b'/><path d='M32 14 L44 20 L44 34 C44 41 38 47 32 50 C26 47 20 41 20 34 L20 20 Z' fill='%23F59E0B'/></svg>"/>
-<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet"/>
-<style>
-:root{--navy-950:#050B18;--navy-900:#080E1A;--gold:#F59E0B;--blue:#2563EB;}
-*{box-sizing:border-box;margin:0;padding:0}
-body{background:var(--navy-900);color:#E2E8F0;font-family:'Inter',sans-serif;-webkit-font-smoothing:antialiased}
-h1,h2,h3{font-family:'Space Grotesk',sans-serif}
-.gold-grad{background:linear-gradient(135deg,#F59E0B,#FCD34D);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
-nav a{color:#94A3B8;font-size:14px;font-weight:500;text-decoration:none;transition:color .2s}
-nav a:hover{color:#fff}
-.btn-gold{display:inline-flex;align-items:center;gap:8px;padding:10px 20px;border-radius:10px;font-family:'Space Grotesk',sans-serif;font-weight:600;font-size:13px;text-decoration:none;background:linear-gradient(135deg,#F59E0B,#D97706);color:#000}
-/* Doc styles */
-.doc-section{margin-bottom:48px}
-.doc-section h2{font-size:18px;font-weight:700;color:#fff;margin-bottom:16px;padding-bottom:12px;border-bottom:1px solid rgba(255,255,255,.07)}
-.doc-section p{color:#64748B;font-size:14px;line-height:1.9;margin-bottom:12px}
-.doc-section ul,.doc-section ol{color:#64748B;font-size:14px;line-height:1.9;padding-left:20px;margin-bottom:12px}
-.doc-section li{margin-bottom:6px}
-.doc-section a{color:#60A5FA;text-decoration:none}
-.doc-section strong{color:#94A3B8;font-weight:600}
-</style>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Términos y Condiciones — Cuotela</title>
+  <meta name="description" content="Términos y condiciones de uso de la plataforma Cuotela. Léelos antes de usar nuestros servicios." />
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    :root{--g50:#F0FAF5;--g100:#D6F0E3;--g600:#006B3D;--g700:#005530;--navy:#0C1E35;--gray50:#F8FAFC;--gray100:#F1F5F9;--gray200:#E2E8F0;--gray500:#64748B;--gray700:#334155;--gray900:#0F172A}
+    *{box-sizing:border-box;margin:0;padding:0}
+    html{font-family:'Inter',sans-serif;color:var(--gray900);scroll-behavior:smooth}
+    h1,h2,h3,h4{font-family:'Space Grotesk',sans-serif}
+    .nav-link{font-size:.875rem;font-weight:500;color:var(--gray700);text-decoration:none;padding:.375rem .75rem;border-radius:.375rem;transition:color .15s,background .15s}
+    .nav-link:hover{color:var(--g700);background:var(--g50)}
+    .btn-outline{font-family:'Space Grotesk',sans-serif;font-size:.875rem;font-weight:600;color:var(--g700);border:1.5px solid var(--g600);padding:.5rem 1.25rem;border-radius:.5rem;text-decoration:none;transition:all .15s}
+    .btn-outline:hover{background:var(--g600);color:#fff}
+    .btn-primary{font-family:'Space Grotesk',sans-serif;font-size:.875rem;font-weight:700;color:#fff;background:var(--g600);padding:.5rem 1.375rem;border-radius:.5rem;text-decoration:none;transition:all .15s;display:inline-flex;align-items:center;gap:.375rem}
+    .btn-primary:hover{background:var(--g700)}
+    .toc-link{display:block;font-size:.82rem;color:var(--gray500);text-decoration:none;padding:.375rem .75rem;border-radius:.375rem;border-left:2px solid transparent;transition:all .15s;line-height:1.45}
+    .toc-link:hover,.toc-link.active{color:var(--g700);border-left-color:var(--g600);background:var(--g50)}
+    .section-heading{font-size:1.25rem;font-weight:800;color:var(--navy);margin-bottom:1rem;padding-top:.5rem}
+    .legal-text p{font-size:.9rem;color:var(--gray700);line-height:1.8;margin-bottom:.875rem}
+    .legal-text ul{padding-left:1.5rem;margin-bottom:.875rem}
+    .legal-text ul li{font-size:.9rem;color:var(--gray700);line-height:1.8;margin-bottom:.25rem}
+    .legal-text strong{font-weight:600;color:var(--gray900)}
+    section[id]{scroll-margin-top:5rem}
+  </style>
 </head>
-<body>
+<body style="background:var(--gray50)">
 
 <!-- NAV -->
-<header style="position:sticky;top:0;z-index:50;background:rgba(5,11,24,.92);backdrop-filter:blur(20px);border-bottom:1px solid rgba(255,255,255,.07)">
-  <nav style="max-width:1280px;margin:0 auto;padding:0 24px;display:flex;align-items:center;justify-content:space-between;height:68px">
-    <a href="/" style="display:flex;align-items:center;gap:12px;text-decoration:none">
-      <svg width="36" height="36" viewBox="0 0 36 36" fill="none"><rect width="36" height="36" rx="10" fill="#0D1830"/><path d="M18 6 L27 10.5 L27 20.5 C27 25.5 23 29.5 18 31.5 C13 29.5 9 25.5 9 20.5 L9 10.5 Z" fill="#1C3060" stroke="#2563EB" stroke-width="1"/><path d="M14.5 20 L17 22.5 L22 17" stroke="#F59E0B" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>
-      <span style="font-family:'Space Grotesk',sans-serif;font-weight:800;font-size:20px;color:#fff;letter-spacing:-.02em">Cuotela</span>
+<header style="position:sticky;top:0;z-index:50;background:#fff;border-bottom:1px solid var(--gray200)">
+  <div style="max-width:1200px;margin:0 auto;padding:0 1.5rem;display:flex;align-items:center;justify-content:space-between;height:4.25rem">
+    <a href="/" style="display:flex;align-items:center;gap:.625rem;text-decoration:none;flex-shrink:0">
+      <svg width="36" height="36" viewBox="0 0 36 36" fill="none"><rect width="36" height="36" rx="9" fill="#006B3D"/><circle cx="15" cy="16.5" r="3" fill="white"/><path d="M10.5 27C10.5 23.96 12.69 21.5 15 21.5C17.31 21.5 19.5 23.96 19.5 27" stroke="white" stroke-width="1.5" stroke-linecap="round" fill="none"/><circle cx="22.5" cy="18.5" r="2.2" fill="white" opacity="0.8"/><path d="M19.5 27C19.5 24.51 20.9 22.5 22.5 22.5C24.1 22.5 25.5 24.51 25.5 27" stroke="white" stroke-width="1.5" stroke-linecap="round" fill="none" opacity="0.8"/><circle cx="19" cy="19.5" r="1" fill="#F5A623"/></svg>
+      <span style="font-family:'Space Grotesk',sans-serif;font-size:1.25rem;font-weight:800;color:var(--navy);letter-spacing:-.03em">cuotela</span>
     </a>
-    <div style="display:flex;gap:32px;align-items:center">
-      <a href="/">Inicio</a>
-      <a href="/blog/">Blog</a>
-      <a href="/contacto/" class="btn-gold">Comenzar gratis</a>
+    <div style="display:flex;align-items:center;gap:.75rem">
+      <a href="https://app.cuotela.co/login" class="btn-outline" style="display:none" id="desk-login">Iniciar sesión</a>
+      <a href="https://app.cuotela.co/registro" class="btn-primary">Crear cuenta gratis</a>
     </div>
-  </nav>
+  </div>
+  <style>@media(min-width:640px){#desk-login{display:inline-flex!important}}</style>
 </header>
 
-<!-- HERO -->
-<section style="background:radial-gradient(ellipse at 30% 0%,rgba(37,99,235,.08) 0,transparent 55%),var(--navy-900);padding:72px 24px 48px">
-  <div style="max-width:860px;margin:0 auto">
-    <div style="display:inline-flex;align-items:center;gap:8px;padding:5px 14px;border-radius:99px;background:rgba(255,255,255,.05);color:#64748B;border:1px solid rgba(255,255,255,.08);font-size:12px;font-weight:600;margin-bottom:20px">
-      <svg width="12" height="12" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14,2 14,8 20,8"/></svg>
-      Documento legal
-    </div>
-    <h1 style="font-size:clamp(28px,4vw,48px);font-weight:800;color:#fff;letter-spacing:-.03em;margin-bottom:12px">Términos y Condiciones <span class="gold-grad">de Uso</span></h1>
-    <div style="display:flex;flex-wrap:wrap;gap:16px;align-items:center">
-      <span style="font-size:13px;color:#475569">Última actualización: octubre 2025</span>
-      <span style="color:#1E293B">·</span>
-      <span style="font-size:13px;color:#475569">Cuotela S.A.S. — Bogotá D.C., Colombia</span>
-    </div>
+<!-- HERO strip -->
+<div style="background:var(--g600);padding:2rem 1.5rem">
+  <div style="max-width:900px;margin:0 auto">
+    <p style="font-family:'Space Grotesk',sans-serif;font-size:.75rem;font-weight:700;letter-spacing:.07em;text-transform:uppercase;color:rgba(255,255,255,.6);margin-bottom:.5rem">Legal</p>
+    <h1 style="font-size:clamp(1.5rem,4vw,2.25rem);font-weight:800;color:#fff;letter-spacing:-.02em">Términos y Condiciones de Uso</h1>
+    <p style="font-size:.875rem;color:rgba(255,255,255,.65);margin-top:.5rem">Última actualización: 1 de julio de 2025 · Cuotela S.A.S. · NIT pendiente de asignación</p>
   </div>
-</section>
+</div>
 
-<!-- CONTENT -->
-<section style="padding:48px 24px 100px">
-  <div style="max-width:860px;margin:0 auto;display:grid;grid-template-columns:200px 1fr;gap:56px;align-items:start">
+<!-- LAYOUT -->
+<div style="max-width:1100px;margin:0 auto;padding:3rem 1.5rem;display:grid;grid-template-columns:240px 1fr;gap:3rem;align-items:start" class="legal-layout">
 
-    <!-- TOC -->
-    <div style="position:sticky;top:88px">
-      <div style="font-size:11px;font-weight:700;color:#F59E0B;letter-spacing:.1em;text-transform:uppercase;margin-bottom:16px">Contenido</div>
-      <nav style="display:flex;flex-direction:column;gap:8px">
-        <a href="#objeto" style="font-size:13px;color:#475569;text-decoration:none;transition:color .2s">1. Objeto</a>
-        <a href="#usuario" style="font-size:13px;color:#475569;text-decoration:none;transition:color .2s">2. Usuario</a>
-        <a href="#servicios" style="font-size:13px;color:#475569;text-decoration:none;transition:color .2s">3. Servicios</a>
-        <a href="#pagos" style="font-size:13px;color:#475569;text-decoration:none;transition:color .2s">4. Pagos y tarifas</a>
-        <a href="#responsabilidades" style="font-size:13px;color:#475569;text-decoration:none;transition:color .2s">5. Responsabilidades</a>
-        <a href="#propriedad" style="font-size:13px;color:#475569;text-decoration:none;transition:color .2s">6. Propiedad intelectual</a>
-        <a href="#datos" style="font-size:13px;color:#475569;text-decoration:none;transition:color .2s">7. Datos personales</a>
-        <a href="#jurisdiccion" style="font-size:13px;color:#475569;text-decoration:none;transition:color .2s">8. Jurisdicción</a>
-      </nav>
+  <!-- TOC -->
+  <aside style="position:sticky;top:5.5rem" class="legal-toc">
+    <p style="font-family:'Space Grotesk',sans-serif;font-size:.75rem;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--gray500);margin-bottom:.75rem;padding:0 .75rem">En esta página</p>
+    <nav style="display:flex;flex-direction:column;gap:.125rem">
+      <a href="#objeto" class="toc-link">1. Objeto y aceptación</a>
+      <a href="#definiciones" class="toc-link">2. Definiciones</a>
+      <a href="#registro" class="toc-link">3. Registro y cuenta</a>
+      <a href="#servicios" class="toc-link">4. Servicios de la plataforma</a>
+      <a href="#asesoria" class="toc-link">5. Asesoría jurídica</a>
+      <a href="#fondo-ahorro" class="toc-link">6. Fondo de ahorro y anticipos</a>
+      <a href="#pagos" class="toc-link">7. Planes y pagos</a>
+      <a href="#responsabilidades" class="toc-link">8. Responsabilidades</a>
+      <a href="#propiedad" class="toc-link">9. Propiedad intelectual</a>
+      <a href="#modificaciones" class="toc-link">10. Modificaciones y terminación</a>
+      <a href="#jurisdiccion" class="toc-link">11. Jurisdicción y ley aplicable</a>
+    </nav>
+    <div style="margin-top:1.5rem;padding:.875rem;background:var(--g50);border-radius:.625rem;border:1px solid var(--g100)">
+      <p style="font-size:.78rem;color:var(--g700);font-weight:600;margin-bottom:.375rem">¿Tienes dudas?</p>
+      <p style="font-size:.75rem;color:var(--gray500);margin-bottom:.625rem;line-height:1.6">Escríbenos antes de aceptar</p>
+      <a href="mailto:hola@cuotela.co" style="font-size:.78rem;color:var(--g600);font-weight:600;text-decoration:none">hola@cuotela.co →</a>
     </div>
+  </aside>
 
-    <!-- Content -->
-    <div>
-      <div id="objeto" class="doc-section">
-        <h2>1. Objeto y aceptación</h2>
-        <p>Los presentes Términos y Condiciones de Uso ("Términos") regulan el acceso y uso de la plataforma digital <strong>Cuotela</strong>, operada por <strong>Cuotela S.A.S.</strong>, sociedad constituida bajo las leyes colombianas, con domicilio en la ciudad de Bogotá D.C.</p>
-        <p>Al crear una cuenta o acceder a cualquier servicio de Cuotela, el Usuario acepta íntegra e incondicionalmente los presentes Términos. Si no está de acuerdo con alguna disposición, deberá abstenerse de utilizar la plataforma.</p>
-      </div>
+  <!-- CONTENT -->
+  <main class="legal-text">
+    <div style="background:#fff;border-radius:1.25rem;border:1px solid var(--gray200);padding:2.5rem;display:flex;flex-direction:column;gap:2.5rem">
 
-      <div id="usuario" class="doc-section">
-        <h2>2. Condiciones del Usuario</h2>
-        <p>Para acceder a los servicios de Cuotela, el Usuario debe:</p>
+      <section id="objeto">
+        <h2 class="section-heading">1. Objeto y aceptación</h2>
+        <p>Los presentes Términos y Condiciones (en adelante, "los Términos") regulan el acceso y uso de la plataforma Cuotela, operada por <strong>Cuotela S.A.S.</strong>, sociedad por acciones simplificada constituida bajo las leyes de la República de Colombia, con domicilio en Bogotá, D.C. (en adelante, "Cuotela", "nosotros" o "la empresa").</p>
+        <p>Al crear una cuenta, acceder a los servicios o utilizar cualquier funcionalidad de la plataforma, el usuario acepta estos Términos en su totalidad. Si no está de acuerdo, debe abstenerse de usar el servicio.</p>
+        <p>Cuotela se reserva el derecho de modificar estos Términos en cualquier momento. Notificará los cambios materiales con al menos <strong>15 días de anticipación</strong> mediante correo electrónico o aviso en la plataforma. El uso continuado del servicio tras la notificación implica aceptación de las modificaciones.</p>
+      </section>
+
+      <section id="definiciones">
+        <h2 class="section-heading">2. Definiciones</h2>
         <ul>
-          <li>Ser mayor de 18 años y ciudadano o residente colombiano con cédula de ciudadanía o extranjería válida.</li>
-          <li>Proporcionar información veraz, actualizada y completa en el proceso de registro.</li>
+          <li><strong>Plataforma:</strong> El sitio web cuotela.co y la aplicación web accesible en app.cuotela.co.</li>
+          <li><strong>Usuario:</strong> Toda persona natural que se registre y utilice los servicios de Cuotela.</li>
+          <li><strong>Obligado alimentario:</strong> Padre o madre que tiene a su cargo el pago de una cuota alimentaria.</li>
+          <li><strong>Beneficiario:</strong> El hijo o hija a cuyo favor se fija y paga la cuota alimentaria.</li>
+          <li><strong>Fondo de ahorro:</strong> Mecanismo voluntario de acumulación de cuotas gestionado por Cuotela.</li>
+          <li><strong>Anticipo de cuota:</strong> Préstamo del valor de hasta tres (3) cuotas alimentarias que Cuotela otorga al obligado en mora, desembolsado directamente al custodio del beneficiario.</li>
+          <li><strong>REDAM:</strong> Registro Nacional de Deudores Alimentarios Morosos, creado por la Ley 2097 de 2021.</li>
+          <li><strong>Consulta jurídica:</strong> Sesión de orientación legal prestada por abogados vinculados a Cuotela.</li>
+        </ul>
+      </section>
+
+      <section id="registro">
+        <h2 class="section-heading">3. Registro y cuenta</h2>
+        <p>El acceso a los servicios requiere la creación de una cuenta. El usuario debe:</p>
+        <ul>
+          <li>Ser mayor de 18 años y tener plena capacidad legal según la ley colombiana.</li>
+          <li>Proporcionar información veraz, completa y actualizada al momento del registro.</li>
           <li>Mantener la confidencialidad de sus credenciales de acceso.</li>
-          <li>Ser el obligado alimentario o el progenitor custodio del menor en cuestión.</li>
-          <li>Disponer de una cuenta bancaria activa en una entidad financiera vigilada por la SFC.</li>
+          <li>Notificar de inmediato a Cuotela ante cualquier uso no autorizado de su cuenta.</li>
         </ul>
-        <p>El Usuario es responsable de todas las acciones realizadas desde su cuenta. En caso de sospecha de acceso no autorizado, deberá notificar inmediatamente a <a href="mailto:seguridad@cuotela.co">seguridad@cuotela.co</a>.</p>
-      </div>
+        <p>Cuotela se reserva el derecho de verificar la identidad del usuario mediante documentos oficiales antes de habilitar funcionalidades financieras (fondo de ahorro, anticipos). La cuenta es personal e intransferible.</p>
+        <p>Cuotela podrá suspender o cancelar cuentas que incumplan estos Términos, presenten información falsa o realicen actividades fraudulentas, sin perjuicio de las acciones legales que correspondan.</p>
+      </section>
 
-      <div id="servicios" class="doc-section">
-        <h2>3. Descripción de los servicios</h2>
-        <p>Cuotela presta los siguientes servicios según el plan contratado:</p>
+      <section id="servicios">
+        <h2 class="section-heading">4. Servicios de la plataforma</h2>
+        <p>Cuotela ofrece los siguientes servicios según el plan contratado:</p>
         <ul>
-          <li><strong>Pago certificado de cuota alimentaria:</strong> Facilita la transferencia de recursos del obligado alimentario a los gastos del menor, generando comprobantes con valor probatorio bajo la Ley 527 de 1999.</li>
-          <li><strong>Ahorro voluntario:</strong> Permite al Usuario acumular progresivamente el monto de la cuota en una subcuenta segregada, liberada únicamente para el pago del menor.</li>
-          <li><strong>Microcrédito de emergencia:</strong> Gestión de créditos a través de aliados financieros vigilados por la Superintendencia Financiera de Colombia. Cuotela actúa como intermediario tecnológico y no como entidad crediticia.</li>
-          <li><strong>Historial certificado:</strong> Generación de documentos de cumplimiento con firma digital avanzada.</li>
-          <li><strong>Asesoría jurídica:</strong> Prestada por profesionales del derecho vinculados a Montcrest & Partners S.A.S. bajo contratos independientes. Las consultas no constituyen representación legal formal.</li>
+          <li><strong>Calculadora de cuota alimentaria:</strong> Herramienta orientativa basada en parámetros legales colombianos. El resultado es una estimación y no constituye decisión judicial ni asesoría jurídica formal.</li>
+          <li><strong>Consulta de REDAM:</strong> Verificación del estado de inscripción en el Registro Nacional de Deudores Alimentarios Morosos mediante integración con las bases de datos oficiales.</li>
+          <li><strong>Historial certificado de pagos:</strong> Registro digital de los pagos realizados a través de la plataforma, con certificación para uso en procesos judiciales.</li>
+          <li><strong>Alertas y notificaciones:</strong> Recordatorios automatizados de fechas de pago, vencimientos y novedades jurídicas.</li>
+          <li><strong>Asesoría jurídica:</strong> Consultas con abogados especializados en derecho de familia (ver cláusula 5).</li>
+          <li><strong>Fondo de ahorro y anticipos:</strong> Mecanismo financiero voluntario (ver cláusula 6).</li>
         </ul>
-        <p>Cuotela se reserva el derecho de modificar, suspender o discontinuar cualquier servicio, previa notificación con un mínimo de 30 días calendario.</p>
-      </div>
+      </section>
 
-      <div id="pagos" class="doc-section">
-        <h2>4. Pagos, tarifas y facturación</h2>
-        <p>Los precios de los planes están expresados en pesos colombianos (COP) e incluyen IVA cuando aplique. El pago de suscripciones se realiza mensualmente de forma anticipada.</p>
+      <section id="asesoria">
+        <h2 class="section-heading">5. Asesoría jurídica</h2>
+        <p>Los servicios de asesoría jurídica de Cuotela son prestados por abogados vinculados a <strong>Montcrest & Partners S.A.S.</strong> o a la red de conciliadores aliados, debidamente tarjados ante el Consejo Superior de la Judicatura.</p>
+        <p><strong>Alcance:</strong> La asesoría incluye orientación legal, revisión de documentos y representación judicial cuando el servicio contratado así lo prevé. Una consulta de chat o videollamada no equivale a un contrato de mandato judicial; la representación formal requiere la suscripción de un contrato de servicios jurídicos independiente.</p>
+        <p><strong>Confidencialidad:</strong> Toda información compartida en el marco de una consulta jurídica está protegida por el secreto profesional del abogado y la política de privacidad de Cuotela (Ley 1581/2012).</p>
+        <p><strong>Limitación:</strong> Cuotela no garantiza resultados específicos en procesos judiciales. Las opiniones jurídicas emitidas se basan en la información proporcionada por el usuario y en el estado actual de la legislación colombiana.</p>
+      </section>
+
+      <section id="fondo-ahorro">
+        <h2 class="section-heading">6. Fondo de ahorro y anticipos de cuota</h2>
+        <p>El fondo de ahorro voluntario permite al obligado alimentario acumular recursos en la plataforma para garantizar el pago oportuno de cuotas futuras. Los recursos depositados:</p>
         <ul>
-          <li>Las pasarelas de pago habilitadas son Wompi (Bancolombia) y PSE. Cuotela no almacena datos de tarjetas de crédito.</li>
-          <li>En caso de fallo en el cobro recurrente, Cuotela notificará al Usuario con 48 horas de anticipación antes de suspender el acceso.</li>
-          <li>Las suscripciones se renuevan automáticamente. El Usuario puede cancelar en cualquier momento desde su perfil, con efectividad al final del período facturado.</li>
-          <li>No se realizan reembolsos de períodos ya facturados, salvo en casos de fallo técnico imputable a Cuotela.</li>
+          <li>Son de uso exclusivo para el pago de cuotas alimentarias del beneficiario.</li>
+          <li>No generan rendimientos financieros para el usuario en la versión actual.</li>
+          <li>Pueden ser retirados únicamente mediante solicitud formal, sujeta a verificación de que no existan cuotas pendientes.</li>
         </ul>
-      </div>
-
-      <div id="responsabilidades" class="doc-section">
-        <h2>5. Limitación de responsabilidad</h2>
-        <p>Cuotela es una plataforma tecnológica y no una entidad financiera, jurídica ni judicial. Por tanto:</p>
+        <p><strong>Anticipo de cuota:</strong> El plan Pro permite solicitar un anticipo de hasta tres (3) cuotas alimentarias cuando el obligado se encuentra en mora. El anticipo:</p>
         <ul>
-          <li>Los comprobantes de Cuotela tienen valor probatorio pero no sustituyen las resoluciones judiciales ni los acuerdos procesales homologados por juzgado.</li>
-          <li>La asesoría jurídica es orientativa y no reemplaza la representación legal formal ante juzgados de familia.</li>
-          <li>Cuotela no garantiza resultados específicos en procesos judiciales derivados del uso de sus comprobantes.</li>
-          <li>La responsabilidad máxima de Cuotela frente al Usuario no excederá el valor pagado por suscripción en los últimos 3 meses.</li>
+          <li>Se desembolsa <strong>directamente</strong> al custodio del beneficiario, nunca al obligado.</li>
+          <li>Genera una obligación de reembolso a Cuotela según el cronograma acordado.</li>
+          <li>Está sujeto a aprobación previa por parte del equipo de Cuotela, que verificará la existencia y vigencia de la obligación alimentaria.</li>
+          <li>El incumplimiento del reembolso habilitará a Cuotela para iniciar las acciones de cobro pertinentes.</li>
         </ul>
-      </div>
+        <p>Cuotela opera los recursos del fondo de ahorro en cuentas segregadas. Los detalles de la custodia de recursos serán informados al usuario al momento de la activación del fondo, previo cumplimiento de los requisitos de debida diligencia.</p>
+      </section>
 
-      <div id="propriedad" class="doc-section">
-        <h2>6. Propiedad intelectual</h2>
-        <p>Todos los contenidos de la plataforma Cuotela — incluyendo, sin limitación, el diseño, marca, logotipos, textos, calculadoras, algoritmos y código fuente — son propiedad exclusiva de Cuotela S.A.S. y están protegidos por la Ley 23 de 1982 sobre derechos de autor y la Decisión Andina 351 de 1993.</p>
-        <p>Está prohibida la reproducción total o parcial de cualquier contenido sin autorización expresa y por escrito de Cuotela S.A.S.</p>
-      </div>
+      <section id="pagos">
+        <h2 class="section-heading">7. Planes, pagos y cancelación</h2>
+        <p>Cuotela ofrece planes de suscripción mensual (Básico, Esencial, Pro) y servicios jurídicos de pago único. Los precios vigentes se muestran en la plataforma y pueden cambiar con previo aviso de 30 días.</p>
+        <ul>
+          <li><strong>Facturación:</strong> El cobro se realiza mensualmente mediante los métodos de pago habilitados (Wompi — PSE, tarjeta débito/crédito).</li>
+          <li><strong>Cancelación:</strong> El usuario puede cancelar su suscripción en cualquier momento desde su panel. El acceso se mantiene hasta el final del período facturado.</li>
+          <li><strong>Reembolsos:</strong> No se realizan reembolsos proporcionales por cancelación anticipada, salvo en caso de fallo técnico imputable a Cuotela debidamente acreditado.</li>
+          <li><strong>Mora en reembolso de anticipos:</strong> La mora en el pago del anticipo causará intereses a la tasa máxima legal permitida en Colombia.</li>
+        </ul>
+      </section>
 
-      <div id="datos" class="doc-section">
-        <h2>7. Tratamiento de datos personales</h2>
-        <p>El tratamiento de datos personales se rige por la <strong>Ley 1581 de 2012</strong> y el Decreto 1377 de 2013. El responsable del tratamiento es <strong>Cuotela S.A.S.</strong></p>
-        <p>Para el ejercicio de sus derechos de acceso, rectificación, actualización, supresión o revocación de autorización, el Titular puede escribir a <a href="mailto:datos@cuotela.co">datos@cuotela.co</a>. Ver nuestra <a href="/privacidad/">Política de Privacidad completa</a>.</p>
-      </div>
+      <section id="responsabilidades">
+        <h2 class="section-heading">8. Responsabilidades del usuario y limitaciones de Cuotela</h2>
+        <p>El usuario se obliga a:</p>
+        <ul>
+          <li>Usar la plataforma exclusivamente para fines lícitos y relacionados con obligaciones alimentarias legítimas.</li>
+          <li>No introducir información falsa, engañosa o que infrinja derechos de terceros.</li>
+          <li>No intentar acceder de forma no autorizada a los sistemas o datos de otros usuarios.</li>
+        </ul>
+        <p><strong>Limitación de responsabilidad de Cuotela:</strong> En ningún caso Cuotela será responsable por daños indirectos, lucro cesante o perjuicios derivados del uso de la plataforma. La responsabilidad máxima de Cuotela frente a un usuario no superará el valor pagado por el plan en los últimos 3 meses. Cuotela no responde por la conducta de terceros (obligados, custodios, juzgados) ni por los resultados de los procesos judiciales.</p>
+      </section>
 
-      <div id="jurisdiccion" class="doc-section">
-        <h2>8. Jurisdicción y ley aplicable</h2>
-        <p>Los presentes Términos se rigen por las leyes de la República de Colombia. Cualquier controversia derivada de su interpretación o ejecución será resuelta ante los jueces y tribunales competentes de la ciudad de Bogotá D.C., renunciando expresamente el Usuario a cualquier otro fuero que pudiera corresponderle.</p>
-        <p>Para reclamaciones y disputas, el Usuario deberá primero agotar la vía de atención directa escribiendo a <a href="mailto:legal@cuotela.co">legal@cuotela.co</a> con un plazo de respuesta de 10 días hábiles.</p>
-        <p>La versión vigente de estos Términos está publicada permanentemente en <strong>cuotela.co/terminos</strong>. En caso de modificaciones sustanciales, Cuotela notificará al Usuario por correo electrónico con mínimo 15 días de anticipación.</p>
-      </div>
+      <section id="propiedad">
+        <h2 class="section-heading">9. Propiedad intelectual</h2>
+        <p>Todos los contenidos de la plataforma (marca, logo, diseño, código, textos, metodologías) son propiedad de Cuotela S.A.S. o se usan bajo licencia. El usuario obtiene únicamente una licencia de uso personal, no exclusiva y no transferible para acceder a los servicios.</p>
+        <p>Queda prohibida la reproducción, distribución o modificación de cualquier contenido de la plataforma sin autorización expresa y escrita de Cuotela.</p>
+      </section>
 
-      <!-- Bottom contact -->
-      <div style="background:rgba(37,99,235,.06);border:1px solid rgba(37,99,235,.2);border-radius:16px;padding:24px 28px;margin-top:32px">
-        <h3 style="font-family:'Space Grotesk',sans-serif;font-size:15px;font-weight:700;color:#fff;margin-bottom:8px">¿Preguntas sobre estos términos?</h3>
-        <p style="font-size:13px;color:#64748B;margin-bottom:16px">Escríbenos al correo de atención legal. Respondemos en menos de 10 días hábiles.</p>
-        <a href="mailto:legal@cuotela.co" style="font-size:13px;color:#60A5FA;text-decoration:none;font-weight:600">legal@cuotela.co →</a>
-      </div>
+      <section id="modificaciones">
+        <h2 class="section-heading">10. Modificaciones y terminación del servicio</h2>
+        <p>Cuotela se reserva el derecho de modificar, suspender o discontinuar cualquier funcionalidad de la plataforma en cualquier momento, con o sin previo aviso para cambios no materiales.</p>
+        <p>Para cambios que afecten materialmente los servicios contratados, Cuotela notificará con al menos <strong>30 días de anticipación</strong>. El usuario podrá cancelar sin penalización dentro de ese período.</p>
+        <p>En caso de incumplimiento grave de estos Términos, Cuotela podrá terminar la cuenta del usuario de forma inmediata sin derecho a reembolso.</p>
+      </section>
+
+      <section id="jurisdiccion">
+        <h2 class="section-heading">11. Jurisdicción y ley aplicable</h2>
+        <p>Estos Términos se rigen por las leyes de la <strong>República de Colombia</strong>. Para la resolución de controversias, las partes se someten a la jurisdicción de los jueces competentes de la ciudad de <strong>Bogotá, D.C.</strong>, renunciando a cualquier otro fuero que por razón de su domicilio pudiera corresponderles.</p>
+        <p>Las partes intentarán resolver cualquier disputa de manera amigable en un plazo de 30 días. De no lograrse acuerdo, el asunto podrá ser llevado a conciliación ante un Centro de Conciliación autorizado antes de acudir a la vía judicial.</p>
+        <p style="margin-top:1.5rem;padding:1rem;background:var(--gray50);border-radius:.5rem;font-size:.82rem;color:var(--gray500)">Para consultas sobre estos Términos: <a href="mailto:hola@cuotela.co" style="color:var(--g600)">hola@cuotela.co</a> · Cuotela S.A.S., Bogotá, D.C., Colombia</p>
+      </section>
+
     </div>
-  </div>
-</section>
+  </main>
+</div>
+
+<style>
+  .legal-layout{@media(max-width:768px){grid-template-columns:1fr!important}}
+  .legal-toc{@media(max-width:768px){display:none!important}}
+</style>
 
 <!-- FOOTER -->
-<footer style="background:var(--navy-950);border-top:1px solid rgba(255,255,255,.06);padding:40px 24px">
-  <div style="max-width:1280px;margin:0 auto;display:flex;flex-wrap:wrap;justify-content:space-between;align-items:center;gap:16px">
-    <a href="/" style="display:flex;align-items:center;gap:10px;text-decoration:none">
-      <svg width="28" height="28" viewBox="0 0 36 36" fill="none"><rect width="36" height="36" rx="10" fill="#0D1830"/><path d="M18 6 L27 10.5 L27 20.5 C27 25.5 23 29.5 18 31.5 C13 29.5 9 25.5 9 20.5 L9 10.5 Z" fill="#1C3060" stroke="#2563EB" stroke-width="1"/><path d="M14.5 20 L17 22.5 L22 17" stroke="#F59E0B" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>
-      <span style="font-family:'Space Grotesk',sans-serif;font-weight:800;font-size:18px;color:#fff">Cuotela</span>
+<footer style="background:var(--gray900);padding:2rem 1.5rem">
+  <div style="max-width:1100px;margin:0 auto;display:flex;flex-wrap:wrap;justify-content:space-between;align-items:center;gap:1rem">
+    <a href="/" style="display:flex;align-items:center;gap:.5rem;text-decoration:none">
+      <svg width="28" height="28" viewBox="0 0 36 36" fill="none"><rect width="36" height="36" rx="9" fill="#006B3D"/><circle cx="15" cy="16.5" r="3" fill="white"/><path d="M10.5 27C10.5 23.96 12.69 21.5 15 21.5C17.31 21.5 19.5 23.96 19.5 27" stroke="white" stroke-width="1.5" stroke-linecap="round" fill="none"/><circle cx="22.5" cy="18.5" r="2.2" fill="white" opacity="0.8"/><path d="M19.5 27C19.5 24.51 20.9 22.5 22.5 22.5C24.1 22.5 25.5 24.51 25.5 27" stroke="white" stroke-width="1.5" stroke-linecap="round" fill="none" opacity="0.8"/><circle cx="19" cy="19.5" r="1" fill="#F5A623"/></svg>
+      <span style="font-family:'Space Grotesk',sans-serif;font-size:1rem;font-weight:800;color:#fff">cuotela</span>
     </a>
-    <div style="display:flex;gap:24px">
-      <a href="/terminos/" style="color:#60A5FA;font-size:13px;text-decoration:none">Términos</a>
-      <a href="/privacidad/" style="color:#334155;font-size:13px;text-decoration:none">Privacidad</a>
-      <a href="/contacto/" style="color:#334155;font-size:13px;text-decoration:none">Contacto</a>
+    <div style="display:flex;gap:1.5rem;flex-wrap:wrap">
+      <a href="/" style="font-size:.8rem;color:rgba(255,255,255,.4);text-decoration:none">Inicio</a>
+      <a href="/privacidad" style="font-size:.8rem;color:rgba(255,255,255,.4);text-decoration:none">Política de Privacidad</a>
+      <a href="/contacto" style="font-size:.8rem;color:rgba(255,255,255,.4);text-decoration:none">Contacto</a>
     </div>
-    <p style="color:#1E293B;font-size:12px">© 2025 Cuotela S.A.S. — Bogotá, Colombia</p>
+    <p style="font-size:.75rem;color:rgba(255,255,255,.25)">© 2025 Cuotela S.A.S.</p>
   </div>
 </footer>
+
+<script>
+  // Highlight active TOC link on scroll
+  const sections=document.querySelectorAll('section[id]');
+  const links=document.querySelectorAll('.toc-link');
+  const obs=new IntersectionObserver(entries=>{
+    entries.forEach(e=>{
+      if(e.isIntersecting){
+        links.forEach(l=>l.classList.remove('active'));
+        const a=document.querySelector('.toc-link[href="#'+e.target.id+'"]');
+        if(a)a.classList.add('active');
+      }
+    });
+  },{rootMargin:'-20% 0px -70% 0px'});
+  sections.forEach(s=>obs.observe(s));
+</script>
 </body>
 </html>

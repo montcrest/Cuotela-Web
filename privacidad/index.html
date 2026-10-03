@@ -1,246 +1,276 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="es" class="scroll-smooth">
 <head>
-<meta charset="UTF-8"/>
-<meta name="viewport" content="width=device-width,initial-scale=1"/>
-<title>Política de Privacidad — Cuotela</title>
-<meta name="description" content="Política de privacidad y tratamiento de datos personales de Cuotela S.A.S. Conforme a la Ley 1581 de 2012 de la República de Colombia."/>
-<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'><rect width='64' height='64' rx='14' fill='%231a3a6b'/><path d='M32 14 L44 20 L44 34 C44 41 38 47 32 50 C26 47 20 41 20 34 L20 20 Z' fill='%23F59E0B'/></svg>"/>
-<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet"/>
-<style>
-:root{--navy-950:#050B18;--navy-900:#080E1A;--gold:#F59E0B;--blue:#2563EB;}
-*{box-sizing:border-box;margin:0;padding:0}
-body{background:var(--navy-900);color:#E2E8F0;font-family:'Inter',sans-serif;-webkit-font-smoothing:antialiased}
-h1,h2,h3{font-family:'Space Grotesk',sans-serif}
-.gold-grad{background:linear-gradient(135deg,#F59E0B,#FCD34D);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
-nav a{color:#94A3B8;font-size:14px;font-weight:500;text-decoration:none;transition:color .2s}
-nav a:hover{color:#fff}
-.btn-gold{display:inline-flex;align-items:center;gap:8px;padding:10px 20px;border-radius:10px;font-family:'Space Grotesk',sans-serif;font-weight:600;font-size:13px;text-decoration:none;background:linear-gradient(135deg,#F59E0B,#D97706);color:#000}
-.doc-section{margin-bottom:48px}
-.doc-section h2{font-size:18px;font-weight:700;color:#fff;margin-bottom:16px;padding-bottom:12px;border-bottom:1px solid rgba(255,255,255,.07)}
-.doc-section p{color:#64748B;font-size:14px;line-height:1.9;margin-bottom:12px}
-.doc-section ul,.doc-section ol{color:#64748B;font-size:14px;line-height:1.9;padding-left:20px;margin-bottom:12px}
-.doc-section li{margin-bottom:6px}
-.doc-section a{color:#60A5FA;text-decoration:none}
-.doc-section strong{color:#94A3B8;font-weight:600}
-.rights-box{background:rgba(37,99,235,.06);border:1px solid rgba(37,99,235,.2);border-radius:14px;padding:18px 20px;margin-bottom:10px}
-.rights-box h4{font-family:'Space Grotesk',sans-serif;font-weight:700;font-size:14px;color:#60A5FA;margin-bottom:6px}
-.rights-box p{font-size:13px;color:#64748B;line-height:1.7;margin:0}
-</style>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Política de Privacidad — Cuotela</title>
+  <meta name="description" content="Política de privacidad y tratamiento de datos personales de Cuotela según la Ley 1581 de 2012." />
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    :root{--g50:#F0FAF5;--g100:#D6F0E3;--g600:#006B3D;--g700:#005530;--navy:#0C1E35;--gray50:#F8FAFC;--gray100:#F1F5F9;--gray200:#E2E8F0;--gray500:#64748B;--gray700:#334155;--gray900:#0F172A}
+    *{box-sizing:border-box;margin:0;padding:0}
+    html{font-family:'Inter',sans-serif;color:var(--gray900);scroll-behavior:smooth}
+    h1,h2,h3{font-family:'Space Grotesk',sans-serif}
+    .nav-link{font-size:.875rem;font-weight:500;color:var(--gray700);text-decoration:none;padding:.375rem .75rem;border-radius:.375rem;transition:color .15s,background .15s}
+    .nav-link:hover{color:var(--g700);background:var(--g50)}
+    .btn-outline{font-family:'Space Grotesk',sans-serif;font-size:.875rem;font-weight:600;color:var(--g700);border:1.5px solid var(--g600);padding:.5rem 1.25rem;border-radius:.5rem;text-decoration:none;transition:all .15s}
+    .btn-outline:hover{background:var(--g600);color:#fff}
+    .btn-primary{font-family:'Space Grotesk',sans-serif;font-size:.875rem;font-weight:700;color:#fff;background:var(--g600);padding:.5rem 1.375rem;border-radius:.5rem;text-decoration:none;transition:all .15s;display:inline-flex;align-items:center;gap:.375rem}
+    .btn-primary:hover{background:var(--g700)}
+    .toc-link{display:block;font-size:.82rem;color:var(--gray500);text-decoration:none;padding:.375rem .75rem;border-radius:.375rem;border-left:2px solid transparent;transition:all .15s;line-height:1.45}
+    .toc-link:hover,.toc-link.active{color:var(--g700);border-left-color:var(--g600);background:var(--g50)}
+    .section-heading{font-size:1.25rem;font-weight:800;color:var(--navy);margin-bottom:1rem;padding-top:.5rem}
+    .legal-text p{font-size:.9rem;color:var(--gray700);line-height:1.8;margin-bottom:.875rem}
+    .legal-text ul{padding-left:1.5rem;margin-bottom:.875rem}
+    .legal-text ul li{font-size:.9rem;color:var(--gray700);line-height:1.8;margin-bottom:.25rem}
+    .legal-text strong{font-weight:600;color:var(--gray900)}
+    .rights-grid{display:grid;grid-template-columns:1fr 1fr;gap:1rem;margin-bottom:.875rem}
+    .right-card{background:var(--g50);border:1px solid var(--g100);border-radius:.625rem;padding:1rem}
+    section[id]{scroll-margin-top:5rem}
+  </style>
 </head>
-<body>
+<body style="background:var(--gray50)">
 
 <!-- NAV -->
-<header style="position:sticky;top:0;z-index:50;background:rgba(5,11,24,.92);backdrop-filter:blur(20px);border-bottom:1px solid rgba(255,255,255,.07)">
-  <nav style="max-width:1280px;margin:0 auto;padding:0 24px;display:flex;align-items:center;justify-content:space-between;height:68px">
-    <a href="/" style="display:flex;align-items:center;gap:12px;text-decoration:none">
-      <svg width="36" height="36" viewBox="0 0 36 36" fill="none"><rect width="36" height="36" rx="10" fill="#0D1830"/><path d="M18 6 L27 10.5 L27 20.5 C27 25.5 23 29.5 18 31.5 C13 29.5 9 25.5 9 20.5 L9 10.5 Z" fill="#1C3060" stroke="#2563EB" stroke-width="1"/><path d="M14.5 20 L17 22.5 L22 17" stroke="#F59E0B" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>
-      <span style="font-family:'Space Grotesk',sans-serif;font-weight:800;font-size:20px;color:#fff;letter-spacing:-.02em">Cuotela</span>
+<header style="position:sticky;top:0;z-index:50;background:#fff;border-bottom:1px solid var(--gray200)">
+  <div style="max-width:1200px;margin:0 auto;padding:0 1.5rem;display:flex;align-items:center;justify-content:space-between;height:4.25rem">
+    <a href="/" style="display:flex;align-items:center;gap:.625rem;text-decoration:none;flex-shrink:0">
+      <svg width="36" height="36" viewBox="0 0 36 36" fill="none"><rect width="36" height="36" rx="9" fill="#006B3D"/><circle cx="15" cy="16.5" r="3" fill="white"/><path d="M10.5 27C10.5 23.96 12.69 21.5 15 21.5C17.31 21.5 19.5 23.96 19.5 27" stroke="white" stroke-width="1.5" stroke-linecap="round" fill="none"/><circle cx="22.5" cy="18.5" r="2.2" fill="white" opacity="0.8"/><path d="M19.5 27C19.5 24.51 20.9 22.5 22.5 22.5C24.1 22.5 25.5 24.51 25.5 27" stroke="white" stroke-width="1.5" stroke-linecap="round" fill="none" opacity="0.8"/><circle cx="19" cy="19.5" r="1" fill="#F5A623"/></svg>
+      <span style="font-family:'Space Grotesk',sans-serif;font-size:1.25rem;font-weight:800;color:var(--navy);letter-spacing:-.03em">cuotela</span>
     </a>
-    <div style="display:flex;gap:32px;align-items:center">
-      <a href="/">Inicio</a>
-      <a href="/blog/">Blog</a>
-      <a href="/contacto/" class="btn-gold">Comenzar gratis</a>
+    <div style="display:flex;align-items:center;gap:.75rem">
+      <a href="https://app.cuotela.co/login" class="btn-outline" style="display:none" id="desk-login">Iniciar sesión</a>
+      <a href="https://app.cuotela.co/registro" class="btn-primary">Crear cuenta gratis</a>
     </div>
-  </nav>
+  </div>
+  <style>@media(min-width:640px){#desk-login{display:inline-flex!important}}</style>
 </header>
 
-<!-- HERO -->
-<section style="background:radial-gradient(ellipse at 30% 0%,rgba(37,99,235,.08) 0,transparent 55%),var(--navy-900);padding:72px 24px 48px">
-  <div style="max-width:860px;margin:0 auto">
-    <div style="display:inline-flex;align-items:center;gap:8px;padding:5px 14px;border-radius:99px;background:rgba(255,255,255,.05);color:#64748B;border:1px solid rgba(255,255,255,.08);font-size:12px;font-weight:600;margin-bottom:20px">
-      <svg width="12" height="12" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" viewBox="0 0 24 24"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
-      Protección de datos
-    </div>
-    <h1 style="font-size:clamp(28px,4vw,48px);font-weight:800;color:#fff;letter-spacing:-.03em;margin-bottom:12px">Política de <span class="gold-grad">Privacidad</span></h1>
-    <div style="display:flex;flex-wrap:wrap;gap:16px;align-items:center">
-      <span style="font-size:13px;color:#475569">Última actualización: octubre 2025</span>
-      <span style="color:#1E293B">·</span>
-      <span style="font-size:13px;color:#475569">Ley 1581/2012 — Habeas Data</span>
-    </div>
+<!-- HERO strip -->
+<div style="background:var(--navy);padding:2rem 1.5rem">
+  <div style="max-width:900px;margin:0 auto">
+    <p style="font-family:'Space Grotesk',sans-serif;font-size:.75rem;font-weight:700;letter-spacing:.07em;text-transform:uppercase;color:rgba(255,255,255,.5);margin-bottom:.5rem">Legal · Privacidad</p>
+    <h1 style="font-size:clamp(1.5rem,4vw,2.25rem);font-weight:800;color:#fff;letter-spacing:-.02em">Política de Privacidad y Tratamiento de Datos Personales</h1>
+    <p style="font-size:.875rem;color:rgba(255,255,255,.55);margin-top:.5rem">Última actualización: 1 de julio de 2025 · Vigente según Ley 1581/2012 y Decreto 1074/2015</p>
   </div>
-</section>
+</div>
 
-<!-- CONTENT -->
-<section style="padding:48px 24px 100px">
-  <div style="max-width:860px;margin:0 auto;display:grid;grid-template-columns:200px 1fr;gap:56px;align-items:start">
+<!-- LAYOUT -->
+<div style="max-width:1100px;margin:0 auto;padding:3rem 1.5rem;display:grid;grid-template-columns:240px 1fr;gap:3rem;align-items:start" class="legal-layout">
 
-    <!-- TOC -->
-    <div style="position:sticky;top:88px">
-      <div style="font-size:11px;font-weight:700;color:#F59E0B;letter-spacing:.1em;text-transform:uppercase;margin-bottom:16px">Secciones</div>
-      <nav style="display:flex;flex-direction:column;gap:8px">
-        <a href="#responsable" style="font-size:13px;color:#475569;text-decoration:none">1. Responsable</a>
-        <a href="#datos-recopilados" style="font-size:13px;color:#475569;text-decoration:none">2. Datos recopilados</a>
-        <a href="#finalidades" style="font-size:13px;color:#475569;text-decoration:none">3. Finalidades</a>
-        <a href="#base-legal" style="font-size:13px;color:#475569;text-decoration:none">4. Base legal</a>
-        <a href="#habeas-data" style="font-size:13px;color:#60A5FA;text-decoration:none">5. Derechos ARCO</a>
-        <a href="#terceros" style="font-size:13px;color:#475569;text-decoration:none">6. Terceros</a>
-        <a href="#seguridad" style="font-size:13px;color:#475569;text-decoration:none">7. Seguridad</a>
-        <a href="#menores" style="font-size:13px;color:#475569;text-decoration:none">8. Datos de menores</a>
-        <a href="#cookies" style="font-size:13px;color:#475569;text-decoration:none">9. Cookies</a>
-        <a href="#vigencia" style="font-size:13px;color:#475569;text-decoration:none">10. Vigencia</a>
-      </nav>
+  <!-- TOC -->
+  <aside style="position:sticky;top:5.5rem" class="legal-toc">
+    <p style="font-family:'Space Grotesk',sans-serif;font-size:.75rem;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--gray500);margin-bottom:.75rem;padding:0 .75rem">En esta página</p>
+    <nav style="display:flex;flex-direction:column;gap:.125rem">
+      <a href="#responsable" class="toc-link">1. Responsable del tratamiento</a>
+      <a href="#datos-recopilados" class="toc-link">2. Datos que recopilamos</a>
+      <a href="#finalidades" class="toc-link">3. Finalidades del tratamiento</a>
+      <a href="#bases-legales" class="toc-link">4. Base legal del tratamiento</a>
+      <a href="#derechos-arco" class="toc-link">5. Derechos ARCO del titular</a>
+      <a href="#transferencias" class="toc-link">6. Transferencia de datos</a>
+      <a href="#seguridad" class="toc-link">7. Seguridad de la información</a>
+      <a href="#cookies" class="toc-link">8. Cookies y tecnologías similares</a>
+      <a href="#menores" class="toc-link">9. Datos de menores de edad</a>
+      <a href="#vigencia" class="toc-link">10. Vigencia y actualizaciones</a>
+    </nav>
+    <div style="margin-top:1.5rem;padding:.875rem;background:var(--g50);border-radius:.625rem;border:1px solid var(--g100)">
+      <p style="font-size:.78rem;color:var(--g700);font-weight:600;margin-bottom:.375rem">Derechos ARCO</p>
+      <p style="font-size:.75rem;color:var(--gray500);margin-bottom:.625rem;line-height:1.6">Para ejercer tus derechos sobre tus datos personales:</p>
+      <a href="mailto:privacidad@cuotela.co" style="font-size:.78rem;color:var(--g600);font-weight:600;text-decoration:none;display:block">privacidad@cuotela.co</a>
     </div>
+  </aside>
 
-    <!-- Content -->
-    <div>
-      <div id="responsable" class="doc-section">
-        <h2>1. Responsable del tratamiento</h2>
-        <div style="background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.08);border-radius:14px;padding:20px 24px;margin-bottom:16px">
-          <p style="margin:0;color:#CBD5E1"><strong>Cuotela S.A.S.</strong><br/>
-          Bogotá D.C., Colombia<br/>
-          Correo: <a href="mailto:datos@cuotela.co">datos@cuotela.co</a><br/>
-          Sitio web: cuotela.co</p>
+  <!-- CONTENT -->
+  <main class="legal-text">
+    <div style="background:#fff;border-radius:1.25rem;border:1px solid var(--gray200);padding:2.5rem;display:flex;flex-direction:column;gap:2.5rem">
+
+      <div style="padding:1rem;background:#EFF6FF;border-radius:.625rem;border:1px solid #BFDBFE;display:flex;gap:.75rem">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#2563EB" stroke-width="2" style="flex-shrink:0;margin-top:2px"><circle cx="12" cy="12" r="10"/><line x1="12" x2="12" y1="8" y2="12"/><line x1="12" x2="12.01" y1="16" y2="16"/></svg>
+        <p style="font-size:.85rem;color:#1E40AF;margin-bottom:0;line-height:1.65">En Cuotela manejamos información sensible de familias colombianas. Esta política explica con claridad qué datos recopilamos, para qué los usamos y cómo los protegemos. Si tienes dudas, escríbenos antes de registrarte.</p>
+      </div>
+
+      <section id="responsable">
+        <h2 class="section-heading">1. Responsable del tratamiento</h2>
+        <p><strong>Cuotela S.A.S.</strong> es el responsable del tratamiento de los datos personales recopilados a través de la plataforma cuotela.co y app.cuotela.co.</p>
+        <ul>
+          <li><strong>Domicilio:</strong> Bogotá, D.C., Colombia</li>
+          <li><strong>Correo de privacidad:</strong> privacidad@cuotela.co</li>
+          <li><strong>Correo general:</strong> hola@cuotela.co</li>
+          <li><strong>Ley aplicable:</strong> Ley Estatutaria 1581 de 2012 y Decreto 1074 de 2015 (Régimen de Protección de Datos Personales de Colombia)</li>
+        </ul>
+      </section>
+
+      <section id="datos-recopilados">
+        <h2 class="section-heading">2. Datos que recopilamos</h2>
+        <p><strong>Datos de identidad y contacto:</strong></p>
+        <ul>
+          <li>Nombre completo, número de documento de identidad (cédula), fecha de nacimiento.</li>
+          <li>Correo electrónico, número de teléfono/WhatsApp, ciudad de residencia.</li>
+        </ul>
+        <p><strong>Datos relacionados con la obligación alimentaria:</strong></p>
+        <ul>
+          <li>Número e información básica de los hijos a cargo (nombre, edad, tipo de custodia).</li>
+          <li>Ingresos declarados por el usuario para el cálculo de la cuota.</li>
+          <li>Historial de pagos registrados en la plataforma.</li>
+          <li>Documentos judiciales cargados voluntariamente (autos, sentencias, acuerdos).</li>
+        </ul>
+        <p><strong>Datos de uso de la plataforma:</strong></p>
+        <ul>
+          <li>Dirección IP, navegador, dispositivo y sistema operativo.</li>
+          <li>Páginas visitadas, tiempo de sesión y acciones realizadas dentro de la plataforma.</li>
+          <li>Cookies de sesión y preferencias (ver cláusula 8).</li>
+        </ul>
+        <p><strong>Datos financieros (para fondo de ahorro y anticipos):</strong></p>
+        <ul>
+          <li>Información de la cuenta bancaria o método de pago (procesada por Wompi — nunca almacenamos números completos de tarjeta).</li>
+          <li>Historial de transacciones dentro del fondo.</li>
+        </ul>
+      </section>
+
+      <section id="finalidades">
+        <h2 class="section-heading">3. Finalidades del tratamiento</h2>
+        <p>Tratamos tus datos personales para las siguientes finalidades:</p>
+        <ul>
+          <li><strong>Prestación del servicio:</strong> Crear y gestionar tu cuenta, procesar pagos, emitir certificados y generar el historial de cuotas.</li>
+          <li><strong>Asesoría jurídica:</strong> Compartir información relevante con los abogados que atienden tu caso, bajo estricta confidencialidad profesional.</li>
+          <li><strong>Consulta REDAM:</strong> Verificar el estado de inscripción ante el Registro Nacional de Deudores Alimentarios Morosos.</li>
+          <li><strong>Comunicaciones del servicio:</strong> Alertas de pago, vencimientos, novedades en tu caso y actualizaciones legales relevantes.</li>
+          <li><strong>Marketing (opcional):</strong> Envío de boletines y contenido informativo. Solo con tu consentimiento explícito y con opción de cancelar en cualquier momento.</li>
+          <li><strong>Mejora del servicio:</strong> Análisis agregado y anonimizado del uso de la plataforma para mejorar funcionalidades.</li>
+          <li><strong>Cumplimiento legal:</strong> Atender requerimientos de autoridades judiciales o administrativas colombianas con orden legal.</li>
+        </ul>
+      </section>
+
+      <section id="bases-legales">
+        <h2 class="section-heading">4. Base legal del tratamiento</h2>
+        <p>El tratamiento de tus datos se realiza sobre las siguientes bases legales, según el artículo 10 de la Ley 1581/2012:</p>
+        <ul>
+          <li><strong>Consentimiento:</strong> Otorgado al aceptar estos términos y esta política al momento del registro.</li>
+          <li><strong>Ejecución de un contrato:</strong> Para los datos necesarios para prestarte los servicios contratados.</li>
+          <li><strong>Obligación legal:</strong> Para datos que debamos tratar por requerimiento de autoridades colombianas.</li>
+          <li><strong>Interés legítimo:</strong> Para la seguridad de la plataforma y la prevención del fraude.</li>
+        </ul>
+      </section>
+
+      <section id="derechos-arco">
+        <h2 class="section-heading">5. Derechos ARCO del titular</h2>
+        <p>Como titular de datos personales, tienes los siguientes derechos según la Ley 1581/2012:</p>
+        <div class="rights-grid">
+          <div class="right-card">
+            <p style="font-family:'Space Grotesk',sans-serif;font-size:.875rem;font-weight:700;color:var(--g700);margin-bottom:.375rem">Acceso</p>
+            <p style="font-size:.82rem;color:var(--gray500);margin-bottom:0;line-height:1.6">Conocer qué datos tuyos tenemos, cómo los tratamos y con quién los compartimos.</p>
+          </div>
+          <div class="right-card">
+            <p style="font-family:'Space Grotesk',sans-serif;font-size:.875rem;font-weight:700;color:var(--g700);margin-bottom:.375rem">Rectificación</p>
+            <p style="font-size:.82rem;color:var(--gray500);margin-bottom:0;line-height:1.6">Corregir datos inexactos, incompletos o desactualizados.</p>
+          </div>
+          <div class="right-card">
+            <p style="font-family:'Space Grotesk',sans-serif;font-size:.875rem;font-weight:700;color:var(--g700);margin-bottom:.375rem">Cancelación</p>
+            <p style="font-size:.82rem;color:var(--gray500);margin-bottom:0;line-height:1.6">Solicitar la eliminación de tus datos cuando no sean necesarios para la finalidad que motivó su recopilación.</p>
+          </div>
+          <div class="right-card">
+            <p style="font-family:'Space Grotesk',sans-serif;font-size:.875rem;font-weight:700;color:var(--g700);margin-bottom:.375rem">Oposición</p>
+            <p style="font-size:.82rem;color:var(--gray500);margin-bottom:0;line-height:1.6">Oponerte al tratamiento de tus datos para finalidades específicas, como el envío de comunicaciones de marketing.</p>
+          </div>
         </div>
-        <p>Cuotela S.A.S. actúa como Responsable del Tratamiento de los datos personales de sus usuarios conforme a la <strong>Ley 1581 de 2012</strong>, el Decreto Reglamentario 1377 de 2013 y demás normas aplicables de la República de Colombia.</p>
-      </div>
+        <p>Para ejercer cualquiera de estos derechos, escríbenos a <strong>privacidad@cuotela.co</strong> con asunto "Derecho ARCO" indicando tu nombre completo y la solicitud específica. Responderemos en un plazo máximo de <strong>15 días hábiles</strong>.</p>
+        <p>Si consideras que tu solicitud no fue atendida adecuadamente, puedes presentar una queja ante la <strong>Superintendencia de Industria y Comercio (SIC)</strong> a través de www.sic.gov.co.</p>
+      </section>
 
-      <div id="datos-recopilados" class="doc-section">
-        <h2>2. Datos recopilados</h2>
-        <p>Cuotela recopila las siguientes categorías de datos:</p>
+      <section id="transferencias">
+        <h2 class="section-heading">6. Transferencia y transmisión de datos</h2>
+        <p>Cuotela comparte tus datos únicamente con:</p>
         <ul>
-          <li><strong>Datos de identificación:</strong> Nombre completo, número de cédula de ciudadanía o extranjería, fecha de nacimiento, fotografía de documento.</li>
-          <li><strong>Datos de contacto:</strong> Correo electrónico, número de celular/WhatsApp, ciudad de residencia.</li>
-          <li><strong>Datos financieros:</strong> Entidad bancaria, número de cuenta (no almacenamos datos de tarjetas de crédito/débito), historial de transacciones en la plataforma.</li>
-          <li><strong>Datos del proceso judicial:</strong> Número de radicado, juzgado, monto de cuota establecido, datos del otro progenitor y del menor (únicamente los necesarios para gestionar la obligación).</li>
-          <li><strong>Datos de uso de la plataforma:</strong> Dirección IP, tipo de navegador, páginas visitadas, duración de sesiones (para mejora del servicio).</li>
+          <li><strong>Abogados vinculados:</strong> Montcrest & Partners S.A.S. y la red de conciliadores aliados, para la prestación del servicio de asesoría jurídica, bajo acuerdos de confidencialidad.</li>
+          <li><strong>Procesador de pagos:</strong> Wompi (Bancolombia S.A.), para el procesamiento seguro de transacciones. Sus políticas de privacidad son independientes.</li>
+          <li><strong>Herramientas de análisis:</strong> Datos anonimizados y agregados para mejora del servicio (sin información personal identificable).</li>
+          <li><strong>Autoridades:</strong> Únicamente ante requerimiento legal válido de autoridad judicial o administrativa colombiana.</li>
         </ul>
-        <p>No recopilamos datos sensibles en los términos del artículo 5 de la Ley 1581/2012, salvo aquellos estrictamente necesarios para la gestión legal de la obligación alimentaria, previo consentimiento expreso.</p>
-      </div>
+        <p>Cuotela <strong>no vende, arrienda ni comercializa</strong> datos personales de sus usuarios a terceros con fines publicitarios o comerciales.</p>
+      </section>
 
-      <div id="finalidades" class="doc-section">
-        <h2>3. Finalidades del tratamiento</h2>
-        <p>Los datos personales serán tratados para las siguientes finalidades:</p>
-        <ol>
-          <li>Verificación de identidad del Usuario (KYC — Know Your Customer).</li>
-          <li>Prestación de los servicios contratados: pago de cuota, ahorro voluntario, crédito de emergencia.</li>
-          <li>Generación de comprobantes con valor probatorio bajo la Ley 527/1999.</li>
-          <li>Gestión de la relación contractual, facturación y cobro.</li>
-          <li>Envío de comunicaciones relacionadas con el servicio (alertas de vencimiento, actualizaciones).</li>
-          <li>Cumplimiento de obligaciones legales ante autoridades competentes.</li>
-          <li>Mejora de la experiencia de usuario y desarrollo de nuevas funcionalidades.</li>
-          <li>Prevención de fraude y cumplimiento SARLAFT (cuando aplique).</li>
-        </ol>
-        <p>No utilizaremos los datos para publicidad de terceros sin consentimiento previo y expreso del Titular.</p>
-      </div>
-
-      <div id="base-legal" class="doc-section">
-        <h2>4. Base legal del tratamiento</h2>
-        <p>El tratamiento de datos se fundamenta en:</p>
+      <section id="seguridad">
+        <h2 class="section-heading">7. Seguridad de la información</h2>
+        <p>Implementamos medidas técnicas y organizativas para proteger tus datos:</p>
         <ul>
-          <li><strong>Consentimiento expreso</strong> otorgado durante el registro, en los términos del artículo 9 de la Ley 1581/2012.</li>
-          <li><strong>Ejecución de contrato</strong>: el tratamiento es necesario para prestar los servicios solicitados.</li>
-          <li><strong>Cumplimiento de obligaciones legales</strong>: normativa SARLAFT, SIPLAFT, obligaciones tributarias y reportes ante la UIAF cuando sea requerido.</li>
-          <li><strong>Interés legítimo</strong>: prevención de fraude y seguridad de la plataforma.</li>
+          <li>Cifrado SSL/TLS en todas las comunicaciones entre tu navegador y nuestros servidores.</li>
+          <li>Contraseñas almacenadas con hash seguro (bcrypt); nunca en texto plano.</li>
+          <li>Acceso a datos personales restringido al personal estrictamente necesario.</li>
+          <li>Registros de acceso y auditoría de operaciones sobre datos sensibles.</li>
+          <li>Actualizaciones periódicas de seguridad en infraestructura y dependencias.</li>
         </ul>
-      </div>
+        <p>En caso de una brecha de seguridad que afecte tus datos, te notificaremos en un plazo máximo de <strong>72 horas</strong> desde que tengamos conocimiento del incidente, según las obligaciones establecidas en la normativa colombiana.</p>
+      </section>
 
-      <div id="habeas-data" class="doc-section">
-        <h2>5. Derechos ARCO — Habeas Data</h2>
-        <p>De conformidad con el artículo 8 de la Ley 1581/2012, el Titular de los datos tiene los siguientes derechos:</p>
-        <div style="display:flex;flex-direction:column;gap:10px;margin-bottom:16px">
-          <div class="rights-box">
-            <h4>Acceso</h4>
-            <p>Conocer qué datos personales suyos están siendo tratados y la información sobre su tratamiento.</p>
-          </div>
-          <div class="rights-box">
-            <h4>Rectificación</h4>
-            <p>Actualizar, corregir o modificar sus datos cuando sean inexactos, incompletos o estén desactualizados.</p>
-          </div>
-          <div class="rights-box">
-            <h4>Cancelación / Supresión</h4>
-            <p>Solicitar la eliminación de sus datos cuando no sean necesarios para las finalidades que justificaron el tratamiento o haya revocado el consentimiento, salvo obligación legal de conservación.</p>
-          </div>
-          <div class="rights-box">
-            <h4>Oposición</h4>
-            <p>Oponerse al tratamiento de sus datos para finalidades específicas (p.ej., comunicaciones comerciales).</p>
-          </div>
-          <div class="rights-box">
-            <h4>Revocación del consentimiento</h4>
-            <p>Revocar el consentimiento otorgado en cualquier momento, sin efecto retroactivo. La revocación puede implicar la imposibilidad de prestar algunos servicios.</p>
-          </div>
-        </div>
-        <p>Para ejercer sus derechos, el Titular puede escribir a <a href="mailto:datos@cuotela.co">datos@cuotela.co</a> indicando: nombre completo, número de documento, derecho que desea ejercer y motivación. Cuotela responderá en un plazo máximo de <strong>10 días hábiles</strong> para consultas y <strong>15 días hábiles</strong> para reclamos, conforme al artículo 14 de la Ley 1581/2012.</p>
-        <p>Si considera que su derecho no fue atendido, puede presentar queja ante la <strong>Superintendencia de Industria y Comercio (SIC)</strong>, entidad que ejerce la vigilancia del cumplimiento de la Ley 1581/2012.</p>
-      </div>
-
-      <div id="terceros" class="doc-section">
-        <h2>6. Transferencia y transmisión a terceros</h2>
-        <p>Cuotela puede compartir datos personales únicamente con:</p>
+      <section id="cookies">
+        <h2 class="section-heading">8. Cookies y tecnologías similares</h2>
+        <p>Usamos cookies para:</p>
         <ul>
-          <li><strong>Aliados financieros vigilados SFC:</strong> Para procesar pagos y gestionar créditos de emergencia.</li>
-          <li><strong>Montcrest & Partners S.A.S.:</strong> Para prestar los servicios de asesoría jurídica contratados.</li>
-          <li><strong>Proveedor de infraestructura tecnológica:</strong> Almacenamiento en nube con certificación ISO 27001.</li>
-          <li><strong>Pasarelas de pago:</strong> Wompi/Bancolombia y PSE, bajo sus propias políticas de seguridad.</li>
-          <li><strong>Autoridades competentes:</strong> Cuando medie orden judicial o requerimiento legal.</li>
+          <li><strong>Cookies esenciales:</strong> Mantener tu sesión activa y garantizar la seguridad de la plataforma. Son necesarias y no pueden desactivarse.</li>
+          <li><strong>Cookies de preferencias:</strong> Recordar tu idioma y configuración de la plataforma.</li>
+          <li><strong>Cookies analíticas:</strong> Entender cómo usas la plataforma para mejorarla (datos agregados y anonimizados).</li>
         </ul>
-        <p>No vendemos, arrendamos ni comercializamos datos personales a terceros con fines distintos a los aquí descritos.</p>
-        <p>Toda transferencia internacional de datos (si aplica) se realizará conforme al artículo 26 de la Ley 1581/2012, garantizando un nivel adecuado de protección en el país destinatario.</p>
-      </div>
+        <p>Puedes configurar tu navegador para rechazar cookies no esenciales. Esto puede afectar algunas funcionalidades de la plataforma.</p>
+      </section>
 
-      <div id="seguridad" class="doc-section">
-        <h2>7. Medidas de seguridad</h2>
-        <p>Cuotela implementa las siguientes medidas técnicas y organizativas para proteger los datos personales:</p>
-        <ul>
-          <li>Cifrado SSL/TLS en todas las comunicaciones entre el navegador y nuestros servidores.</li>
-          <li>Cifrado AES-256 para datos en reposo en nuestra base de datos.</li>
-          <li>Autenticación de dos factores (2FA) disponible para todos los usuarios.</li>
-          <li>Infraestructura alojada en servidores con certificación ISO/IEC 27001.</li>
-          <li>Acceso a datos de producción restringido y auditado internamente.</li>
-          <li>Planes de respuesta ante incidentes de seguridad conforme a la normativa colombiana.</li>
-          <li>Pruebas periódicas de vulnerabilidades (pentesting).</li>
-        </ul>
-        <p>En caso de una violación de datos que afecte sus derechos, notificaremos a los Titulares afectados y a la SIC en los términos previstos por la ley.</p>
-      </div>
+      <section id="menores">
+        <h2 class="section-heading">9. Datos de menores de edad</h2>
+        <p>Cuotela no recopila datos personales directamente de menores de edad. La plataforma está diseñada para padres, madres y tutores legales mayores de 18 años.</p>
+        <p>En el marco de los servicios, los usuarios pueden ingresar datos básicos de sus hijos (nombre, edad, tipo de custodia) exclusivamente para el cálculo de cuotas y la gestión del servicio. Estos datos se tratan con especial cuidado y solo para las finalidades directamente relacionadas con el bienestar del menor.</p>
+        <p>De conformidad con el artículo 7 de la Ley 1581/2012, el tratamiento de datos de menores requiere autorización de sus representantes legales, la cual se entiende otorgada al momento de ingresar dicha información en la plataforma.</p>
+      </section>
 
-      <div id="menores" class="doc-section">
-        <h2>8. Datos de menores de edad</h2>
-        <p>Los menores de edad (beneficiarios de la cuota alimentaria) <strong>no son usuarios de la plataforma</strong>. Los datos de los menores — nombre, edad, institución educativa — son tratados únicamente como información de destino necesaria para la gestión de la obligación alimentaria.</p>
-        <p>El progenitor que registra los datos del menor garantiza que está autorizado para compartirlos en el contexto del proceso de alimentos. El tratamiento de estos datos se limita estrictamente a las finalidades del servicio y no se utilizará para ningún otro propósito.</p>
-        <p>Cuotela aplica el principio de minimización de datos: solo recopilamos de los menores la información estrictamente necesaria.</p>
-      </div>
+      <section id="vigencia">
+        <h2 class="section-heading">10. Vigencia, conservación y actualizaciones</h2>
+        <p>Tus datos se conservarán mientras seas usuario activo de Cuotela y durante el tiempo necesario para cumplir con las finalidades descritas y las obligaciones legales aplicables (generalmente hasta 5 años después de la terminación de la relación contractual, salvo disposición legal en contrario).</p>
+        <p>Esta política puede actualizarse para reflejar cambios en nuestros servicios o en la legislación colombiana. Cuando las actualizaciones sean materiales, te notificaremos por correo electrónico con al menos <strong>15 días de anticipación</strong>. La versión vigente siempre estará disponible en cuotela.co/privacidad.</p>
+        <p style="margin-top:1.5rem;padding:1rem;background:var(--gray50);border-radius:.5rem;font-size:.82rem;color:var(--gray500)">
+          Para ejercer derechos ARCO o reportar incidentes de privacidad: <a href="mailto:privacidad@cuotela.co" style="color:var(--g600)">privacidad@cuotela.co</a><br>
+          Para consultas generales: <a href="mailto:hola@cuotela.co" style="color:var(--g600)">hola@cuotela.co</a><br>
+          Superintendencia de Industria y Comercio (SIC): <a href="https://www.sic.gov.co" style="color:var(--g600)" target="_blank" rel="noopener">www.sic.gov.co</a>
+        </p>
+      </section>
 
-      <div id="cookies" class="doc-section">
-        <h2>9. Cookies y tecnologías de rastreo</h2>
-        <p>El sitio web de Cuotela utiliza las siguientes categorías de cookies:</p>
-        <ul>
-          <li><strong>Cookies esenciales:</strong> Necesarias para el funcionamiento del sitio (sesión, autenticación). No requieren consentimiento.</li>
-          <li><strong>Cookies de análisis:</strong> Usamos herramientas de analítica web anonimizadas para medir el tráfico y mejorar la experiencia. Solo con su consentimiento.</li>
-          <li><strong>Cookies de preferencias:</strong> Recuerdan configuraciones como el idioma. Solo con su consentimiento.</li>
-        </ul>
-        <p>Puede gestionar o eliminar las cookies desde la configuración de su navegador. La desactivación de cookies esenciales puede afectar el funcionamiento del servicio.</p>
-      </div>
-
-      <div id="vigencia" class="doc-section">
-        <h2>10. Vigencia y actualizaciones</h2>
-        <p>La presente Política entra en vigor desde la fecha de publicación y permanece vigente hasta que sea reemplazada por una versión actualizada.</p>
-        <p>Los datos personales serán conservados durante el tiempo necesario para cumplir las finalidades descritas y las obligaciones legales de retención (mínimo 5 años para registros contables y financieros conforme al Código de Comercio colombiano).</p>
-        <p>Cuotela se reserva el derecho de actualizar esta Política. Las modificaciones serán notificadas por correo electrónico con un mínimo de 10 días de anticipación a su entrada en vigor. La versión vigente siempre estará disponible en <strong>cuotela.co/privacidad</strong>.</p>
-      </div>
-
-      <div style="background:rgba(245,158,11,.06);border:1px solid rgba(245,158,11,.2);border-radius:16px;padding:24px 28px;margin-top:32px">
-        <h3 style="font-family:'Space Grotesk',sans-serif;font-size:15px;font-weight:700;color:#fff;margin-bottom:8px">Ejercer mis derechos Habeas Data</h3>
-        <p style="font-size:13px;color:#64748B;margin-bottom:16px">Para cualquier solicitud relacionada con el tratamiento de sus datos personales.</p>
-        <a href="mailto:datos@cuotela.co" style="font-size:13px;color:#F59E0B;text-decoration:none;font-weight:600">datos@cuotela.co →</a>
-      </div>
     </div>
-  </div>
-</section>
+  </main>
+</div>
+
+<style>
+  .legal-layout{@media(max-width:768px){grid-template-columns:1fr!important}}
+  .legal-toc{@media(max-width:768px){display:none!important}}
+  .rights-grid{@media(max-width:520px){grid-template-columns:1fr!important}}
+</style>
 
 <!-- FOOTER -->
-<footer style="background:var(--navy-950);border-top:1px solid rgba(255,255,255,.06);padding:40px 24px">
-  <div style="max-width:1280px;margin:0 auto;display:flex;flex-wrap:wrap;justify-content:space-between;align-items:center;gap:16px">
-    <a href="/" style="display:flex;align-items:center;gap:10px;text-decoration:none">
-      <svg width="28" height="28" viewBox="0 0 36 36" fill="none"><rect width="36" height="36" rx="10" fill="#0D1830"/><path d="M18 6 L27 10.5 L27 20.5 C27 25.5 23 29.5 18 31.5 C13 29.5 9 25.5 9 20.5 L9 10.5 Z" fill="#1C3060" stroke="#2563EB" stroke-width="1"/><path d="M14.5 20 L17 22.5 L22 17" stroke="#F59E0B" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>
-      <span style="font-family:'Space Grotesk',sans-serif;font-weight:800;font-size:18px;color:#fff">Cuotela</span>
+<footer style="background:var(--gray900);padding:2rem 1.5rem">
+  <div style="max-width:1100px;margin:0 auto;display:flex;flex-wrap:wrap;justify-content:space-between;align-items:center;gap:1rem">
+    <a href="/" style="display:flex;align-items:center;gap:.5rem;text-decoration:none">
+      <svg width="28" height="28" viewBox="0 0 36 36" fill="none"><rect width="36" height="36" rx="9" fill="#006B3D"/><circle cx="15" cy="16.5" r="3" fill="white"/><path d="M10.5 27C10.5 23.96 12.69 21.5 15 21.5C17.31 21.5 19.5 23.96 19.5 27" stroke="white" stroke-width="1.5" stroke-linecap="round" fill="none"/><circle cx="22.5" cy="18.5" r="2.2" fill="white" opacity="0.8"/><path d="M19.5 27C19.5 24.51 20.9 22.5 22.5 22.5C24.1 22.5 25.5 24.51 25.5 27" stroke="white" stroke-width="1.5" stroke-linecap="round" fill="none" opacity="0.8"/><circle cx="19" cy="19.5" r="1" fill="#F5A623"/></svg>
+      <span style="font-family:'Space Grotesk',sans-serif;font-size:1rem;font-weight:800;color:#fff">cuotela</span>
     </a>
-    <div style="display:flex;gap:24px">
-      <a href="/terminos/" style="color:#334155;font-size:13px;text-decoration:none">Términos</a>
-      <a href="/privacidad/" style="color:#60A5FA;font-size:13px;text-decoration:none">Privacidad</a>
-      <a href="/contacto/" style="color:#334155;font-size:13px;text-decoration:none">Contacto</a>
+    <div style="display:flex;gap:1.5rem;flex-wrap:wrap">
+      <a href="/" style="font-size:.8rem;color:rgba(255,255,255,.4);text-decoration:none">Inicio</a>
+      <a href="/terminos" style="font-size:.8rem;color:rgba(255,255,255,.4);text-decoration:none">Términos y Condiciones</a>
+      <a href="/contacto" style="font-size:.8rem;color:rgba(255,255,255,.4);text-decoration:none">Contacto</a>
     </div>
-    <p style="color:#1E293B;font-size:12px">© 2025 Cuotela S.A.S. — Ley 1581/2012</p>
+    <p style="font-size:.75rem;color:rgba(255,255,255,.25)">© 2025 Cuotela S.A.S.</p>
   </div>
 </footer>
+
+<script>
+  const sections=document.querySelectorAll('section[id]');
+  const links=document.querySelectorAll('.toc-link');
+  const obs=new IntersectionObserver(entries=>{
+    entries.forEach(e=>{
+      if(e.isIntersecting){
+        links.forEach(l=>l.classList.remove('active'));
+        const a=document.querySelector('.toc-link[href="#'+e.target.id+'"]');
+        if(a)a.classList.add('active');
+      }
+    });
+  },{rootMargin:'-20% 0px -70% 0px'});
+  sections.forEach(s=>obs.observe(s));
+</script>
 </body>
 </html>
