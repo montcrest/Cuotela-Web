@@ -1,0 +1,526 @@
+<!DOCTYPE html>
+<html lang="es" class="scroll-smooth">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1"/>
+<title>Cuotela — Obligaciones alimentarias cumplidas</title>
+<meta name="description" content="Plataforma LegalTech + FinTech para pagar, ahorrar y cumplir la cuota alimentaria directamente al menor. Asesoría jurídica especializada en Colombia."/>
+<meta property="og:title" content="Cuotela — Obligaciones alimentarias cumplidas"/>
+<meta property="og:description" content="La cuota alimentaria llegó directa a donde debe ir. Sin intermediarios."/>
+<meta property="og:type" content="website"/>
+<meta name="theme-color" content="#059669"/>
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'><rect width='64' height='64' rx='14' fill='%23059669'/><text x='32' y='46' font-family='system-ui' font-weight='800' font-size='38' text-anchor='middle' fill='white'>C</text></svg>"/>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@700;800&family=Manrope:wght@400;500;600;700&family=JetBrains+Mono:wght@500&display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com"></script>
+<script>
+tailwind.config = {
+  theme: {
+    extend: {
+      colors: { navy: '#0F172A', 'navy-mid': '#1e293b' },
+      fontFamily: {
+        display: ['Syne','system-ui','sans-serif'],
+        body: ['Manrope','system-ui','sans-serif'],
+        mono: ['JetBrains Mono','monospace']
+      }
+    }
+  }
+}
+</script>
+<script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
+<style>
+  body { background:#0F172A; color:#e2e8f0; font-family:'Manrope',sans-serif; -webkit-font-smoothing:antialiased; }
+  ::selection { background:rgba(5,150,105,.35); color:#fff; }
+  ::-webkit-scrollbar { width:5px; }
+  ::-webkit-scrollbar-track { background:#0F172A; }
+  ::-webkit-scrollbar-thumb { background:#059669; border-radius:3px; }
+  .grad { background:linear-gradient(135deg,#34d399,#00C896); -webkit-background-clip:text; -webkit-text-fill-color:transparent; background-clip:text; }
+  .card { background:rgba(255,255,255,.04); border:1px solid rgba(255,255,255,.1); border-radius:16px; }
+  .card-g { background:rgba(255,255,255,.04); border:1px solid rgba(5,150,105,.4); border-radius:16px; }
+  .btn { display:inline-flex; align-items:center; gap:8px; padding:12px 24px; border-radius:12px; font-weight:600; font-size:14px; transition:all .2s; }
+  .btn-p { background:#059669; color:#fff; box-shadow:0 0 24px rgba(5,150,105,.35); }
+  .btn-p:hover { background:#047857; }
+  .btn-o { border:1px solid rgba(255,255,255,.15); color:#cbd5e1; backdrop-filter:blur(4px); }
+  .btn-o:hover { border-color:#059669; color:#fff; }
+  .badge { display:inline-flex; align-items:center; gap:8px; padding:6px 16px; border-radius:99px; font-size:12px; font-weight:700; background:rgba(5,150,105,.12); color:#34d399; border:1px solid rgba(5,150,105,.25); }
+  .mesh { background: radial-gradient(at 27% 37%,hsla(165,80%,25%,.25) 0,transparent 50%),radial-gradient(at 97% 21%,hsla(215,100%,15%,.5) 0,transparent 50%),radial-gradient(at 52% 99%,hsla(165,60%,15%,.3) 0,transparent 50%); }
+  .icon-box { width:48px;height:48px;border-radius:12px;background:rgba(5,150,105,.12);border:1px solid rgba(5,150,105,.25);display:flex;align-items:center;justify-content:center;font-size:20px;flex-shrink:0; }
+  details summary::-webkit-details-marker { display:none; }
+  details summary .faq-icon { transition:transform .25s; }
+  details[open] summary .faq-icon { transform:rotate(45deg); }
+  @keyframes float { 0%,100%{transform:translateY(0)}50%{transform:translateY(-10px)} }
+  .float { animation:float 6s ease-in-out infinite; }
+  @keyframes fadeUp { from{opacity:0;transform:translateY(24px)}to{opacity:1;transform:translateY(0)} }
+  .fade-up { animation:fadeUp .7s ease-out forwards; }
+  .fade-up-1 { animation-delay:.1s; opacity:0; }
+  .fade-up-2 { animation-delay:.2s; opacity:0; }
+  .fade-up-3 { animation-delay:.3s; opacity:0; }
+  .fade-up-4 { animation-delay:.4s; opacity:0; }
+  .nav-link { color:#94a3b8; font-size:14px; font-weight:500; transition:color .2s; }
+  .nav-link:hover { color:#fff; }
+  .grid-bg { background-image:linear-gradient(rgba(255,255,255,.07) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.07) 1px,transparent 1px); background-size:60px 60px; }
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<header id="nav" class="fixed top-0 inset-x-0 z-50 transition-all duration-300"
+  x-data="{scrolled:false,open:false}"
+  x-init="window.addEventListener('scroll',()=>scrolled=window.scrollY>20)"
+  :class="scrolled?'bg-[#0F172A]/95 backdrop-blur-xl border-b border-white/8 shadow-xl':''">
+  <nav class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="flex items-center justify-between h-16">
+      <a href="/" class="flex items-center gap-2.5 group">
+        <div class="w-8 h-8 rounded-lg bg-emerald-600 flex items-center justify-center text-white font-bold font-[Syne] text-sm" style="box-shadow:0 0 16px rgba(5,150,105,.4)">C</div>
+        <span style="font-family:Syne,sans-serif;font-weight:800;font-size:18px;color:#fff">Cuotela</span>
+      </a>
+      <div class="hidden lg:flex items-center gap-7">
+        <a href="#servicios" class="nav-link">Servicios</a>
+        <a href="#como-funciona" class="nav-link">Cómo funciona</a>
+        <a href="#planes" class="nav-link">Planes</a>
+        <a href="#asesoria" class="nav-link">Asesoría</a>
+        <a href="nosotros/" class="nav-link">Nosotros</a>
+      </div>
+      <div class="hidden lg:flex items-center gap-3">
+        <a href="#" class="nav-link px-3 py-2 rounded-lg hover:bg-white/5">Iniciar sesión</a>
+        <a href="#comenzar" class="btn btn-p" style="padding:10px 20px;font-size:13px">Comenzar gratis →</a>
+      </div>
+      <button class="lg:hidden p-2 rounded-lg text-slate-400 hover:bg-white/8" @click="open=!open">
+        <svg x-show="!open" class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5"/></svg>
+        <svg x-show="open" class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M6 18 18 6M6 6l12 12"/></svg>
+      </button>
+    </div>
+    <div x-show="open" x-transition class="lg:hidden border-t border-white/8 py-4 space-y-1">
+      <a href="#servicios" @click="open=false" class="block px-4 py-2.5 rounded-lg text-slate-300 hover:bg-white/8 text-sm">Servicios</a>
+      <a href="#como-funciona" @click="open=false" class="block px-4 py-2.5 rounded-lg text-slate-300 hover:bg-white/8 text-sm">Cómo funciona</a>
+      <a href="#planes" @click="open=false" class="block px-4 py-2.5 rounded-lg text-slate-300 hover:bg-white/8 text-sm">Planes</a>
+      <a href="#asesoria" @click="open=false" class="block px-4 py-2.5 rounded-lg text-slate-300 hover:bg-white/8 text-sm">Asesoría</a>
+      <a href="nosotros/" class="block px-4 py-2.5 rounded-lg text-slate-300 hover:bg-white/8 text-sm">Nosotros</a>
+      <div class="pt-3 border-t border-white/8 px-4">
+        <a href="#comenzar" class="btn btn-p w-full justify-center">Comenzar gratis</a>
+      </div>
+    </div>
+  </nav>
+</header>
+
+<!-- HERO -->
+<section id="inicio" class="relative min-h-screen flex items-center overflow-hidden pt-16 mesh">
+  <div class="absolute inset-0 grid-bg opacity-100"></div>
+  <div class="absolute top-1/3 left-1/2 -translate-x-1/2 w-[600px] h-[400px] rounded-full blur-[120px] pointer-events-none" style="background:rgba(5,150,105,.1)"></div>
+  <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-24 lg:py-32">
+    <div class="max-w-4xl mx-auto text-center">
+      <div class="fade-up mb-6">
+        <span class="badge"><span class="w-2 h-2 rounded-full bg-emerald-400" style="animation:pulse 2s infinite"></span>LegalTech + FinTech Colombia 🇨🇴</span>
+      </div>
+      <h1 class="fade-up fade-up-1" style="font-family:Syne,sans-serif;font-weight:800;font-size:clamp(36px,6vw,68px);color:#fff;line-height:1.1;margin-bottom:24px">
+        La cuota alimentaria<br/><span class="grad">llegó directa</span><br/>a donde debe ir
+      </h1>
+      <p class="fade-up fade-up-2 text-slate-400 mb-8 mx-auto" style="font-size:clamp(16px,2vw,20px);line-height:1.7;max-width:660px">
+        Cuotela permite pagar las obligaciones alimentarias <strong style="color:#fff">directamente a los gastos del menor</strong> — educación, salud, ropa y recreación — sin que el dinero transite por ninguno de los padres.
+      </p>
+      <div class="fade-up fade-up-3 flex flex-col sm:flex-row items-center justify-center gap-4 mb-12">
+        <a href="#comenzar" class="btn btn-p" style="font-size:16px;padding:14px 28px">Comienza hoy — Es gratis →</a>
+        <a href="#como-funciona" class="btn btn-o" style="font-size:16px;padding:14px 28px">▶ Ver cómo funciona</a>
+      </div>
+      <!-- Trust bar -->
+      <div class="fade-up fade-up-4 flex flex-wrap justify-center gap-6 text-xs text-slate-500 mb-12">
+        <span>🔒 SSL cifrado bancario</span>
+        <span>🏛️ Cuotela S.A.S. — Bogotá</span>
+        <span>📋 Historial certificado</span>
+        <span>💳 PSE · Nequi · Wompi</span>
+      </div>
+      <!-- Stats -->
+      <div class="grid grid-cols-2 sm:grid-cols-4 gap-3">
+        <div class="card p-4 text-center"><div style="font-family:Syne,sans-serif;font-weight:800;font-size:24px;color:#34d399">+390K</div><div style="font-size:12px;color:#64748b;margin-top:4px">Procesos alimentarios/año</div></div>
+        <div class="card p-4 text-center"><div style="font-family:Syne,sans-serif;font-weight:800;font-size:24px;color:#34d399">55.7%</div><div style="font-size:12px;color:#64748b;margin-top:4px">Nacimientos fuera del matrimonio</div></div>
+        <div class="card p-4 text-center"><div style="font-family:Syne,sans-serif;font-weight:800;font-size:24px;color:#34d399">15K+</div><div style="font-size:12px;color:#64748b;margin-top:4px">Procesos judiciales activos</div></div>
+        <div class="card p-4 text-center"><div style="font-family:Syne,sans-serif;font-weight:800;font-size:24px;color:#34d399">100%</div><div style="font-size:12px;color:#64748b;margin-top:4px">Directo al gasto del menor</div></div>
+      </div>
+    </div>
+  </div>
+  <div class="absolute bottom-8 left-1/2 -translate-x-1/2 float opacity-40">
+    <svg class="w-6 h-6 text-slate-500" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="m19.5 8.25-7.5 7.5-7.5-7.5"/></svg>
+  </div>
+</section>
+
+<!-- SERVICIOS -->
+<section id="servicios" class="py-24">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="text-center mb-14">
+      <span class="badge mb-4">Servicios Cuotela</span>
+      <h2 style="font-family:Syne,sans-serif;font-weight:800;font-size:clamp(28px,4vw,42px);color:#fff;line-height:1.2;margin-top:12px;margin-bottom:16px">Todo lo que necesitas,<br/><span class="grad">en un solo lugar</span></h2>
+      <p style="color:#94a3b8;max-width:560px;margin:0 auto">Servicios financieros + asesoría jurídica para cumplir las obligaciones con dignidad, orden y respaldo legal.</p>
+    </div>
+
+    <!-- Financial services -->
+    <h3 style="font-size:11px;font-weight:700;color:#34d399;text-transform:uppercase;letter-spacing:.1em;margin-bottom:20px;display:flex;align-items:center;gap:8px"><span style="width:32px;height:1px;background:#059669;display:inline-block"></span>Servicios Financieros<span style="width:32px;height:1px;background:#059669;display:inline-block"></span></h3>
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 mb-10">
+      <div class="card p-6" style="transition:all .3s;cursor:default" onmouseover="this.style.borderColor='rgba(5,150,105,.4)'" onmouseout="this.style.borderColor='rgba(255,255,255,.1)'">
+        <div class="flex justify-between items-start mb-4"><div class="icon-box">💳</div><span style="font-size:11px;color:#475569;font-family:'JetBrains Mono',monospace;font-weight:600">SF-01</span></div>
+        <h4 style="font-weight:700;color:#fff;margin-bottom:8px">Pago de Cuotas</h4>
+        <p style="color:#94a3b8;font-size:13px;line-height:1.6">Paga directamente a la institución educativa, clínica o almacén del menor. Comprobante certificado con valor probatorio.</p>
+        <div style="margin-top:12px;display:flex;flex-wrap:wrap;gap:6px">
+          <span style="padding:2px 8px;border-radius:6px;background:rgba(5,150,105,.1);color:#34d399;font-size:11px;font-weight:600;border:1px solid rgba(5,150,105,.2)">PSE</span>
+          <span style="padding:2px 8px;border-radius:6px;background:rgba(5,150,105,.1);color:#34d399;font-size:11px;font-weight:600;border:1px solid rgba(5,150,105,.2)">Nequi</span>
+          <span style="padding:2px 8px;border-radius:6px;background:rgba(5,150,105,.1);color:#34d399;font-size:11px;font-weight:600;border:1px solid rgba(5,150,105,.2)">Wompi</span>
+        </div>
+      </div>
+      <div class="card p-6" style="transition:all .3s;cursor:default" onmouseover="this.style.borderColor='rgba(5,150,105,.4)'" onmouseout="this.style.borderColor='rgba(255,255,255,.1)'">
+        <div class="flex justify-between items-start mb-4"><div class="icon-box">🏦</div><span style="font-size:11px;color:#475569;font-family:'JetBrains Mono',monospace;font-weight:600">SF-02</span></div>
+        <h4 style="font-weight:700;color:#fff;margin-bottom:8px">Ahorro Voluntario</h4>
+        <p style="color:#94a3b8;font-size:13px;line-height:1.6">Ahorra semana a semana para la cuota del siguiente mes. Evita el estrés de fin de mes y mantén tu historial limpio.</p>
+        <div style="margin-top:12px;display:flex;flex-wrap:wrap;gap:6px">
+          <span style="padding:2px 8px;border-radius:6px;background:rgba(5,150,105,.1);color:#34d399;font-size:11px;font-weight:600;border:1px solid rgba(5,150,105,.2)">Sin mínimo</span>
+          <span style="padding:2px 8px;border-radius:6px;background:rgba(5,150,105,.1);color:#34d399;font-size:11px;font-weight:600;border:1px solid rgba(5,150,105,.2)">Flexible</span>
+        </div>
+      </div>
+      <div class="card p-6" style="transition:all .3s;cursor:default" onmouseover="this.style.borderColor='rgba(5,150,105,.4)'" onmouseout="this.style.borderColor='rgba(255,255,255,.1)'">
+        <div class="flex justify-between items-start mb-4"><div class="icon-box">⚡</div><span style="font-size:11px;color:#475569;font-family:'JetBrains Mono',monospace;font-weight:600">SF-03</span></div>
+        <h4 style="font-weight:700;color:#fff;margin-bottom:8px">Crédito de Emergencia</h4>
+        <p style="color:#94a3b8;font-size:13px;line-height:1.6">Si estás en mora, te adelantamos hasta el 80% de la cuota, enviado directamente a los gastos del menor. No a cuentas personales.</p>
+        <div style="margin-top:12px;display:flex;flex-wrap:wrap;gap:6px">
+          <span style="padding:2px 8px;border-radius:6px;background:rgba(5,150,105,.1);color:#34d399;font-size:11px;font-weight:600;border:1px solid rgba(5,150,105,.2)">Rápido</span>
+          <span style="padding:2px 8px;border-radius:6px;background:rgba(5,150,105,.1);color:#34d399;font-size:11px;font-weight:600;border:1px solid rgba(5,150,105,.2)">Directo al menor</span>
+        </div>
+      </div>
+      <div class="card p-6" style="transition:all .3s;cursor:default" onmouseover="this.style.borderColor='rgba(5,150,105,.4)'" onmouseout="this.style.borderColor='rgba(255,255,255,.1)'">
+        <div class="flex justify-between items-start mb-4"><div class="icon-box">📊</div><span style="font-size:11px;color:#475569;font-family:'JetBrains Mono',monospace;font-weight:600">SF-04</span></div>
+        <h4 style="font-weight:700;color:#fff;margin-bottom:8px">Historial de Cumplimiento</h4>
+        <p style="color:#94a3b8;font-size:13px;line-height:1.6">Genera certificados de pago. Demuestra ante un juez o en el REDAM que estás al día. Valor legal respaldado.</p>
+        <div style="margin-top:12px;display:flex;flex-wrap:wrap;gap:6px">
+          <span style="padding:2px 8px;border-radius:6px;background:rgba(5,150,105,.1);color:#34d399;font-size:11px;font-weight:600;border:1px solid rgba(5,150,105,.2)">Certificado</span>
+          <span style="padding:2px 8px;border-radius:6px;background:rgba(5,150,105,.1);color:#34d399;font-size:11px;font-weight:600;border:1px solid rgba(5,150,105,.2)">Exportable</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Destinos -->
+    <div class="card-g p-8 mb-10">
+      <div class="text-center mb-6">
+        <h3 style="font-weight:700;color:#fff;font-size:18px;margin-bottom:6px">Destinos del pago — Directo al menor</h3>
+        <p style="color:#94a3b8;font-size:13px">El dinero nunca toca la cuenta de ninguno de los padres.</p>
+      </div>
+      <div class="grid grid-cols-3 sm:grid-cols-6 gap-3">
+        <div class="text-center p-4 rounded-xl" style="background:rgba(255,255,255,.05)"><div style="font-size:28px;margin-bottom:8px">🎓</div><div style="font-weight:700;font-size:13px;color:#fff">Educación</div><div style="font-size:11px;color:#64748b;margin-top:4px">Colegios, útiles</div></div>
+        <div class="text-center p-4 rounded-xl" style="background:rgba(255,255,255,.05)"><div style="font-size:28px;margin-bottom:8px">🏥</div><div style="font-weight:700;font-size:13px;color:#fff">Salud</div><div style="font-size:11px;color:#64748b;margin-top:4px">Medicina, citas</div></div>
+        <div class="text-center p-4 rounded-xl" style="background:rgba(255,255,255,.05)"><div style="font-size:28px;margin-bottom:8px">👕</div><div style="font-weight:700;font-size:13px;color:#fff">Vestuario</div><div style="font-size:11px;color:#64748b;margin-top:4px">Ropa, uniformes</div></div>
+        <div class="text-center p-4 rounded-xl" style="background:rgba(255,255,255,.05)"><div style="font-size:28px;margin-bottom:8px">🎮</div><div style="font-weight:700;font-size:13px;color:#fff">Recreación</div><div style="font-size:11px;color:#64748b;margin-top:4px">Deporte, cultura</div></div>
+        <div class="text-center p-4 rounded-xl" style="background:rgba(255,255,255,.05)"><div style="font-size:28px;margin-bottom:8px">🍎</div><div style="font-weight:700;font-size:13px;color:#fff">Alimentación</div><div style="font-size:11px;color:#64748b;margin-top:4px">Mercado, lonchera</div></div>
+        <div class="text-center p-4 rounded-xl" style="background:rgba(255,255,255,.05)"><div style="font-size:28px;margin-bottom:8px">📦</div><div style="font-weight:700;font-size:13px;color:#fff">Otros</div><div style="font-size:11px;color:#64748b;margin-top:4px">Transporte, varios</div></div>
+      </div>
+    </div>
+
+    <!-- Legal services -->
+    <h3 style="font-size:11px;font-weight:700;color:#34d399;text-transform:uppercase;letter-spacing:.1em;margin-bottom:20px;display:flex;align-items:center;gap:8px"><span style="width:32px;height:1px;background:#059669;display:inline-block"></span>Servicios Jurídicos<span style="width:32px;height:1px;background:#059669;display:inline-block"></span></h3>
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+      <div class="card p-5 flex gap-4"><div class="icon-box">⚖️</div><div><h4 style="font-weight:700;color:#fff;margin-bottom:6px">Consulta Jurídica Inicial</h4><p style="color:#94a3b8;font-size:13px">Sesión de 30 min con abogado de familia. Diagnóstico y hoja de ruta legal.</p></div></div>
+      <div class="card p-5 flex gap-4"><div class="icon-box">📝</div><div><h4 style="font-weight:700;color:#fff;margin-bottom:6px">Acuerdos Extrajudiciales</h4><p style="color:#94a3b8;font-size:13px">Redacción de acuerdos de cuota, custodia y visitas sin ir a un juzgado.</p></div></div>
+      <div class="card p-5 flex gap-4"><div class="icon-box">🏛️</div><div><h4 style="font-weight:700;color:#fff;margin-bottom:6px">Representación Judicial</h4><p style="color:#94a3b8;font-size:13px">Abogados especializados para demandas de alimentos y procesos de custodia.</p></div></div>
+      <div class="card p-5 flex gap-4"><div class="icon-box">🚨</div><div><h4 style="font-weight:700;color:#fff;margin-bottom:6px">Urgencias Familiares</h4><p style="color:#94a3b8;font-size:13px">Asesoría de emergencia en violencia intrafamiliar o amenaza al menor.</p></div></div>
+      <div class="card p-5 flex gap-4"><div class="icon-box">📚</div><div><h4 style="font-weight:700;color:#fff;margin-bottom:6px">Centro de Educación Legal</h4><p style="color:#94a3b8;font-size:13px">Guías y talleres sobre el Código de la Infancia (Ley 1098/2006).</p></div></div>
+      <div class="card p-5 flex gap-4"><div class="icon-box">🔔</div><div><h4 style="font-weight:700;color:#fff;margin-bottom:6px">Alertas REDAM</h4><p style="color:#94a3b8;font-size:13px">Monitoreo continuo del registro. Alertas antes de que te incluyan.</p></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- CÓMO FUNCIONA -->
+<section id="como-funciona" class="py-24" style="background:linear-gradient(to bottom,transparent,rgba(5,150,105,.06),transparent)">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="text-center mb-14">
+      <span class="badge mb-4">Proceso simple</span>
+      <h2 style="font-family:Syne,sans-serif;font-weight:800;font-size:clamp(28px,4vw,42px);color:#fff;line-height:1.2;margin-top:12px;margin-bottom:16px">Así de fácil<br/><span class="grad">funciona Cuotela</span></h2>
+      <p style="color:#94a3b8;max-width:480px;margin:0 auto">En 4 pasos cumples la obligación alimentaria con respaldo legal y trazabilidad completa.</p>
+    </div>
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 mb-16">
+      <div class="flex flex-col items-center text-center"><div class="relative mb-4"><div style="width:64px;height:64px;background:#059669;border-radius:16px;display:flex;align-items:center;justify-content:center;font-size:28px">👤</div><span style="position:absolute;top:-8px;right:-8px;width:22px;height:22px;border-radius:50%;background:#0F172A;border:1px solid #059669;color:#34d399;font-size:10px;font-weight:700;display:flex;align-items:center;justify-content:center">01</span></div><h3 style="font-weight:700;color:#fff;margin-bottom:8px">Crea tu cuenta gratis</h3><p style="color:#94a3b8;font-size:13px;line-height:1.6">Regístrate en 2 minutos. Indica si eres el obligado o custodio del menor.</p></div>
+      <div class="flex flex-col items-center text-center"><div class="relative mb-4"><div style="width:64px;height:64px;background:#059669;border-radius:16px;display:flex;align-items:center;justify-content:center;font-size:28px">⚙️</div><span style="position:absolute;top:-8px;right:-8px;width:22px;height:22px;border-radius:50%;background:#0F172A;border:1px solid #059669;color:#34d399;font-size:10px;font-weight:700;display:flex;align-items:center;justify-content:center">02</span></div><h3 style="font-weight:700;color:#fff;margin-bottom:8px">Configura la obligación</h3><p style="color:#94a3b8;font-size:13px;line-height:1.6">Ingresa el monto, la fecha límite y selecciona los conceptos: educación, salud, ropa, etc.</p></div>
+      <div class="flex flex-col items-center text-center"><div class="relative mb-4"><div style="width:64px;height:64px;background:#059669;border-radius:16px;display:flex;align-items:center;justify-content:center;font-size:28px">💳</div><span style="position:absolute;top:-8px;right:-8px;width:22px;height:22px;border-radius:50%;background:#0F172A;border:1px solid #059669;color:#34d399;font-size:10px;font-weight:700;display:flex;align-items:center;justify-content:center">03</span></div><h3 style="font-weight:700;color:#fff;margin-bottom:8px">Paga directamente</h3><p style="color:#94a3b8;font-size:13px;line-height:1.6">PSE, Nequi o tarjeta. El pago va a la institución o proveedor del menor. Sin intermediarios.</p></div>
+      <div class="flex flex-col items-center text-center"><div class="relative mb-4"><div style="width:64px;height:64px;background:#059669;border-radius:16px;display:flex;align-items:center;justify-content:center;font-size:28px">✅</div><span style="position:absolute;top:-8px;right:-8px;width:22px;height:22px;border-radius:50%;background:#0F172A;border:1px solid #059669;color:#34d399;font-size:10px;font-weight:700;display:flex;align-items:center;justify-content:center">04</span></div><h3 style="font-weight:700;color:#fff;margin-bottom:8px">Recibe el comprobante</h3><p style="color:#94a3b8;font-size:13px;line-height:1.6">Recibo con destino verificado, fecha y monto. Valor probatorio ante juzgados y REDAM.</p></div>
+    </div>
+    <!-- REDAM alert -->
+    <div class="card p-6 flex gap-4" style="border-color:rgba(239,68,68,.3);background:rgba(239,68,68,.05)">
+      <div style="font-size:28px;flex-shrink:0">⚠️</div>
+      <div>
+        <h4 style="font-weight:700;color:#fff;margin-bottom:6px">¿Sabes qué es el REDAM?</h4>
+        <p style="color:#94a3b8;font-size:14px;line-height:1.6">El <strong style="color:#fca5a5">Registro de Alimentarios Deudores (Ley 2097/2021)</strong> es la lista negra de quienes incumplen 3 o más cuotas. Si estás incluido: <strong style="color:#fca5a5">no puedes vender propiedades, renovar la licencia de conducción, ni acceder a crédito bancario.</strong> Cuotela te ayuda a prevenirlo.</p>
+        <a href="#asesoria" style="display:inline-flex;align-items:center;gap:4px;color:#34d399;font-size:13px;font-weight:600;margin-top:10px">Consulta tu situación →</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PLANES -->
+<section id="planes" class="py-24">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="text-center mb-14">
+      <span class="badge mb-4">Precios transparentes</span>
+      <h2 style="font-family:Syne,sans-serif;font-weight:800;font-size:clamp(28px,4vw,42px);color:#fff;line-height:1.2;margin-top:12px;margin-bottom:16px">Planes para cada<br/><span class="grad">situación familiar</span></h2>
+      <p style="color:#94a3b8;max-width:480px;margin:0 auto">Sin contratos. Sin sorpresas. Cancela cuando quieras.</p>
+    </div>
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5 items-start">
+      <!-- Básico -->
+      <div class="card p-6 flex flex-col gap-5">
+        <div><h3 style="font-family:Syne,sans-serif;font-weight:800;color:#fff;font-size:18px">Básico</h3><p style="color:#64748b;font-size:12px;margin-top:4px">Para comenzar y conocer la plataforma.</p></div>
+        <div style="display:flex;align-items:baseline;gap:6px"><span style="font-family:Syne,sans-serif;font-weight:800;font-size:32px;color:#fff">Gratis</span><span style="color:#64748b;font-size:13px">Siempre</span></div>
+        <ul style="list-style:none;padding:0;margin:0;display:flex;flex-direction:column;gap:10px;flex:1">
+          <li style="display:flex;gap:8px;font-size:13px;color:#cbd5e1"><span style="color:#059669;flex-shrink:0">✓</span>1 obligación activa</li>
+          <li style="display:flex;gap:8px;font-size:13px;color:#cbd5e1"><span style="color:#059669;flex-shrink:0">✓</span>Historial básico</li>
+          <li style="display:flex;gap:8px;font-size:13px;color:#cbd5e1"><span style="color:#059669;flex-shrink:0">✓</span>2 consultas legales/mes (IA)</li>
+          <li style="display:flex;gap:8px;font-size:13px;color:#cbd5e1"><span style="color:#059669;flex-shrink:0">✓</span>Alertas de vencimiento</li>
+        </ul>
+        <a href="#comenzar" class="btn btn-o" style="justify-content:center">Comenzar gratis</a>
+      </div>
+      <!-- Obligado (popular) -->
+      <div style="background:rgba(5,150,105,.06);border:1px solid rgba(5,150,105,.5);border-radius:16px;padding:24px;display:flex;flex-direction:column;gap:20px;position:relative">
+        <div style="position:absolute;top:-12px;left:50%;transform:translateX(-50%);white-space:nowrap"><span style="padding:4px 14px;border-radius:99px;background:#059669;color:#fff;font-size:11px;font-weight:700">⭐ Más popular</span></div>
+        <div><h3 style="font-family:Syne,sans-serif;font-weight:800;color:#fff;font-size:18px">Obligado</h3><p style="color:#64748b;font-size:12px;margin-top:4px">Para el padre/madre que paga la cuota.</p></div>
+        <div style="display:flex;align-items:baseline;gap:6px"><span style="font-family:Syne,sans-serif;font-weight:800;font-size:32px;color:#34d399">$29.900</span><span style="color:#64748b;font-size:13px">/mes</span></div>
+        <ul style="list-style:none;padding:0;margin:0;display:flex;flex-direction:column;gap:10px;flex:1">
+          <li style="display:flex;gap:8px;font-size:13px;color:#cbd5e1"><span style="color:#059669;flex-shrink:0">✓</span>Todo lo del plan Básico</li>
+          <li style="display:flex;gap:8px;font-size:13px;color:#cbd5e1"><span style="color:#059669;flex-shrink:0">✓</span>Obligaciones ilimitadas</li>
+          <li style="display:flex;gap:8px;font-size:13px;color:#cbd5e1"><span style="color:#059669;flex-shrink:0">✓</span>Pago directo certificado</li>
+          <li style="display:flex;gap:8px;font-size:13px;color:#cbd5e1"><span style="color:#059669;flex-shrink:0">✓</span>Ahorro voluntario</li>
+          <li style="display:flex;gap:8px;font-size:13px;color:#cbd5e1"><span style="color:#059669;flex-shrink:0">✓</span>Alerta REDAM incluida</li>
+          <li style="display:flex;gap:8px;font-size:13px;color:#cbd5e1"><span style="color:#059669;flex-shrink:0">✓</span>1 consulta abogado/mes</li>
+        </ul>
+        <a href="#comenzar" class="btn btn-p" style="justify-content:center">Empezar ahora</a>
+      </div>
+      <!-- Custodio -->
+      <div class="card p-6 flex flex-col gap-5">
+        <div><h3 style="font-family:Syne,sans-serif;font-weight:800;color:#fff;font-size:18px">Custodio</h3><p style="color:#64748b;font-size:12px;margin-top:4px">Para quien tiene la custodia del menor.</p></div>
+        <div style="display:flex;align-items:baseline;gap:6px"><span style="font-family:Syne,sans-serif;font-weight:800;font-size:32px;color:#fff">$19.900</span><span style="color:#64748b;font-size:13px">/mes</span></div>
+        <ul style="list-style:none;padding:0;margin:0;display:flex;flex-direction:column;gap:10px;flex:1">
+          <li style="display:flex;gap:8px;font-size:13px;color:#cbd5e1"><span style="color:#059669;flex-shrink:0">✓</span>Seguimiento en tiempo real</li>
+          <li style="display:flex;gap:8px;font-size:13px;color:#cbd5e1"><span style="color:#059669;flex-shrink:0">✓</span>Alertas de pago/mora</li>
+          <li style="display:flex;gap:8px;font-size:13px;color:#cbd5e1"><span style="color:#059669;flex-shrink:0">✓</span>Descarga de comprobantes</li>
+          <li style="display:flex;gap:8px;font-size:13px;color:#cbd5e1"><span style="color:#059669;flex-shrink:0">✓</span>Reporte para acciones legales</li>
+          <li style="display:flex;gap:8px;font-size:13px;color:#cbd5e1"><span style="color:#059669;flex-shrink:0">✓</span>1 consulta abogado/mes</li>
+        </ul>
+        <a href="#comenzar" class="btn btn-o" style="justify-content:center">Empezar ahora</a>
+      </div>
+      <!-- Empresarial -->
+      <div class="card p-6 flex flex-col gap-5">
+        <div><h3 style="font-family:Syne,sans-serif;font-weight:800;color:#fff;font-size:18px">Empresarial</h3><p style="color:#64748b;font-size:12px;margin-top:4px">Para firmas de abogados y empleadores.</p></div>
+        <div style="display:flex;align-items:baseline;gap:6px"><span style="font-family:Syne,sans-serif;font-weight:800;font-size:32px;color:#fff">A medida</span></div>
+        <ul style="list-style:none;padding:0;margin:0;display:flex;flex-direction:column;gap:10px;flex:1">
+          <li style="display:flex;gap:8px;font-size:13px;color:#cbd5e1"><span style="color:#059669;flex-shrink:0">✓</span>Gestión de múltiples clientes</li>
+          <li style="display:flex;gap:8px;font-size:13px;color:#cbd5e1"><span style="color:#059669;flex-shrink:0">✓</span>API de integración</li>
+          <li style="display:flex;gap:8px;font-size:13px;color:#cbd5e1"><span style="color:#059669;flex-shrink:0">✓</span>Panel avanzado</li>
+          <li style="display:flex;gap:8px;font-size:13px;color:#cbd5e1"><span style="color:#059669;flex-shrink:0">✓</span>Reportes masivos</li>
+          <li style="display:flex;gap:8px;font-size:13px;color:#cbd5e1"><span style="color:#059669;flex-shrink:0">✓</span>Onboarding dedicado</li>
+        </ul>
+        <a href="contacto/" class="btn btn-o" style="justify-content:center">Contactar ventas</a>
+      </div>
+    </div>
+    <p style="text-align:center;color:#64748b;font-size:13px;margin-top:20px">✓ 14 días de prueba gratuita &nbsp;·&nbsp; ✓ Sin tarjeta requerida &nbsp;·&nbsp; ✓ Cancela en un clic</p>
+  </div>
+</section>
+
+<!-- CALCULADORA -->
+<section id="calculadora" class="py-24 relative">
+  <div class="absolute inset-0 flex items-center justify-center pointer-events-none"><div style="width:500px;height:300px;background:rgba(5,150,105,.07);border-radius:50%;filter:blur(100px)"></div></div>
+  <div class="relative max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="text-center mb-12">
+      <span class="badge mb-4">Calculadora gratuita</span>
+      <h2 style="font-family:Syne,sans-serif;font-weight:800;font-size:clamp(28px,4vw,40px);color:#fff;line-height:1.2;margin-top:12px;margin-bottom:16px">¿Cuánto debería ser<br/><span class="grad">la cuota alimentaria?</span></h2>
+      <p style="color:#94a3b8;max-width:480px;margin:0 auto;font-size:14px">Estimado orientativo según el Código Civil colombiano y jurisprudencia de la Corte Suprema.</p>
+    </div>
+    <div class="card-g p-8" x-data="{smlv:3,hijos:1,custodia:'exclusiva',edad:'infancia',
+      get resultado(){
+        const s=this.smlv*1423500;
+        const h={1:1,2:1.3,3:1.5,4:1.65};
+        const c=this.custodia==='compartida'?0.6:1.0;
+        const e={bebe:.9,infancia:1,escolar:1.15,adolescente:1.25};
+        return Math.round(s*.30*(h[this.hijos]||1.65)*c*(e[this.edad]||1)/1000)*1000;
+      },
+      get fmt(){return new Intl.NumberFormat('es-CO',{style:'currency',currency:'COP',minimumFractionDigits:0}).format(this.resultado);}
+    }">
+      <div class="grid grid-cols-1 sm:grid-cols-2 gap-5">
+        <div>
+          <label style="display:block;font-size:13px;font-weight:600;color:#cbd5e1;margin-bottom:8px">Salario del obligado (en SMLV)</label>
+          <select x-model.number="smlv" style="width:100%;padding:12px 16px;border-radius:12px;background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.1);color:#fff;font-size:13px;outline:none">
+            <option value="1">1 SMLV ($1.423.500)</option>
+            <option value="2">2 SMLV ($2.847.000)</option>
+            <option value="3" selected>3 SMLV ($4.270.500)</option>
+            <option value="4">4 SMLV ($5.694.000)</option>
+            <option value="5">5 SMLV ($7.117.500)</option>
+            <option value="10">10+ SMLV ($14.235.000+)</option>
+          </select>
+        </div>
+        <div>
+          <label style="display:block;font-size:13px;font-weight:600;color:#cbd5e1;margin-bottom:8px">Número de menores</label>
+          <select x-model.number="hijos" style="width:100%;padding:12px 16px;border-radius:12px;background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.1);color:#fff;font-size:13px;outline:none">
+            <option value="1" selected>1 hijo/a</option>
+            <option value="2">2 hijos/as</option>
+            <option value="3">3 hijos/as</option>
+            <option value="4">4 o más</option>
+          </select>
+        </div>
+        <div>
+          <label style="display:block;font-size:13px;font-weight:600;color:#cbd5e1;margin-bottom:8px">Tipo de custodia</label>
+          <select x-model="custodia" style="width:100%;padding:12px 16px;border-radius:12px;background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.1);color:#fff;font-size:13px;outline:none">
+            <option value="exclusiva" selected>Custodia exclusiva</option>
+            <option value="compartida">Custodia compartida</option>
+          </select>
+        </div>
+        <div>
+          <label style="display:block;font-size:13px;font-weight:600;color:#cbd5e1;margin-bottom:8px">Edad del menor</label>
+          <select x-model="edad" style="width:100%;padding:12px 16px;border-radius:12px;background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.1);color:#fff;font-size:13px;outline:none">
+            <option value="bebe">0-2 años (bebé)</option>
+            <option value="infancia" selected>3-6 años (infancia)</option>
+            <option value="escolar">7-12 años (escolar)</option>
+            <option value="adolescente">13-17 años (adolescente)</option>
+          </select>
+        </div>
+      </div>
+      <div style="margin-top:24px;padding:24px;border-radius:16px;background:rgba(5,150,105,.1);border:1px solid rgba(5,150,105,.3)">
+        <p style="color:#94a3b8;font-size:12px;margin-bottom:6px">Estimado mensual orientativo:</p>
+        <div style="display:flex;align-items:baseline;gap:12px">
+          <span x-text="fmt" style="font-family:Syne,sans-serif;font-weight:800;font-size:36px;color:#34d399"></span>
+          <span style="color:#64748b;font-size:13px">COP / mes</span>
+        </div>
+        <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin-top:16px">
+          <div style="text-align:center;padding:10px;border-radius:10px;background:rgba(255,255,255,.05)"><div style="font-size:12px;color:#94a3b8">🎓 Educación</div><div style="font-weight:700;color:#fff;font-size:13px">35%</div></div>
+          <div style="text-align:center;padding:10px;border-radius:10px;background:rgba(255,255,255,.05)"><div style="font-size:12px;color:#94a3b8">🏥 Salud</div><div style="font-weight:700;color:#fff;font-size:13px">20%</div></div>
+          <div style="text-align:center;padding:10px;border-radius:10px;background:rgba(255,255,255,.05)"><div style="font-size:12px;color:#94a3b8">🍎 Alimentación</div><div style="font-weight:700;color:#fff;font-size:13px">25%</div></div>
+        </div>
+        <p style="font-size:11px;color:#475569;margin-top:12px">⚠️ Orientativo. La cuota definitiva la fija un juez o acuerdo conciliado. <a href="#asesoria" style="color:#059669">Consulta con un abogado →</a></p>
+      </div>
+      <div style="display:flex;gap:12px;margin-top:16px;flex-wrap:wrap">
+        <a href="#comenzar" class="btn btn-p" style="flex:1;justify-content:center">Comenzar a pagar con Cuotela</a>
+        <a href="#asesoria" class="btn btn-o" style="flex:1;justify-content:center">Asesoría legal gratuita</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ASESORÍA -->
+<section id="asesoria" class="py-24">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="text-center mb-14">
+      <span class="badge mb-4">Centro legal Cuotela</span>
+      <h2 style="font-family:Syne,sans-serif;font-weight:800;font-size:clamp(28px,4vw,42px);color:#fff;line-height:1.2;margin-top:12px;margin-bottom:16px">Conoce tus derechos<br/><span class="grad">y obligaciones</span></h2>
+      <p style="color:#94a3b8;max-width:560px;margin:0 auto">Te educamos y acompañamos en cada etapa del proceso familiar.</p>
+    </div>
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 mb-12">
+      <div class="card p-6 flex gap-4"><div class="icon-box">📋</div><div><h4 style="font-weight:700;color:#fff;margin-bottom:6px;font-size:14px">Cuota alimentaria en Colombia</h4><p style="color:#94a3b8;font-size:13px;line-height:1.6">El Código Civil (Art. 411) y la Ley 1098/2006 obligan a garantizar alimentos, educación, salud y recreación hasta los 18 años o 25 si estudia.</p></div></div>
+      <div class="card p-6 flex gap-4"><div class="icon-box">⚠️</div><div><h4 style="font-weight:700;color:#fff;margin-bottom:6px;font-size:14px">Inasistencia alimentaria</h4><p style="color:#94a3b8;font-size:13px;line-height:1.6">El Art. 233 del Código Penal tipifica como delito el incumplimiento: 2 a 3 años de prisión. Cuotela previene esta situación.</p></div></div>
+      <div class="card p-6 flex gap-4"><div class="icon-box">🔄</div><div><h4 style="font-weight:700;color:#fff;margin-bottom:6px;font-size:14px">Cómo modificar la cuota</h4><p style="color:#94a3b8;font-size:13px;line-height:1.6">Pide reducción o aumento ante un juez de familia cuando cambien las condiciones. También se puede por acuerdo extrajudicial.</p></div></div>
+      <div class="card p-6 flex gap-4"><div class="icon-box">👨‍👧</div><div><h4 style="font-weight:700;color:#fff;margin-bottom:6px;font-size:14px">Custodia y visitas</h4><p style="color:#94a3b8;font-size:13px;line-height:1.6">Custodia exclusiva o compartida. El régimen de visitas lo fija el juez o las partes. El incumplimiento tiene sanciones.</p></div></div>
+      <div class="card p-6 flex gap-4"><div class="icon-box">🚫</div><div><h4 style="font-weight:700;color:#fff;margin-bottom:6px;font-size:14px">Registro REDAM</h4><p style="color:#94a3b8;font-size:13px;line-height:1.6">3 cuotas incumplidas → REDAM: no puedes vender bienes, renovar licencia ni acceder a crédito. Cuotela emite alertas preventivas.</p></div></div>
+      <div class="card p-6 flex gap-4"><div class="icon-box">🛡️</div><div><h4 style="font-weight:700;color:#fff;margin-bottom:6px;font-size:14px">Violencia intrafamiliar</h4><p style="color:#94a3b8;font-size:13px;line-height:1.6">Orientación de emergencia para interponer medidas de protección ante comisaría de familia o fiscalía. No estás solo/a.</p></div></div>
+    </div>
+    <!-- CTA consulta -->
+    <div class="card-g p-8 lg:p-12 text-center max-w-2xl mx-auto">
+      <div style="font-size:48px;margin-bottom:16px">⚖️</div>
+      <h3 style="font-family:Syne,sans-serif;font-weight:800;font-size:26px;color:#fff;margin-bottom:12px">Primera consulta <span class="grad">gratis</span></h3>
+      <p style="color:#94a3b8;margin-bottom:28px;font-size:15px;line-height:1.6">30 minutos con abogado especializado en derecho de familia. Diagnóstico de tu situación y hoja de ruta.</p>
+      <div style="display:flex;flex-wrap:wrap;gap:12px;justify-content:center">
+        <a href="#comenzar" class="btn btn-p" style="font-size:15px;padding:14px 24px">Agendar consulta gratuita</a>
+        <a href="https://wa.me/573000000000?text=Hola%20Cuotela%2C%20necesito%20asesor%C3%ADa" target="_blank" class="btn btn-o" style="font-size:15px;padding:14px 24px">📱 WhatsApp ahora</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section id="faq" class="py-24">
+  <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="text-center mb-12">
+      <span class="badge mb-4">Preguntas frecuentes</span>
+      <h2 style="font-family:Syne,sans-serif;font-weight:800;font-size:clamp(28px,4vw,40px);color:#fff;line-height:1.2;margin-top:12px">Todo lo que<br/><span class="grad">necesitas saber</span></h2>
+    </div>
+    <div style="display:flex;flex-direction:column;gap:10px">
+      <details class="card"><summary style="display:flex;justify-content:space-between;align-items:center;padding:18px 20px;cursor:pointer;list-style:none;border-radius:16px" onmouseover="this.style.background='rgba(255,255,255,.04)'" onmouseout="this.style.background=''"><span style="font-weight:600;color:#e2e8f0;font-size:14px;padding-right:16px">¿Es Cuotela un banco o entidad financiera?</span><span class="faq-icon" style="color:#059669;font-size:18px;flex-shrink:0">+</span></summary><p style="padding:0 20px 18px;color:#94a3b8;font-size:13px;line-height:1.7;border-top:1px solid rgba(255,255,255,.08);padding-top:14px;margin-top:0">No. Cuotela es una plataforma tecnológica (LegalTech + FinTech) que actúa como canal de pago y originación. Los créditos los otorga un aliado financiero vigilado por la SFC.</p></details>
+      <details class="card"><summary style="display:flex;justify-content:space-between;align-items:center;padding:18px 20px;cursor:pointer;list-style:none;border-radius:16px" onmouseover="this.style.background='rgba(255,255,255,.04)'" onmouseout="this.style.background=''"><span style="font-weight:600;color:#e2e8f0;font-size:14px;padding-right:16px">¿Cómo garantizan que el dinero llegue al menor?</span><span class="faq-icon" style="color:#059669;font-size:18px;flex-shrink:0">+</span></summary><p style="padding:0 20px 18px;color:#94a3b8;font-size:13px;line-height:1.7;border-top:1px solid rgba(255,255,255,.08);padding-top:14px;margin-top:0">La plataforma conecta el pago directamente con la institución prestadora del servicio. El dinero nunca pasa por una cuenta personal de los padres.</p></details>
+      <details class="card"><summary style="display:flex;justify-content:space-between;align-items:center;padding:18px 20px;cursor:pointer;list-style:none;border-radius:16px" onmouseover="this.style.background='rgba(255,255,255,.04)'" onmouseout="this.style.background=''"><span style="font-weight:600;color:#e2e8f0;font-size:14px;padding-right:16px">¿El historial de pagos sirve ante un juzgado?</span><span class="faq-icon" style="color:#059669;font-size:18px;flex-shrink:0">+</span></summary><p style="padding:0 20px 18px;color:#94a3b8;font-size:13px;line-height:1.7;border-top:1px solid rgba(255,255,255,.08);padding-top:14px;margin-top:0">Sí. Los certificados incluyen fecha, monto, destino, comprobante de la entidad y firma digital. Tienen valor probatorio según la Ley 527/1999.</p></details>
+      <details class="card"><summary style="display:flex;justify-content:space-between;align-items:center;padding:18px 20px;cursor:pointer;list-style:none;border-radius:16px" onmouseover="this.style.background='rgba(255,255,255,.04)'" onmouseout="this.style.background=''"><span style="font-weight:600;color:#e2e8f0;font-size:14px;padding-right:16px">¿Qué pasa si me incluyen en el REDAM?</span><span class="faq-icon" style="color:#059669;font-size:18px;flex-shrink:0">+</span></summary><p style="padding:0 20px 18px;color:#94a3b8;font-size:13px;line-height:1.7;border-top:1px solid rgba(255,255,255,.08);padding-top:14px;margin-top:0">Cuotela te avisa antes de llegar a 3 cuotas vencidas. Si ya estás en el REDAM, nuestros abogados te acompañan para ponerte al día con el crédito de emergencia.</p></details>
+      <details class="card"><summary style="display:flex;justify-content:space-between;align-items:center;padding:18px 20px;cursor:pointer;list-style:none;border-radius:16px" onmouseover="this.style.background='rgba(255,255,255,.04)'" onmouseout="this.style.background=''"><span style="font-weight:600;color:#e2e8f0;font-size:14px;padding-right:16px">¿El crédito de emergencia es para mí o para el menor?</span><span class="faq-icon" style="color:#059669;font-size:18px;flex-shrink:0">+</span></summary><p style="padding:0 20px 18px;color:#94a3b8;font-size:13px;line-height:1.7;border-top:1px solid rgba(255,255,255,.08);padding-top:14px;margin-top:0">El desembolso va DIRECTAMENTE al gasto del menor. Nunca a tu cuenta personal. Tú quedas con la obligación de pagar el crédito a la entidad aliada.</p></details>
+    </div>
+    <div style="text-align:center;margin-top:32px">
+      <p style="color:#64748b;font-size:13px;margin-bottom:12px">¿No encontraste tu respuesta?</p>
+      <a href="mailto:hola@cuotela.co" class="btn btn-o">✉️ hola@cuotela.co</a>
+    </div>
+  </div>
+</section>
+
+<!-- CTA FINAL -->
+<section id="comenzar" class="py-24 relative overflow-hidden">
+  <div class="absolute inset-0" style="background:linear-gradient(to bottom,rgba(5,150,105,.1),rgba(15,23,42,.8))"></div>
+  <div class="absolute inset-0 grid-bg opacity-60"></div>
+  <div class="absolute inset-0 flex items-center justify-center pointer-events-none"><div style="width:700px;height:400px;background:rgba(5,150,105,.08);border-radius:50%;filter:blur(130px)"></div></div>
+  <div class="relative z-10 max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+    <span class="badge mb-6">Comienza hoy</span>
+    <h2 style="font-family:Syne,sans-serif;font-weight:800;font-size:clamp(32px,5vw,56px);color:#fff;line-height:1.1;margin-bottom:20px">El cumplimiento de<br/><span class="grad">tus hijos empieza hoy</span></h2>
+    <p style="color:#94a3b8;font-size:17px;line-height:1.7;margin-bottom:36px;max-width:560px;margin-left:auto;margin-right:auto">Únete a los padres que ya usan Cuotela para cumplir sus obligaciones de forma transparente, certificada y directa. <strong style="color:#fff">El primer mes es gratis.</strong></p>
+    <div style="display:flex;flex-wrap:wrap;gap:14px;justify-content:center;margin-bottom:28px">
+      <a href="#" class="btn btn-p" style="font-size:16px;padding:16px 32px;box-shadow:0 0 40px rgba(5,150,105,.4)">Crear cuenta gratis — sin tarjeta →</a>
+      <a href="#asesoria" class="btn btn-o" style="font-size:16px;padding:16px 32px">Hablar con un abogado</a>
+    </div>
+    <div style="display:flex;flex-wrap:wrap;justify-content:center;gap:24px;color:#475569;font-size:12px">
+      <span>👥 +500 padres registrados</span>
+      <span>⭐ 4.9/5 satisfacción</span>
+      <span>🔒 Datos 100% seguros</span>
+      <span>🇨🇴 Hecho en Colombia</span>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer style="border-top:1px solid rgba(255,255,255,.08);background:rgba(0,0,0,.2)">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-14">
+    <div class="grid grid-cols-1 lg:grid-cols-4 gap-10">
+      <div style="grid-column:span 1">
+        <a href="/" style="display:flex;align-items:center;gap:10px;margin-bottom:16px;text-decoration:none">
+          <div style="width:32px;height:32px;background:#059669;border-radius:8px;display:flex;align-items:center;justify-content:center;color:#fff;font-weight:800;font-family:Syne,sans-serif">C</div>
+          <span style="font-family:Syne,sans-serif;font-weight:800;font-size:18px;color:#fff">Cuotela</span>
+        </a>
+        <p style="color:#64748b;font-size:13px;line-height:1.6;margin-bottom:16px">Plataforma LegalTech + FinTech para el cumplimiento de obligaciones alimentarias en Colombia.<br/><span style="color:#34d399;font-weight:600">Sin intermediarios. Directo al menor.</span></p>
+        <div style="display:flex;gap:10px">
+          <a href="https://instagram.com/cuotela.co" target="_blank" style="width:36px;height:36px;border-radius:8px;border:1px solid rgba(255,255,255,.1);display:flex;align-items:center;justify-content:center;color:#94a3b8;font-size:14px;text-decoration:none" onmouseover="this.style.borderColor='rgba(5,150,105,.5)';this.style.color='#fff'" onmouseout="this.style.borderColor='rgba(255,255,255,.1)';this.style.color='#94a3b8'">IG</a>
+          <a href="https://linkedin.com/company/cuotela" target="_blank" style="width:36px;height:36px;border-radius:8px;border:1px solid rgba(255,255,255,.1);display:flex;align-items:center;justify-content:center;color:#94a3b8;font-size:14px;text-decoration:none" onmouseover="this.style.borderColor='rgba(5,150,105,.5)';this.style.color='#fff'" onmouseout="this.style.borderColor='rgba(255,255,255,.1)';this.style.color='#94a3b8'">in</a>
+        </div>
+        <div style="margin-top:20px;font-size:11px;color:#334155;line-height:1.8">
+          <p>Cuotela S.A.S. — NIT: [En trámite]</p>
+          <p>Bogotá D.C., Colombia</p>
+        </div>
+      </div>
+      <div>
+        <h4 style="font-size:11px;font-weight:700;color:#fff;text-transform:uppercase;letter-spacing:.08em;margin-bottom:16px">Plataforma</h4>
+        <ul style="list-style:none;padding:0;display:flex;flex-direction:column;gap:10px">
+          <li><a href="#servicios" style="color:#64748b;font-size:13px;text-decoration:none" onmouseover="this.style.color='#fff'" onmouseout="this.style.color='#64748b'">Servicios</a></li>
+          <li><a href="#como-funciona" style="color:#64748b;font-size:13px;text-decoration:none" onmouseover="this.style.color='#fff'" onmouseout="this.style.color='#64748b'">Cómo funciona</a></li>
+          <li><a href="#planes" style="color:#64748b;font-size:13px;text-decoration:none" onmouseover="this.style.color='#fff'" onmouseout="this.style.color='#64748b'">Planes y precios</a></li>
+          <li><a href="#calculadora" style="color:#64748b;font-size:13px;text-decoration:none" onmouseover="this.style.color='#fff'" onmouseout="this.style.color='#64748b'">Calculadora</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4 style="font-size:11px;font-weight:700;color:#fff;text-transform:uppercase;letter-spacing:.08em;margin-bottom:16px">Legal</h4>
+        <ul style="list-style:none;padding:0;display:flex;flex-direction:column;gap:10px">
+          <li><a href="terminos/" style="color:#64748b;font-size:13px;text-decoration:none" onmouseover="this.style.color='#fff'" onmouseout="this.style.color='#64748b'">Términos de uso</a></li>
+          <li><a href="privacidad/" style="color:#64748b;font-size:13px;text-decoration:none" onmouseover="this.style.color='#fff'" onmouseout="this.style.color='#64748b'">Política de privacidad</a></li>
+          <li><a href="privacidad/#habeas-data" style="color:#64748b;font-size:13px;text-decoration:none" onmouseover="this.style.color='#fff'" onmouseout="this.style.color='#64748b'">Habeas Data</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4 style="font-size:11px;font-weight:700;color:#fff;text-transform:uppercase;letter-spacing:.08em;margin-bottom:16px">Empresa</h4>
+        <ul style="list-style:none;padding:0;display:flex;flex-direction:column;gap:10px">
+          <li><a href="nosotros/" style="color:#64748b;font-size:13px;text-decoration:none" onmouseover="this.style.color='#fff'" onmouseout="this.style.color='#64748b'">Nosotros</a></li>
+          <li><a href="blog/" style="color:#64748b;font-size:13px;text-decoration:none" onmouseover="this.style.color='#fff'" onmouseout="this.style.color='#64748b'">Blog</a></li>
+          <li><a href="contacto/" style="color:#64748b;font-size:13px;text-decoration:none" onmouseover="this.style.color='#fff'" onmouseout="this.style.color='#64748b'">Contacto</a></li>
+          <li><a href="mailto:hola@cuotela.co" style="color:#64748b;font-size:13px;text-decoration:none" onmouseover="this.style.color='#fff'" onmouseout="this.style.color='#64748b'">hola@cuotela.co</a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  <div style="border-top:1px solid rgba(255,255,255,.06)">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-5" style="display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:10px">
+      <p style="color:#334155;font-size:12px">© 2024 Cuotela S.A.S. Todos los derechos reservados.</p>
+      <p style="color:#334155;font-size:12px">Hecho en 🇨🇴 Colombia con ♥ por los hijos</p>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
