@@ -4,134 +4,258 @@
 <meta charset="UTF-8"/>
 <meta name="viewport" content="width=device-width,initial-scale=1"/>
 <title>Blog — Cuotela</title>
-<meta name="description" content="Artículos sobre cuota alimentaria, REDAM, custodia y derecho de familia en Colombia."/>
-<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'><rect width='64' height='64' rx='14' fill='%23059669'/><text x='32' y='46' font-family='system-ui' font-weight='800' font-size='38' text-anchor='middle' fill='white'>C</text></svg>"/>
-<link href="https://fonts.googleapis.com/css2?family=Syne:wght@700;800&family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet"/>
+<meta name="description" content="Guías jurídicas sobre cuota alimentaria, REDAM, custodia y derechos de los padres en Colombia. Actualizado por abogados de familia."/>
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'><rect width='64' height='64' rx='14' fill='%231a3a6b'/><path d='M32 14 L44 20 L44 34 C44 41 38 47 32 50 C26 47 20 41 20 34 L20 20 Z' fill='%23F59E0B'/></svg>"/>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet"/>
 <script src="https://cdn.tailwindcss.com"></script>
 <style>
-  body{background:#0F172A;color:#e2e8f0;font-family:'Manrope',sans-serif;-webkit-font-smoothing:antialiased}
-  .card{background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.1);border-radius:16px;transition:all .3s;text-decoration:none;display:block;color:inherit}
-  .card:hover{border-color:rgba(5,150,105,.4);transform:translateY(-2px)}
-  .badge{display:inline-flex;align-items:center;padding:4px 10px;border-radius:99px;font-size:11px;font-weight:700}
-  .b-legal{background:rgba(5,150,105,.12);color:#34d399;border:1px solid rgba(5,150,105,.2)}
-  .b-fin{background:rgba(59,130,246,.1);color:#93c5fd;border:1px solid rgba(59,130,246,.2)}
-  .b-guia{background:rgba(168,85,247,.1);color:#d8b4fe;border:1px solid rgba(168,85,247,.2)}
-  nav a{color:#94a3b8;font-size:14px;font-weight:500;text-decoration:none}
-  nav a:hover{color:#fff}
-  .grad{background:linear-gradient(135deg,#34d399,#00C896);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+:root{--navy-950:#050B18;--navy-900:#080E1A;--gold:#F59E0B;--blue:#2563EB;}
+*{box-sizing:border-box;margin:0;padding:0}
+body{background:var(--navy-900);color:#E2E8F0;font-family:'Inter',sans-serif;-webkit-font-smoothing:antialiased}
+h1,h2,h3{font-family:'Space Grotesk',sans-serif}
+.gold-grad{background:linear-gradient(135deg,#F59E0B,#FCD34D);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+.btn{display:inline-flex;align-items:center;gap:8px;padding:14px 28px;border-radius:12px;font-family:'Space Grotesk',sans-serif;font-weight:600;font-size:15px;text-decoration:none;transition:all .2s;cursor:pointer;border:none}
+.btn-gold{background:linear-gradient(135deg,#F59E0B,#D97706);color:#000;box-shadow:0 4px 20px rgba(245,158,11,.3)}
+.btn-outline{background:transparent;color:#E2E8F0;border:1px solid rgba(255,255,255,.2)}
+.card{background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.08);border-radius:20px;transition:all .3s}
+.card:hover{border-color:rgba(37,99,235,.3);transform:translateY(-2px)}
+.sec-label{font-family:'Space Grotesk',sans-serif;font-size:11px;font-weight:700;letter-spacing:.15em;text-transform:uppercase;color:#F59E0B;margin-bottom:12px}
+.mesh{background:radial-gradient(ellipse at 30% 0%,rgba(37,99,235,.1) 0,transparent 55%),var(--navy-900)}
+nav a{color:#94A3B8;font-size:14px;font-weight:500;text-decoration:none;transition:color .2s}
+nav a:hover{color:#fff}
+.tag{display:inline-flex;align-items:center;padding:3px 10px;border-radius:99px;font-size:11px;font-weight:600;font-family:'Space Grotesk',sans-serif}
+.tag-blue{background:rgba(37,99,235,.12);color:#60A5FA;border:1px solid rgba(37,99,235,.25)}
+.tag-gold{background:rgba(245,158,11,.12);color:#F59E0B;border:1px solid rgba(245,158,11,.25)}
+.tag-teal{background:rgba(13,148,136,.12);color:#2DD4BF;border:1px solid rgba(13,148,136,.25)}
+.tag-red{background:rgba(239,68,68,.1);color:#FCA5A5;border:1px solid rgba(239,68,68,.2)}
 </style>
 </head>
 <body>
+
 <!-- NAV -->
-<header style="position:sticky;top:0;z-index:50;background:rgba(15,23,42,.95);backdrop-filter:blur(16px);border-bottom:1px solid rgba(255,255,255,.08)">
-  <nav style="max-width:1280px;margin:0 auto;padding:0 24px;display:flex;align-items:center;justify-content:space-between;height:64px">
-    <a href="../" style="display:flex;align-items:center;gap:10px;text-decoration:none">
-      <div style="width:32px;height:32px;background:#059669;border-radius:8px;display:flex;align-items:center;justify-content:center;color:#fff;font-weight:800;font-family:Syne,sans-serif">C</div>
-      <span style="font-family:Syne,sans-serif;font-weight:800;font-size:18px;color:#fff">Cuotela</span>
+<header style="position:sticky;top:0;z-index:50;background:rgba(5,11,24,.92);backdrop-filter:blur(20px);border-bottom:1px solid rgba(255,255,255,.07)">
+  <nav style="max-width:1280px;margin:0 auto;padding:0 24px;display:flex;align-items:center;justify-content:space-between;height:68px">
+    <a href="/" style="display:flex;align-items:center;gap:12px;text-decoration:none">
+      <svg width="36" height="36" viewBox="0 0 36 36" fill="none"><rect width="36" height="36" rx="10" fill="#0D1830"/><path d="M18 6 L27 10.5 L27 20.5 C27 25.5 23 29.5 18 31.5 C13 29.5 9 25.5 9 20.5 L9 10.5 Z" fill="#1C3060" stroke="#2563EB" stroke-width="1"/><path d="M14.5 20 L17 22.5 L22 17" stroke="#F59E0B" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      <span style="font-family:'Space Grotesk',sans-serif;font-weight:800;font-size:20px;color:#fff;letter-spacing:-.02em">Cuotela</span>
     </a>
-    <div style="display:flex;gap:24px;align-items:center">
-      <a href="../#servicios">Servicios</a>
-      <a href="../#planes">Planes</a>
-      <a href="./" style="color:#34d399">Blog</a>
-      <a href="../contacto/" style="display:inline-flex;align-items:center;gap:6px;padding:8px 18px;border-radius:10px;background:#059669;color:#fff;font-size:13px;font-weight:600">Comenzar gratis</a>
+    <div style="display:flex;gap:32px;align-items:center">
+      <a href="/#servicios">Servicios</a>
+      <a href="/#planes">Planes</a>
+      <a href="/blog/" style="color:#fff">Blog</a>
+      <a href="/nosotros/">Nosotros</a>
+      <a href="/contacto/" class="btn btn-gold" style="padding:10px 20px;font-size:13px;border-radius:10px">Comenzar gratis</a>
     </div>
   </nav>
 </header>
 
 <!-- HERO -->
-<section style="padding:80px 24px 60px;text-align:center;background:radial-gradient(at 50% 0%,rgba(5,150,105,.1) 0,transparent 70%)">
-  <span style="display:inline-flex;align-items:center;gap:8px;padding:6px 16px;border-radius:99px;font-size:12px;font-weight:700;background:rgba(5,150,105,.12);color:#34d399;border:1px solid rgba(5,150,105,.25);margin-bottom:20px">Centro de conocimiento</span>
-  <h1 style="font-family:Syne,sans-serif;font-weight:800;font-size:clamp(32px,5vw,52px);color:#fff;line-height:1.1;margin:16px 0">Todo sobre <span class="grad">derecho de familia</span><br/>en Colombia</h1>
-  <p style="color:#94a3b8;font-size:16px;max-width:560px;margin:0 auto;line-height:1.7">Guías prácticas, actualizaciones legales y consejos para navegar la cuota alimentaria, la custodia y tus derechos como padre o madre.</p>
+<section class="mesh" style="padding:80px 24px 64px">
+  <div style="max-width:800px;margin:0 auto;text-align:center">
+    <div class="sec-label">Guías y recursos</div>
+    <h1 style="font-size:clamp(32px,5vw,56px);font-weight:800;color:#fff;letter-spacing:-.03em;line-height:1.1;margin-bottom:16px">Blog <span class="gold-grad">Cuotela</span></h1>
+    <p style="color:#64748B;font-size:16px;line-height:1.7;max-width:580px;margin:0 auto">Guías jurídicas escritas por abogados de familia. Todo lo que necesitas saber sobre cuota alimentaria, custodia y derechos en Colombia.</p>
+  </div>
 </section>
 
-<!-- ARTÍCULOS DESTACADOS -->
-<section style="max-width:1280px;margin:0 auto;padding:20px 24px 80px">
-  <!-- Featured post -->
-  <a href="#" class="card" style="padding:32px;display:grid;grid-template-columns:1fr auto;gap:24px;align-items:center;margin-bottom:20px">
+<!-- FEATURED ARTICLE -->
+<section style="padding:48px 24px 0;max-width:1280px;margin:0 auto">
+  <div style="background:linear-gradient(135deg,rgba(28,48,96,.5),rgba(20,32,64,.3));border:1px solid rgba(37,99,235,.3);border-radius:24px;padding:48px;display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:center">
     <div>
-      <div style="display:flex;gap:10px;flex-wrap:wrap;margin-bottom:16px">
-        <span class="badge b-legal">⚖️ Legal</span>
-        <span style="font-size:12px;color:#475569">15 enero 2025 · 8 min</span>
+      <div style="display:flex;gap:8px;flex-wrap:wrap;margin-bottom:20px">
+        <span class="tag tag-red">Urgente leer</span>
+        <span class="tag tag-blue">REDAM</span>
       </div>
-      <h2 style="font-family:Syne,sans-serif;font-weight:700;font-size:clamp(18px,2.5vw,26px);color:#fff;margin-bottom:12px;line-height:1.3">¿Cuánto es la cuota alimentaria en Colombia en 2025? Cómo calcularla legalmente</h2>
-      <p style="color:#94a3b8;font-size:14px;line-height:1.7">La cuota alimentaria se fija según el principio de proporcionalidad: depende del ingreso del obligado, las necesidades del menor y la capacidad del custodio. Te explicamos la fórmula, los rangos según el salario y cómo modificarla.</p>
-      <p style="color:#34d399;font-size:13px;font-weight:600;margin-top:16px">Leer artículo →</p>
+      <h2 style="font-size:clamp(22px,2.5vw,34px);font-weight:800;color:#fff;letter-spacing:-.03em;margin-bottom:14px;line-height:1.2">REDAM 2024: Qué es, consecuencias y cómo salir si ya estás registrado</h2>
+      <p style="color:#64748B;font-size:14px;line-height:1.8;margin-bottom:28px">La Ley 2097 de 2021 creó el Registro de Alimentarios Deudores. 3 cuotas sin pagar y pierdes acceso a crédito, licencias y venta de inmuebles. Te explicamos todo.</p>
+      <div style="display:flex;align-items:center;gap:20px;flex-wrap:wrap">
+        <a href="/contacto/" class="btn btn-gold" style="padding:12px 24px;font-size:14px">Leer artículo completo</a>
+        <div style="display:flex;align-items:center;gap:8px;color:#475569;font-size:13px">
+          <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
+          8 min de lectura
+        </div>
+      </div>
     </div>
-    <div style="width:140px;height:140px;background:linear-gradient(135deg,rgba(5,150,105,.2),rgba(5,150,105,.05));border-radius:16px;display:flex;align-items:center;justify-content:center;font-size:64px;flex-shrink:0">📋</div>
-  </a>
-
-  <!-- Grid de posts -->
-  <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:16px">
-    <a href="#" class="card" style="padding:24px">
-      <div style="display:flex;gap:8px;margin-bottom:14px;flex-wrap:wrap">
-        <span class="badge b-fin">💳 Finanzas</span>
-        <span style="font-size:11px;color:#475569">12 enero 2025 · 6 min</span>
+    <!-- Visual element -->
+    <div style="display:flex;justify-content:center">
+      <div style="position:relative;width:280px">
+        <div style="background:rgba(220,38,38,.08);border:1px solid rgba(220,38,38,.25);border-radius:20px;padding:32px;text-align:center">
+          <div style="width:64px;height:64px;border-radius:18px;background:rgba(220,38,38,.15);border:1px solid rgba(220,38,38,.3);display:flex;align-items:center;justify-content:center;margin:0 auto 16px">
+            <svg width="28" height="28" fill="none" stroke="#EF4444" stroke-width="2" stroke-linecap="round" viewBox="0 0 24 24"><path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>
+          </div>
+          <div style="font-family:'Space Grotesk',sans-serif;font-weight:800;font-size:28px;color:#FCA5A5">REDAM</div>
+          <div style="font-size:12px;color:#64748B;margin-top:6px;line-height:1.5">Registro de<br/>Alimentarios Deudores<br/>Ley 2097/2021</div>
+          <div style="margin-top:20px;padding-top:20px;border-top:1px solid rgba(239,68,68,.15)">
+            <div style="font-size:11px;color:#64748B">Consecuencias:</div>
+            <div style="display:flex;flex-direction:column;gap:6px;margin-top:8px;text-align:left">
+              {['Sin licencia de conducción','Sin crédito bancario','Sin vender inmuebles'].map(c=>`<div style="display:flex;gap:6px;align-items:center;font-size:12px;color:#FCA5A5"><span style="color:#EF4444">×</span>${c}</div>`).join('')}
+            </div>
+          </div>
+        </div>
       </div>
-      <h3 style="font-family:Syne,sans-serif;font-weight:700;font-size:16px;color:#fff;margin-bottom:10px;line-height:1.4">REDAM 2025: qué es, cómo consultarlo y cómo salir si ya estás incluido</h3>
-      <p style="color:#94a3b8;font-size:13px;line-height:1.6">El Registro de Alimentarios Deudores (Ley 2097/2021) tiene consecuencias graves. Te contamos qué pasa cuando te incluyen y cuál es el proceso de exclusión.</p>
-      <p style="color:#34d399;font-size:12px;font-weight:600;margin-top:14px">Leer más →</p>
-    </a>
-    <a href="#" class="card" style="padding:24px">
-      <div style="display:flex;gap:8px;margin-bottom:14px;flex-wrap:wrap">
-        <span class="badge b-legal">⚖️ Legal</span>
-        <span style="font-size:11px;color:#475569">8 enero 2025 · 10 min</span>
-      </div>
-      <h3 style="font-family:Syne,sans-serif;font-weight:700;font-size:16px;color:#fff;margin-bottom:10px;line-height:1.4">Custodia compartida vs exclusiva: derechos, obligaciones y cuota alimentaria</h3>
-      <p style="color:#94a3b8;font-size:13px;line-height:1.6">¿Cuánto cambia la cuota si la custodia es compartida? ¿Qué dice la jurisprudencia de la Corte Suprema? Guía completa actualizada.</p>
-      <p style="color:#34d399;font-size:12px;font-weight:600;margin-top:14px">Leer más →</p>
-    </a>
-    <a href="#" class="card" style="padding:24px">
-      <div style="display:flex;gap:8px;margin-bottom:14px;flex-wrap:wrap">
-        <span class="badge b-guia">📚 Guía práctica</span>
-        <span style="font-size:11px;color:#475569">3 enero 2025 · 5 min</span>
-      </div>
-      <h3 style="font-family:Syne,sans-serif;font-weight:700;font-size:16px;color:#fff;margin-bottom:10px;line-height:1.4">Por qué el ahorro voluntario para la cuota es la mejor estrategia financiera de los padres</h3>
-      <p style="color:#94a3b8;font-size:13px;line-height:1.6">Cómo funciona el ahorro voluntario en Cuotela, por qué previene la mora y cómo construye un historial sólido para los jueces de familia.</p>
-      <p style="color:#34d399;font-size:12px;font-weight:600;margin-top:14px">Leer más →</p>
-    </a>
-    <a href="#" class="card" style="padding:24px">
-      <div style="display:flex;gap:8px;margin-bottom:14px;flex-wrap:wrap">
-        <span class="badge b-legal">⚖️ Legal</span>
-        <span style="font-size:11px;color:#475569">28 dic 2024 · 7 min</span>
-      </div>
-      <h3 style="font-family:Syne,sans-serif;font-weight:700;font-size:16px;color:#fff;margin-bottom:10px;line-height:1.4">Inasistencia alimentaria en Colombia: el delito que el 70% de los obligados desconoce</h3>
-      <p style="color:#94a3b8;font-size:13px;line-height:1.6">El Art. 233 del Código Penal tipifica la inasistencia alimentaria con hasta 3 años de prisión. Qué se necesita para que proceda la denuncia penal.</p>
-      <p style="color:#34d399;font-size:12px;font-weight:600;margin-top:14px">Leer más →</p>
-    </a>
-    <a href="#" class="card" style="padding:24px">
-      <div style="display:flex;gap:8px;margin-bottom:14px;flex-wrap:wrap">
-        <span class="badge b-guia">📚 Guía práctica</span>
-        <span style="font-size:11px;color:#475569">20 dic 2024 · 6 min</span>
-      </div>
-      <h3 style="font-family:Syne,sans-serif;font-weight:700;font-size:16px;color:#fff;margin-bottom:10px;line-height:1.4">Cómo pedir la reducción de la cuota alimentaria cuando pierdes el trabajo</h3>
-      <p style="color:#94a3b8;font-size:13px;line-height:1.6">El proceso de modificación de cuota por cambio de circunstancias económicas: documentos, tiempos y juzgado competente. Con ejemplo práctico.</p>
-      <p style="color:#34d399;font-size:12px;font-weight:600;margin-top:14px">Leer más →</p>
-    </a>
-    <a href="#" class="card" style="padding:24px">
-      <div style="display:flex;gap:8px;margin-bottom:14px;flex-wrap:wrap">
-        <span class="badge b-fin">💳 Finanzas</span>
-        <span style="font-size:11px;color:#475569">15 dic 2024 · 4 min</span>
-      </div>
-      <h3 style="font-family:Syne,sans-serif;font-weight:700;font-size:16px;color:#fff;margin-bottom:10px;line-height:1.4">PSE, Nequi o efectivo: cuál es la mejor forma de pagar la cuota para que tenga respaldo legal</h3>
-      <p style="color:#94a3b8;font-size:13px;line-height:1.6">No todos los pagos tienen el mismo valor probatorio. Te explicamos qué comprobantes acepta un juzgado y cuáles no.</p>
-      <p style="color:#34d399;font-size:12px;font-weight:600;margin-top:14px">Leer más →</p>
-    </a>
-  </div>
-
-  <!-- Newsletter CTA -->
-  <div style="margin-top:40px;background:rgba(5,150,105,.06);border:1px solid rgba(5,150,105,.25);border-radius:16px;padding:32px;text-align:center">
-    <h3 style="font-family:Syne,sans-serif;font-weight:700;font-size:20px;color:#fff;margin-bottom:10px">Recibe los artículos en tu correo</h3>
-    <p style="color:#94a3b8;font-size:13px;margin-bottom:20px">Un email por semana. Sin spam. Sobre cuota alimentaria, custodia y tus derechos.</p>
-    <div style="display:flex;max-width:440px;margin:0 auto;gap:10px;flex-wrap:wrap">
-      <input type="email" placeholder="tu@correo.com" style="flex:1;min-width:200px;padding:12px 16px;border-radius:12px;background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.1);color:#e2e8f0;font-size:13px;outline:none;box-sizing:border-box"/>
-      <button style="padding:12px 20px;border-radius:12px;background:#059669;color:#fff;font-size:13px;font-weight:600;border:none;cursor:pointer" onclick="this.textContent='✓ Suscrito!'">Suscribirse →</button>
     </div>
   </div>
 </section>
 
-<footer style="border-top:1px solid rgba(255,255,255,.06);padding:24px;text-align:center">
-  <p style="color:#334155;font-size:12px">© 2024 Cuotela S.A.S. — <a href="../" style="color:#64748b;text-decoration:none">Inicio</a> · <a href="../terminos/" style="color:#64748b;text-decoration:none">Términos</a> · <a href="../contacto/" style="color:#64748b;text-decoration:none">Contacto</a></p>
+<!-- ARTICLES GRID -->
+<section style="padding:40px 24px 100px;max-width:1280px;margin:0 auto">
+  <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(320px,1fr));gap:20px">
+
+    <!-- Article 1 -->
+    <article class="card" style="padding:28px;display:flex;flex-direction:column">
+      <div style="display:flex;gap:8px;margin-bottom:16px">
+        <span class="tag tag-blue">Cuota alimentaria</span>
+      </div>
+      <div style="flex:1;height:100px;background:linear-gradient(135deg,rgba(37,99,235,.1),rgba(20,32,64,.2));border-radius:12px;display:flex;align-items:center;justify-content:center;margin-bottom:20px">
+        <svg width="40" height="40" fill="none" stroke="rgba(96,165,250,.4)" stroke-width="1.5" stroke-linecap="round" viewBox="0 0 24 24"><rect x="2" y="5" width="20" height="14" rx="2"/><line x1="2" y1="10" x2="22" y2="10"/></svg>
+      </div>
+      <h3 style="font-size:17px;font-weight:700;color:#fff;margin-bottom:10px;line-height:1.3">Cómo calcular la cuota alimentaria en Colombia paso a paso</h3>
+      <p style="color:#64748B;font-size:13px;line-height:1.7;margin-bottom:20px;flex:1">El principio de proporcionalidad, los ingresos que se consideran, y por qué la cuota no es siempre un porcentaje fijo del salario.</p>
+      <div style="display:flex;justify-content:space-between;align-items:center">
+        <span style="font-size:12px;color:#334155">Oct 2025 · 6 min</span>
+        <a href="/contacto/" style="font-size:13px;color:#60A5FA;text-decoration:none;font-weight:600;display:flex;align-items:center;gap:4px">
+          Leer <svg width="12" height="12" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+        </a>
+      </div>
+    </article>
+
+    <!-- Article 2 -->
+    <article class="card" style="padding:28px;display:flex;flex-direction:column">
+      <div style="display:flex;gap:8px;margin-bottom:16px">
+        <span class="tag tag-gold">Custodia</span>
+      </div>
+      <div style="flex:1;height:100px;background:linear-gradient(135deg,rgba(245,158,11,.08),rgba(20,32,64,.2));border-radius:12px;display:flex;align-items:center;justify-content:center;margin-bottom:20px">
+        <svg width="40" height="40" fill="none" stroke="rgba(245,158,11,.4)" stroke-width="1.5" stroke-linecap="round" viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+      </div>
+      <h3 style="font-size:17px;font-weight:700;color:#fff;margin-bottom:10px;line-height:1.3">Custodia compartida vs. exclusiva: Derechos y responsabilidades</h3>
+      <p style="color:#64748B;font-size:13px;line-height:1.7;margin-bottom:20px;flex:1">Diferencias legales, quién decide el colegio del menor, qué pasa con la cuota en custodia compartida y cómo se negocia el régimen de visitas.</p>
+      <div style="display:flex;justify-content:space-between;align-items:center">
+        <span style="font-size:12px;color:#334155">Sep 2025 · 9 min</span>
+        <a href="/contacto/" style="font-size:13px;color:#60A5FA;text-decoration:none;font-weight:600;display:flex;align-items:center;gap:4px">
+          Leer <svg width="12" height="12" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+        </a>
+      </div>
+    </article>
+
+    <!-- Article 3 -->
+    <article class="card" style="padding:28px;display:flex;flex-direction:column">
+      <div style="display:flex;gap:8px;margin-bottom:16px">
+        <span class="tag tag-teal">Ahorro</span>
+      </div>
+      <div style="flex:1;height:100px;background:linear-gradient(135deg,rgba(13,148,136,.08),rgba(20,32,64,.2));border-radius:12px;display:flex;align-items:center;justify-content:center;margin-bottom:20px">
+        <svg width="40" height="40" fill="none" stroke="rgba(45,212,191,.4)" stroke-width="1.5" stroke-linecap="round" viewBox="0 0 24 24"><path d="M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>
+      </div>
+      <h3 style="font-size:17px;font-weight:700;color:#fff;margin-bottom:10px;line-height:1.3">Ahorro voluntario para la cuota: Cómo evitar la mora con Cuotela</h3>
+      <p style="color:#64748B;font-size:13px;line-height:1.7;margin-bottom:20px;flex:1">Por qué el ahorro programado es la estrategia más efectiva para no caer en el REDAM, y cómo construir un historial de cumplimiento con valor legal.</p>
+      <div style="display:flex;justify-content:space-between;align-items:center">
+        <span style="font-size:12px;color:#334155">Sep 2025 · 5 min</span>
+        <a href="/contacto/" style="font-size:13px;color:#60A5FA;text-decoration:none;font-weight:600;display:flex;align-items:center;gap:4px">
+          Leer <svg width="12" height="12" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+        </a>
+      </div>
+    </article>
+
+    <!-- Article 4 -->
+    <article class="card" style="padding:28px;display:flex;flex-direction:column">
+      <div style="display:flex;gap:8px;margin-bottom:16px">
+        <span class="tag tag-red">Legal</span>
+      </div>
+      <div style="flex:1;height:100px;background:linear-gradient(135deg,rgba(239,68,68,.06),rgba(20,32,64,.2));border-radius:12px;display:flex;align-items:center;justify-content:center;margin-bottom:20px">
+        <svg width="40" height="40" fill="none" stroke="rgba(252,165,165,.4)" stroke-width="1.5" stroke-linecap="round" viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14,2 14,8 20,8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg>
+      </div>
+      <h3 style="font-size:17px;font-weight:700;color:#fff;margin-bottom:10px;line-height:1.3">Inasistencia alimentaria: Cuándo es delito y qué penas tiene</h3>
+      <p style="color:#64748B;font-size:13px;line-height:1.7;margin-bottom:20px;flex:1">El artículo 233 del Código Penal colombiano y las circunstancias que convierten la mora alimentaria en un delito penal. Diferencias con el proceso civil.</p>
+      <div style="display:flex;justify-content:space-between;align-items:center">
+        <span style="font-size:12px;color:#334155">Ago 2025 · 7 min</span>
+        <a href="/contacto/" style="font-size:13px;color:#60A5FA;text-decoration:none;font-weight:600;display:flex;align-items:center;gap:4px">
+          Leer <svg width="12" height="12" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+        </a>
+      </div>
+    </article>
+
+    <!-- Article 5 -->
+    <article class="card" style="padding:28px;display:flex;flex-direction:column">
+      <div style="display:flex;gap:8px;margin-bottom:16px">
+        <span class="tag tag-blue">Derechos</span>
+      </div>
+      <div style="flex:1;height:100px;background:linear-gradient(135deg,rgba(37,99,235,.08),rgba(20,32,64,.2));border-radius:12px;display:flex;align-items:center;justify-content:center;margin-bottom:20px">
+        <svg width="40" height="40" fill="none" stroke="rgba(96,165,250,.4)" stroke-width="1.5" stroke-linecap="round" viewBox="0 0 24 24"><path d="M12 2 L22 7 L22 17 C22 21 17 24 12 24 C7 24 2 21 2 17 L2 7 Z"/></svg>
+      </div>
+      <h3 style="font-size:17px;font-weight:700;color:#fff;margin-bottom:10px;line-height:1.3">Derechos del padre no custodio: Lo que muchos no saben</h3>
+      <p style="color:#64748B;font-size:13px;line-height:1.7;margin-bottom:20px;flex:1">Derecho a la información escolar y médica, a las vacaciones, a impugnar decisiones importantes. Una guía para el padre que no tiene la custodia.</p>
+      <div style="display:flex;justify-content:space-between;align-items:center">
+        <span style="font-size:12px;color:#334155">Ago 2025 · 10 min</span>
+        <a href="/contacto/" style="font-size:13px;color:#60A5FA;text-decoration:none;font-weight:600;display:flex;align-items:center;gap:4px">
+          Leer <svg width="12" height="12" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+        </a>
+      </div>
+    </article>
+
+    <!-- Article 6 -->
+    <article class="card" style="padding:28px;display:flex;flex-direction:column">
+      <div style="display:flex;gap:8px;margin-bottom:16px">
+        <span class="tag tag-gold">Guía práctica</span>
+      </div>
+      <div style="flex:1;height:100px;background:linear-gradient(135deg,rgba(245,158,11,.06),rgba(20,32,64,.2));border-radius:12px;display:flex;align-items:center;justify-content:center;margin-bottom:20px">
+        <svg width="40" height="40" fill="none" stroke="rgba(245,158,11,.4)" stroke-width="1.5" stroke-linecap="round" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M12 8v4l3 3"/></svg>
+      </div>
+      <h3 style="font-size:17px;font-weight:700;color:#fff;margin-bottom:10px;line-height:1.3">Modificación de cuota por cambio de empleo: Guía paso a paso</h3>
+      <p style="color:#64748B;font-size:13px;line-height:1.7;margin-bottom:20px;flex:1">¿Perdiste el empleo o tus ingresos bajaron significativamente? Tienes derecho a pedir modificación de cuota. Aquí el proceso, los plazos y los documentos necesarios.</p>
+      <div style="display:flex;justify-content:space-between;align-items:center">
+        <span style="font-size:12px;color:#334155">Jul 2025 · 8 min</span>
+        <a href="/contacto/" style="font-size:13px;color:#60A5FA;text-decoration:none;font-weight:600;display:flex;align-items:center;gap:4px">
+          Leer <svg width="12" height="12" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+        </a>
+      </div>
+    </article>
+
+    <!-- Article 7 -->
+    <article class="card" style="padding:28px;display:flex;flex-direction:column">
+      <div style="display:flex;gap:8px;margin-bottom:16px">
+        <span class="tag tag-teal">Violencia</span>
+      </div>
+      <div style="flex:1;height:100px;background:linear-gradient(135deg,rgba(13,148,136,.06),rgba(20,32,64,.2));border-radius:12px;display:flex;align-items:center;justify-content:center;margin-bottom:20px">
+        <svg width="40" height="40" fill="none" stroke="rgba(45,212,191,.4)" stroke-width="1.5" stroke-linecap="round" viewBox="0 0 24 24"><path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>
+      </div>
+      <h3 style="font-size:17px;font-weight:700;color:#fff;margin-bottom:10px;line-height:1.3">Violencia intrafamiliar y custodia: Cómo proteger a tus hijos</h3>
+      <p style="color:#64748B;font-size:13px;line-height:1.7;margin-bottom:20px;flex:1">Medidas de protección, quién las dicta, cuánto duran y qué efecto tienen sobre la custodia y el régimen de visitas. Ley 1257/2008 explicada.</p>
+      <div style="display:flex;justify-content:space-between;align-items:center">
+        <span style="font-size:12px;color:#334155">Jul 2025 · 11 min</span>
+        <a href="/contacto/" style="font-size:13px;color:#60A5FA;text-decoration:none;font-weight:600;display:flex;align-items:center;gap:4px">
+          Leer <svg width="12" height="12" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+        </a>
+      </div>
+    </article>
+
+  </div>
+</section>
+
+<!-- CTA NEWSLETTER -->
+<section style="padding:0 24px 100px">
+  <div style="max-width:700px;margin:0 auto;text-align:center">
+    <div style="background:linear-gradient(135deg,rgba(28,48,96,.5),rgba(20,32,64,.3));border:1px solid rgba(37,99,235,.25);border-radius:24px;padding:52px 40px">
+      <div class="sec-label">Mantente informado</div>
+      <h2 style="font-size:clamp(24px,3vw,34px);font-weight:800;color:#fff;letter-spacing:-.03em;margin-bottom:12px">¿Tienes una pregunta legal?</h2>
+      <p style="color:#64748B;font-size:15px;margin-bottom:32px;line-height:1.7">Nuestro equipo de abogados de familia responde cada consulta en menos de 24 horas hábiles.</p>
+      <a href="/contacto/" class="btn btn-gold" style="font-size:15px;padding:16px 36px">Consultar con un abogado</a>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer style="background:var(--navy-950);border-top:1px solid rgba(255,255,255,.06);padding:40px 24px">
+  <div style="max-width:1280px;margin:0 auto;display:flex;flex-wrap:wrap;justify-content:space-between;align-items:center;gap:16px">
+    <a href="/" style="display:flex;align-items:center;gap:10px;text-decoration:none">
+      <svg width="28" height="28" viewBox="0 0 36 36" fill="none"><rect width="36" height="36" rx="10" fill="#0D1830"/><path d="M18 6 L27 10.5 L27 20.5 C27 25.5 23 29.5 18 31.5 C13 29.5 9 25.5 9 20.5 L9 10.5 Z" fill="#1C3060" stroke="#2563EB" stroke-width="1"/><path d="M14.5 20 L17 22.5 L22 17" stroke="#F59E0B" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      <span style="font-family:'Space Grotesk',sans-serif;font-weight:800;font-size:18px;color:#fff">Cuotela</span>
+    </a>
+    <div style="display:flex;gap:24px">
+      <a href="/terminos/" style="color:#334155;font-size:13px;text-decoration:none">Términos</a>
+      <a href="/privacidad/" style="color:#334155;font-size:13px;text-decoration:none">Privacidad</a>
+      <a href="/contacto/" style="color:#334155;font-size:13px;text-decoration:none">Contacto</a>
+    </div>
+    <p style="color:#1E293B;font-size:12px">© 2025 Cuotela S.A.S. — Bogotá, Colombia</p>
+  </div>
 </footer>
 </body>
 </html>
