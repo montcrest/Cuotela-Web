@@ -1,0 +1,83 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Nav from '../components/Nav.astro';
+import Footer from '../components/Footer.astro';
+import '../styles/global.css';
+---
+
+<BaseLayout
+  title="Política de Privacidad — Cuotela"
+  description="Política de tratamiento de datos personales de Cuotela S.A.S. según la Ley 1581 de 2012."
+>
+  <Nav />
+  <main class="pt-24">
+    <section class="py-20 max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="mb-12">
+        <div class="section-badge">Privacidad</div>
+        <h1 class="heading-lg mt-4 mb-2">Política de Privacidad</h1>
+        <p class="text-slate-500 text-sm">Vigente desde: octubre 2024 · Ley 1581 de 2012 y Decreto 1377 de 2013</p>
+      </div>
+
+      <div class="space-y-6 text-slate-300 leading-relaxed">
+
+        <div class="card p-6 space-y-3">
+          <h2 class="font-display font-bold text-white text-lg">1. Responsable del tratamiento</h2>
+          <p><strong class="text-white">Cuotela S.A.S.</strong><br/>
+          NIT: [en trámite] · Bogotá D.C., Colombia<br/>
+          Email: <a href="mailto:datos@cuotela.co" class="text-emerald-400">datos@cuotela.co</a></p>
+        </div>
+
+        <div class="card p-6 space-y-3">
+          <h2 class="font-display font-bold text-white text-lg">2. Datos que recolectamos</h2>
+          <ul class="list-disc pl-5 space-y-1 text-slate-400">
+            <li>Datos de identificación: nombre, cédula, fecha de nacimiento</li>
+            <li>Datos de contacto: email, celular, dirección</li>
+            <li>Datos financieros: información bancaria para procesamiento de pagos</li>
+            <li>Datos de uso: historial de pagos, consultas y transacciones en la plataforma</li>
+            <li>Datos del menor: nombre, edad, institución educativa (solo lo necesario para el destino del pago)</li>
+          </ul>
+        </div>
+
+        <div class="card p-6 space-y-3">
+          <h2 class="font-display font-bold text-white text-lg">3. Finalidad del tratamiento</h2>
+          <ul class="list-disc pl-5 space-y-1 text-slate-400">
+            <li>Prestar los servicios contratados en la plataforma</li>
+            <li>Procesamiento de pagos a través de aliados financieros</li>
+            <li>Generación de certificados con valor probatorio</li>
+            <li>Cumplimiento de obligaciones legales y regulatorias</li>
+            <li>Envío de comunicaciones relacionadas con el servicio</li>
+          </ul>
+        </div>
+
+        <div class="card p-6 space-y-3">
+          <h2 class="font-display font-bold text-white text-lg">4. Derechos del titular (Habeas Data)</h2>
+          <p>El titular de los datos tiene derecho a:</p>
+          <ul class="list-disc pl-5 space-y-1 text-slate-400">
+            <li>Conocer, actualizar y rectificar sus datos</li>
+            <li>Solicitar prueba de la autorización</li>
+            <li>Ser informado del uso de sus datos</li>
+            <li>Presentar quejas ante la SIC</li>
+            <li>Revocar la autorización y solicitar supresión de datos</li>
+          </ul>
+        </div>
+
+        <div class="card p-6 space-y-3">
+          <h2 class="font-display font-bold text-white text-lg">5. Transferencias a terceros</h2>
+          <p>Los datos financieros se comparten con aliados financieros vigilados por la SFC para el procesamiento de créditos. Ningún dato personal se vende a terceros para fines publicitarios. Wompi (pasarela de pagos) recibe datos de pago bajo sus propias políticas de seguridad PCI-DSS.</p>
+        </div>
+
+        <div class="card p-6 space-y-3">
+          <h2 class="font-display font-bold text-white text-lg">6. Seguridad</h2>
+          <p>Cuotela implementa cifrado SSL/TLS, almacenamiento seguro en la nube y controles de acceso para proteger tus datos. En caso de brecha de seguridad, notificaremos a los usuarios afectados según lo exige la Ley.</p>
+        </div>
+
+        <div class="card p-6 space-y-3">
+          <h2 class="font-display font-bold text-white text-lg">7. Vigencia</h2>
+          <p>Los datos se conservan mientras el usuario tenga cuenta activa en Cuotela, y por los plazos legales aplicables tras la cancelación. Para ejercer tus derechos: <a href="mailto:datos@cuotela.co" class="text-emerald-400 hover:underline">datos@cuotela.co</a></p>
+        </div>
+
+      </div>
+    </section>
+  </main>
+  <Footer />
+</BaseLayout>

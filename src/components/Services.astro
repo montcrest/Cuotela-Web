@@ -1,0 +1,154 @@
+---
+const financialServices = [
+  {
+    id: 'SF-01',
+    icon: '💳',
+    title: 'Pago de Cuotas',
+    desc: 'Realiza el pago mensual directamente a la institución educativa, clínica, almacén o servicio que corresponda. Comprobante certificado incluido.',
+    tags: ['PSE', 'Nequi', 'Wompi', 'Transferencia'],
+  },
+  {
+    id: 'SF-02',
+    icon: '🏦',
+    title: 'Ahorro Voluntario',
+    desc: 'Prepárate con anticipación. Ahorra semana a semana para la cuota del siguiente mes y evita el estrés de final de mes.',
+    tags: ['Rendimientos', 'Sin mínimo', 'Flexible'],
+  },
+  {
+    id: 'SF-03',
+    icon: '⚡',
+    title: 'Crédito de Emergencia',
+    desc: 'Si estás en mora, te adelantamos hasta el 80% de la cuota — y lo enviamos directamente a los gastos del menor. No a cuentas de los padres.',
+    tags: ['Tasa competitiva', 'Rápido', 'Directo al menor'],
+  },
+  {
+    id: 'SF-04',
+    icon: '📊',
+    title: 'Historial de Cumplimiento',
+    desc: 'Genera certificados y reportes de tus pagos. Demuestra ante un juez o en el REDAM que estás al día. Valor legal respaldado.',
+    tags: ['Certificado', 'Exportable', 'Valor probatorio'],
+  },
+];
+
+const legalServices = [
+  {
+    icon: '⚖️',
+    title: 'Consulta Jurídica Inicial',
+    desc: 'Sesión de 30 minutos con abogado de familia. Diagnóstico de tu situación y hoja de ruta legal.',
+  },
+  {
+    icon: '📝',
+    title: 'Acuerdos Extrajudiciales',
+    desc: 'Redacción de acuerdos de cuota alimentaria, custodia y visitas sin necesidad de ir a un juzgado.',
+  },
+  {
+    icon: '🏛️',
+    title: 'Representación Judicial',
+    desc: 'Abogados especializados en derecho de familia para demandas de alimentos y procesos de custodia.',
+  },
+  {
+    icon: '🚨',
+    title: 'Urgencias Familiares',
+    desc: 'Asesoría de emergencia en casos de violencia intrafamiliar, incumplimiento grave o amenaza al menor.',
+  },
+  {
+    icon: '📚',
+    title: 'Centro de Educación Legal',
+    desc: 'Aprende tus derechos y obligaciones. Guías, videos y talleres sobre el Código de la Infancia (Ley 1098/2006).',
+  },
+  {
+    icon: '🔔',
+    title: 'Alertas REDAM',
+    desc: 'Monitoreo continuo del Registro de Alimentarios Deudores. Alertas de riesgo antes de que te incluyan.',
+  },
+];
+---
+
+<section id="servicios" class="py-24 relative">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+
+    <!-- Header -->
+    <div class="text-center mb-16" data-reveal>
+      <div class="section-badge">Servicios Cuotela</div>
+      <h2 class="heading-lg mb-4">Todo lo que necesitas,<br/><span class="gradient-text">en un solo lugar</span></h2>
+      <p class="text-slate-400 max-w-2xl mx-auto">
+        Combinamos servicios financieros y asesoría jurídica especializada para que los padres cumplan sus obligaciones alimentarias con dignidad, orden y respaldo legal.
+      </p>
+    </div>
+
+    <!-- Financial services -->
+    <div class="mb-16">
+      <h3 class="text-xs font-semibold text-emerald-400 uppercase tracking-widest mb-6 flex items-center gap-2">
+        <span class="w-8 h-px bg-emerald-600"></span>
+        Servicios Financieros
+        <span class="w-8 h-px bg-emerald-600"></span>
+      </h3>
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+        {financialServices.map((s, i) => (
+          <div class="card-glow p-6 space-y-4" data-reveal style={`transition-delay: ${i * 80}ms`}>
+            <div class="flex items-start justify-between">
+              <div class="icon-box text-2xl">{s.icon}</div>
+              <span class="text-xs font-mono text-slate-600 font-semibold">{s.id}</span>
+            </div>
+            <div>
+              <h4 class="font-display font-semibold text-white mb-2">{s.title}</h4>
+              <p class="text-slate-400 text-sm leading-relaxed">{s.desc}</p>
+            </div>
+            <div class="flex flex-wrap gap-1.5 pt-1">
+              {s.tags.map(tag => (
+                <span class="px-2 py-0.5 rounded-md bg-emerald-600/10 text-emerald-400 text-xs font-medium border border-emerald-600/20">
+                  {tag}
+                </span>
+              ))}
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+
+    <!-- Destinations visual -->
+    <div class="card border-gradient p-8 mb-16" data-reveal>
+      <div class="text-center mb-8">
+        <h3 class="font-display font-bold text-xl text-white mb-2">Destinos del pago — Directo al menor</h3>
+        <p class="text-slate-400 text-sm">El dinero nunca toca la cuenta de ninguno de los padres.</p>
+      </div>
+      <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-4">
+        {[
+          { icon: '🎓', label: 'Educación', sub: 'Colegios, universidades, útiles' },
+          { icon: '🏥', label: 'Salud', sub: 'Medicina prepagada, citas, medicamentos' },
+          { icon: '👕', label: 'Vestuario', sub: 'Ropa, zapatos, uniformes' },
+          { icon: '🎮', label: 'Recreación', sub: 'Deporte, cultura, turismo' },
+          { icon: '🍎', label: 'Alimentación', sub: 'Mercado, restaurante, lonchera' },
+          { icon: '📦', label: 'Otros', sub: 'Transporte, vivienda, varios' },
+        ].map(dest => (
+          <div class="flex flex-col items-center text-center p-4 rounded-xl bg-white/5 hover:bg-white/8 transition-colors">
+            <span class="text-3xl mb-2">{dest.icon}</span>
+            <span class="font-semibold text-sm text-white">{dest.label}</span>
+            <span class="text-xs text-slate-500 mt-1 leading-tight">{dest.sub}</span>
+          </div>
+        ))}
+      </div>
+    </div>
+
+    <!-- Legal services -->
+    <div>
+      <h3 class="text-xs font-semibold text-emerald-400 uppercase tracking-widest mb-6 flex items-center gap-2">
+        <span class="w-8 h-px bg-emerald-600"></span>
+        Servicios Jurídicos
+        <span class="w-8 h-px bg-emerald-600"></span>
+      </h3>
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+        {legalServices.map((s, i) => (
+          <div class="card p-6 flex gap-4" data-reveal style={`transition-delay: ${i * 70}ms`}>
+            <div class="icon-box text-xl">{s.icon}</div>
+            <div>
+              <h4 class="font-display font-semibold text-white mb-1.5">{s.title}</h4>
+              <p class="text-slate-400 text-sm leading-relaxed">{s.desc}</p>
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+
+  </div>
+</section>

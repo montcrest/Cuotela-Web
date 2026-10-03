@@ -1,0 +1,155 @@
+---
+const steps = [
+  {
+    n: '01',
+    title: 'Crea tu cuenta gratis',
+    desc: 'Regístrate en 2 minutos. Indica si eres el obligado o el custodio del menor. Sube la resolución o acuerdo de cuota si lo tienes.',
+    icon: '👤',
+  },
+  {
+    n: '02',
+    title: 'Configura la obligación',
+    desc: 'Ingresa el monto de la cuota, la fecha límite de pago y selecciona los conceptos a los que va destinado: educación, salud, ropa, etc.',
+    icon: '⚙️',
+  },
+  {
+    n: '03',
+    title: 'Paga directamente',
+    desc: 'Usa PSE, Nequi, tarjeta de crédito o débito. El pago va directamente a la institución o proveedor del menor. Sin intermediarios.',
+    icon: '💳',
+  },
+  {
+    n: '04',
+    title: 'Recibe el comprobante',
+    desc: 'Genera tu recibo de pago con destino verificado, fecha y monto. Tiene valor probatorio ante juzgados y REDAM.',
+    icon: '✅',
+  },
+];
+
+const userTypes = [
+  {
+    icon: '👨',
+    title: 'Soy el obligado',
+    subtitle: '(Quien paga la cuota)',
+    color: 'from-blue-600/20 to-blue-800/10',
+    border: 'border-blue-600/30',
+    features: [
+      'Pago directo y certificado',
+      'Ahorro voluntario mensual',
+      'Crédito de emergencia si entro en mora',
+      'Historial para evitar el REDAM',
+      'Asesoría legal ante demandas',
+    ],
+  },
+  {
+    icon: '👩',
+    title: 'Soy el custodio',
+    subtitle: '(Quien cuida al menor)',
+    color: 'from-emerald-600/20 to-emerald-800/10',
+    border: 'border-emerald-600/40',
+    features: [
+      'Seguimiento en tiempo real',
+      'Alertas de pago recibido',
+      'Reporte para acción legal si hay mora',
+      'Asesoría en modificación de cuota',
+      'Apoyo en procesos de custodia',
+    ],
+  },
+  {
+    icon: '⚖️',
+    title: 'Soy abogado de familia',
+    subtitle: '(Quiero alianzas)',
+    color: 'from-purple-600/20 to-purple-800/10',
+    border: 'border-purple-600/30',
+    features: [
+      'Portal de gestión de clientes',
+      'Descarga de historial certificado',
+      'Notificaciones de mora de clientes',
+      'Referidos y comisiones',
+      'Capacitación continua',
+    ],
+  },
+];
+---
+
+<section id="como-funciona" class="py-24 relative bg-gradient-to-b from-transparent via-emerald-950/10 to-transparent">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+
+    <!-- Header -->
+    <div class="text-center mb-16" data-reveal>
+      <div class="section-badge">Proceso simple</div>
+      <h2 class="heading-lg mb-4">Así de fácil<br/><span class="gradient-text">funciona Cuotela</span></h2>
+      <p class="text-slate-400 max-w-xl mx-auto">
+        En 4 pasos cumples la obligación alimentaria con respaldo legal y trazabilidad completa.
+      </p>
+    </div>
+
+    <!-- Steps timeline -->
+    <div class="relative mb-20">
+      <!-- Connector line (desktop) -->
+      <div class="hidden lg:block absolute top-10 left-0 right-0 h-px bg-gradient-to-r from-transparent via-emerald-600/40 to-transparent mx-16"></div>
+
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
+        {steps.map((step, i) => (
+          <div class="flex flex-col items-center text-center" data-reveal style={`transition-delay: ${i * 100}ms`}>
+            <div class="relative mb-5">
+              <div class="step-number w-16 h-16 text-2xl">
+                {step.icon}
+              </div>
+              <span class="absolute -top-2 -right-2 w-6 h-6 rounded-full bg-navy-900 border border-emerald-600 text-emerald-400 text-xs font-bold font-mono flex items-center justify-center">
+                {step.n}
+              </span>
+            </div>
+            <h3 class="font-display font-semibold text-white mb-2">{step.title}</h3>
+            <p class="text-slate-400 text-sm leading-relaxed">{step.desc}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+
+    <!-- User types -->
+    <div class="mb-12" data-reveal>
+      <h3 class="text-center text-xs font-semibold text-slate-500 uppercase tracking-widest mb-8">¿Quién eres en Cuotela?</h3>
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-5">
+        {userTypes.map((u, i) => (
+          <div
+            class={`card p-6 bg-gradient-to-b ${u.color} border ${u.border}`}
+            data-reveal
+            style={`transition-delay: ${i * 100}ms`}
+          >
+            <div class="text-4xl mb-4">{u.icon}</div>
+            <h4 class="font-display font-bold text-white text-lg">{u.title}</h4>
+            <p class="text-slate-500 text-xs mb-4">{u.subtitle}</p>
+            <ul class="space-y-2">
+              {u.features.map(f => (
+                <li class="flex items-start gap-2 text-sm text-slate-300">
+                  <svg class="w-4 h-4 text-emerald-500 mt-0.5 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke-width="2.5" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="m4.5 12.75 6 6 9-13.5"/>
+                  </svg>
+                  {f}
+                </li>
+              ))}
+            </ul>
+          </div>
+        ))}
+      </div>
+    </div>
+
+    <!-- REDAM alert box -->
+    <div class="card border-red-500/30 bg-red-950/20 p-6 flex gap-5" data-reveal>
+      <div class="text-3xl flex-shrink-0">⚠️</div>
+      <div>
+        <h4 class="font-display font-bold text-white mb-1.5">¿Sabes qué es el REDAM?</h4>
+        <p class="text-slate-400 text-sm leading-relaxed">
+          El <strong class="text-red-400">Registro de Alimentarios Deudores (Ley 2097/2021)</strong> es la lista negra de quienes incumplen 3 o más cuotas.
+          Si estás incluido: <strong class="text-red-300">no puedes vender propiedades, renovar la licencia de conducción, ni acceder a crédito bancario.</strong>
+          Cuotela te ayuda a evitarlo y a salir si ya estás en él.
+        </p>
+        <a href="#asesoria" class="inline-flex items-center gap-1 text-emerald-400 text-sm font-medium mt-3 hover:text-emerald-300 transition-colors">
+          Consulta tu situación →
+        </a>
+      </div>
+    </div>
+
+  </div>
+</section>

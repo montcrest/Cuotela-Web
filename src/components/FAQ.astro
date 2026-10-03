@@ -1,0 +1,75 @@
+---
+const faqs = [
+  {
+    q: '¿Es Cuotela un banco o entidad financiera?',
+    a: 'No. Cuotela es una plataforma tecnológica (LegalTech + FinTech) que actúa como canal de pago y originación. Los créditos de emergencia los otorga un aliado financiero vigilado por la SFC. Cuotela gestiona el flujo y la trazabilidad del destino del dinero.',
+  },
+  {
+    q: '¿Cómo garantizan que el dinero llegue directamente al menor?',
+    a: 'La plataforma conecta el pago directamente con la institución prestadora del servicio (colegio, EPS, almacén) usando APIs de pago. El obligado selecciona el destino y el comprobante indica explícitamente el beneficiario. En ningún momento el dinero pasa por una cuenta personal de los padres.',
+  },
+  {
+    q: '¿El historial de pagos de Cuotela sirve ante un juzgado?',
+    a: 'Sí. Los certificados de pago emitidos por Cuotela incluyen fecha, monto, destino, comprobante de la entidad receptora y firma digital. Tienen valor probatorio como documento electrónico según la Ley 527/1999 de Colombia.',
+  },
+  {
+    q: '¿Qué pasa si me incluyen en el REDAM?',
+    a: 'Cuotela te avisa antes de llegar a 3 cuotas vencidas. Si ya estás en el REDAM, nuestros abogados te acompañan para ponerte al día con el crédito de emergencia y solicitar la exclusión del registro ante las autoridades competentes.',
+  },
+  {
+    q: '¿El crédito de emergencia es para mí o para el menor?',
+    a: 'El desembolso va DIRECTAMENTE al gasto del menor. Nunca a tu cuenta. Cuotela coordina con la entidad receptora (colegio, médico, etc.) el pago y genera el comprobante. Tú quedas con la obligación de pagar el crédito a la entidad aliada.',
+  },
+  {
+    q: '¿Puedo usar Cuotela si mi cuota fue fijada verbalmente o sin acuerdo escrito?',
+    a: 'Sí. Cuotela funciona incluso si no tienes un documento formal. Te ayudamos a formalizar el acuerdo mediante conciliación extrajudicial para que quede respaldado legalmente. El módulo de asesoría jurídica te guía en este proceso.',
+  },
+  {
+    q: '¿Qué pasa con mis datos personales?',
+    a: 'Cuotela cumple con la Ley 1581/2012 de Protección de Datos Personales (Habeas Data). Tus datos no se venden a terceros. Solo se comparten con aliados financieros en el proceso de originación del crédito, con tu consentimiento explícito.',
+  },
+  {
+    q: '¿Cuándo estará disponible la app móvil?',
+    a: 'La versión web funcional ya está disponible. La app para Android e iOS está en desarrollo (Flutter) y será lanzada en 2025 Q4. Inscríbete ahora en la web y recibirás acceso anticipado a la app.',
+  },
+];
+---
+
+<section id="faq" class="py-24 relative">
+  <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
+
+    <div class="text-center mb-12" data-reveal>
+      <div class="section-badge">Preguntas frecuentes</div>
+      <h2 class="heading-lg mb-4">Todo lo que<br/><span class="gradient-text">necesitas saber</span></h2>
+    </div>
+
+    <div class="space-y-3" data-reveal>
+      {faqs.map((faq, i) => (
+        <details class="card group" style={`transition-delay: ${i * 50}ms`}>
+          <summary class="flex items-center justify-between p-5 cursor-pointer list-none select-none hover:bg-white/5 rounded-2xl transition-colors">
+            <span class="font-medium text-slate-200 text-sm pr-4">{faq.q}</span>
+            <svg class="faq-icon w-5 h-5 text-emerald-500 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M12 4.5v15m7.5-7.5h-15"/>
+            </svg>
+          </summary>
+          <div class="px-5 pb-5">
+            <p class="text-slate-400 text-sm leading-relaxed border-t border-white/8 pt-4">
+              {faq.a}
+            </p>
+          </div>
+        </details>
+      ))}
+    </div>
+
+    <div class="text-center mt-10" data-reveal>
+      <p class="text-slate-500 text-sm mb-4">¿No encontraste tu respuesta?</p>
+      <a href="mailto:hola@cuotela.co" class="btn-outline">
+        <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M21.75 6.75v10.5a2.25 2.25 0 0 1-2.25 2.25h-15a2.25 2.25 0 0 1-2.25-2.25V6.75m19.5 0A2.25 2.25 0 0 0 19.5 4.5h-15a2.25 2.25 0 0 0-2.25 2.25m19.5 0v.243a2.25 2.25 0 0 1-1.07 1.916l-7.5 4.615a2.25 2.25 0 0 1-2.36 0L3.32 8.91a2.25 2.25 0 0 1-1.07-1.916V6.75"/>
+        </svg>
+        hola@cuotela.co
+      </a>
+    </div>
+
+  </div>
+</section>

@@ -1,0 +1,103 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Nav from '../../components/Nav.astro';
+import Footer from '../../components/Footer.astro';
+import '../../styles/global.css';
+
+const posts = [
+  {
+    slug: 'cuota-alimentaria-colombia-2024',
+    title: '¿Cuánto debe ser la cuota alimentaria en Colombia 2024?',
+    excerpt: 'Guía completa con los parámetros del Código Civil, la jurisprudencia de la Corte Suprema y el índice de costos de crianza 2024.',
+    date: '2024-10-01',
+    category: 'Legal',
+    readTime: '8 min',
+  },
+  {
+    slug: 'redam-como-salir',
+    title: 'REDAM: Cómo salir del registro de alimentarios deudores',
+    excerpt: 'Si estás en el REDAM, esto es lo que debes hacer. Pasos legales, plazos y cómo Cuotela puede ayudarte a ponerte al día.',
+    date: '2024-09-20',
+    category: 'Legal',
+    readTime: '6 min',
+  },
+  {
+    slug: 'custodia-compartida-colombia',
+    title: 'Custodia compartida en Colombia: ventajas, desventajas y proceso',
+    excerpt: 'Todo lo que necesitas saber sobre la custodia compartida en Colombia: cuándo aplica, cómo se solicita y qué impacto tiene en la cuota.',
+    date: '2024-09-10',
+    category: 'Familia',
+    readTime: '7 min',
+  },
+  {
+    slug: 'ahorro-voluntario-cuota',
+    title: 'Por qué ahorrar para la cuota alimentaria es la mejor decisión',
+    excerpt: 'Prepárate con anticipación. Cómo el ahorro voluntario en Cuotela te protege de entrar en mora y mantiene tu historial limpio.',
+    date: '2024-09-05',
+    category: 'Finanzas',
+    readTime: '5 min',
+  },
+];
+
+const categories = ['Todos', 'Legal', 'Finanzas', 'Familia', 'Tips'];
+
+const categoryColors: Record<string, string> = {
+  'Legal': 'bg-blue-600/15 text-blue-400 border-blue-600/25',
+  'Finanzas': 'bg-emerald-600/15 text-emerald-400 border-emerald-600/25',
+  'Familia': 'bg-purple-600/15 text-purple-400 border-purple-600/25',
+  'Tips': 'bg-amber-600/15 text-amber-400 border-amber-600/25',
+};
+---
+
+<BaseLayout
+  title="Blog — Cuotela | Derecho de familia y finanzas parentales"
+  description="Artículos sobre cuota alimentaria, custodia, REDAM y finanzas para padres en Colombia."
+>
+  <Nav />
+  <main class="pt-24">
+
+    <!-- Header -->
+    <section class="py-16 text-center">
+      <div class="max-w-3xl mx-auto px-4">
+        <div class="section-badge justify-center">Blog Cuotela</div>
+        <h1 class="heading-xl mt-4 mb-4">Aprende sobre tus<br/><span class="gradient-text">derechos y obligaciones</span></h1>
+        <p class="text-slate-400">Artículos escritos por abogados de familia para que entiendas la ley sin complicaciones.</p>
+      </div>
+    </section>
+
+    <!-- Posts grid -->
+    <section class="py-8 pb-24 max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-2 gap-6">
+        {posts.map((post, i) => (
+          <a
+            href={`/blog/${post.slug}`}
+            class="card p-7 flex flex-col gap-4 group hover:border-emerald-600/40 transition-all duration-300"
+            data-reveal
+            style={`transition-delay: ${i * 80}ms`}
+          >
+            <div class="flex items-center justify-between">
+              <span class={`px-2.5 py-0.5 rounded-full text-xs font-semibold border ${categoryColors[post.category] || 'bg-white/10 text-slate-400 border-white/10'}`}>
+                {post.category}
+              </span>
+              <span class="text-slate-600 text-xs font-mono">{post.readTime} de lectura</span>
+            </div>
+            <h2 class="font-display font-bold text-white text-lg leading-tight group-hover:text-emerald-400 transition-colors">
+              {post.title}
+            </h2>
+            <p class="text-slate-400 text-sm leading-relaxed flex-1">{post.excerpt}</p>
+            <div class="flex items-center justify-between pt-2 border-t border-white/8">
+              <span class="text-slate-600 text-xs">
+                {new Date(post.date).toLocaleDateString('es-CO', { year: 'numeric', month: 'long', day: 'numeric' })}
+              </span>
+              <span class="text-emerald-400 text-sm group-hover:translate-x-1 transition-transform">
+                Leer →
+              </span>
+            </div>
+          </a>
+        ))}
+      </div>
+    </section>
+
+  </main>
+  <Footer />
+</BaseLayout>
