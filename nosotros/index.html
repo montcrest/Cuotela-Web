@@ -1,244 +1,348 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="es" class="scroll-smooth">
 <head>
-<meta charset="UTF-8"/>
-<meta name="viewport" content="width=device-width,initial-scale=1"/>
-<title>Nosotros — Cuotela</title>
-<meta name="description" content="Conoce el equipo detrás de Cuotela: la plataforma LegalTech que está transformando la gestión de obligaciones alimentarias en Colombia."/>
-<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'><rect width='64' height='64' rx='14' fill='%231a3a6b'/><path d='M32 14 L44 20 L44 34 C44 41 38 47 32 50 C26 47 20 41 20 34 L20 20 Z' fill='%23F59E0B'/><path d='M27 33 L30 36 L37 29' stroke='white' stroke-width='2.5' fill='none' stroke-linecap='round' stroke-linejoin='round'/></svg>"/>
-<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet"/>
-<script src="https://cdn.tailwindcss.com"></script>
-<style>
-:root{--navy-950:#050B18;--navy-900:#080E1A;--navy-800:#0D1830;--gold:#F59E0B;--blue:#2563EB;}
-*{box-sizing:border-box;margin:0;padding:0}
-body{background:var(--navy-900);color:#E2E8F0;font-family:'Inter',sans-serif;-webkit-font-smoothing:antialiased}
-h1,h2,h3,.display{font-family:'Space Grotesk',sans-serif}
-.gold-grad{background:linear-gradient(135deg,#F59E0B,#FCD34D);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
-.blue-grad{background:linear-gradient(135deg,#60A5FA,#2563EB);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
-.btn{display:inline-flex;align-items:center;gap:8px;padding:14px 28px;border-radius:12px;font-family:'Space Grotesk',sans-serif;font-weight:600;font-size:15px;text-decoration:none;transition:all .2s;cursor:pointer;border:none}
-.btn-gold{background:linear-gradient(135deg,#F59E0B,#D97706);color:#000;box-shadow:0 4px 20px rgba(245,158,11,.3)}
-.btn-gold:hover{transform:translateY(-1px)}
-.btn-outline{background:transparent;color:#E2E8F0;border:1px solid rgba(255,255,255,.2)}
-.btn-outline:hover{border-color:rgba(245,158,11,.5);color:#F59E0B}
-.card{background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.08);border-radius:20px}
-.sec-label{font-family:'Space Grotesk',sans-serif;font-size:11px;font-weight:700;letter-spacing:.15em;text-transform:uppercase;color:#F59E0B;margin-bottom:12px}
-.mesh{background:radial-gradient(ellipse at 20% 0%,rgba(37,99,235,.1) 0,transparent 55%),radial-gradient(ellipse at 80% 20%,rgba(245,158,11,.06) 0,transparent 50%),var(--navy-900)}
-nav a{color:#94A3B8;font-size:14px;font-weight:500;text-decoration:none;transition:color .2s}
-nav a:hover{color:#fff}
-</style>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Nosotros — Cuotela</title>
+  <meta name="description" content="Conoce la historia, misión y el equipo detrás de Cuotela. Una plataforma nacida de la experiencia jurídica real en derecho de familia colombiano." />
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700;800&family=Inter:ital,wght@0,400;0,500;0,600;1,400&display=swap" rel="stylesheet" />
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
+  <style>
+    :root{--g50:#F0FAF5;--g100:#D6F0E3;--g200:#ACDFC6;--g400:#3DB87A;--g600:#006B3D;--g700:#005530;--g800:#003D22;--g900:#002414;--navy:#0C1E35;--navy2:#1A3A5C;--gold:#C8860A;--goldb:#F5A623;--gray50:#F8FAFC;--gray100:#F1F5F9;--gray200:#E2E8F0;--gray500:#64748B;--gray700:#334155;--gray900:#0F172A}
+    *{box-sizing:border-box;margin:0;padding:0}
+    html{font-family:'Inter',sans-serif;color:var(--gray900)}
+    h1,h2,h3,h4,h5,h6{font-family:'Space Grotesk',sans-serif}
+    [x-cloak]{display:none!important}
+    .nav-link{font-size:.875rem;font-weight:500;color:var(--gray700);text-decoration:none;padding:.375rem .75rem;border-radius:.375rem;transition:color .15s,background .15s}
+    .nav-link:hover{color:var(--g700);background:var(--g50)}
+    .btn-outline{font-family:'Space Grotesk',sans-serif;font-size:.875rem;font-weight:600;color:var(--g700);border:1.5px solid var(--g600);padding:.5rem 1.25rem;border-radius:.5rem;text-decoration:none;transition:all .15s;white-space:nowrap}
+    .btn-outline:hover{background:var(--g600);color:#fff}
+    .btn-primary{font-family:'Space Grotesk',sans-serif;font-size:.875rem;font-weight:700;color:#fff;background:var(--g600);padding:.5rem 1.375rem;border-radius:.5rem;text-decoration:none;transition:all .15s;white-space:nowrap;display:inline-flex;align-items:center;gap:.375rem}
+    .btn-primary:hover{background:var(--g700);transform:translateY(-1px);box-shadow:0 4px 12px rgba(0,107,61,.35)}
+    .chip{display:inline-flex;align-items:center;gap:.375rem;font-family:'Space Grotesk',sans-serif;font-size:.75rem;font-weight:600;letter-spacing:.06em;text-transform:uppercase;padding:.3rem .75rem;border-radius:2rem;background:var(--g100);color:var(--g700)}
+    .card{background:#fff;border-radius:1rem;box-shadow:0 1px 3px rgba(0,0,0,.06),0 4px 16px rgba(0,0,0,.04);border:1px solid var(--gray200)}
+    .section-py{padding:5rem 0}
+    @media(max-width:768px){.section-py{padding:3.5rem 0}}
+  </style>
 </head>
 <body>
 
 <!-- NAV -->
-<header style="position:sticky;top:0;z-index:50;background:rgba(5,11,24,.92);backdrop-filter:blur(20px);border-bottom:1px solid rgba(255,255,255,.07)">
-  <nav style="max-width:1280px;margin:0 auto;padding:0 24px;display:flex;align-items:center;justify-content:space-between;height:68px">
-    <a href="/" style="display:flex;align-items:center;gap:12px;text-decoration:none">
-      <svg width="36" height="36" viewBox="0 0 36 36" fill="none"><rect width="36" height="36" rx="10" fill="#0D1830"/><path d="M18 6 L27 10.5 L27 20.5 C27 25.5 23 29.5 18 31.5 C13 29.5 9 25.5 9 20.5 L9 10.5 Z" fill="#1C3060" stroke="#2563EB" stroke-width="1"/><path d="M14.5 20 L17 22.5 L22 17" stroke="#F59E0B" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>
-      <span style="font-family:'Space Grotesk',sans-serif;font-weight:800;font-size:20px;color:#fff;letter-spacing:-.02em">Cuotela</span>
+<header style="position:sticky;top:0;z-index:50;background:#fff;border-bottom:1px solid var(--gray200)" x-data="{open:false}">
+  <div style="max-width:1200px;margin:0 auto;padding:0 1.5rem;display:flex;align-items:center;justify-content:space-between;height:4.25rem">
+    <a href="/" style="display:flex;align-items:center;gap:.625rem;text-decoration:none;flex-shrink:0">
+      <svg width="36" height="36" viewBox="0 0 36 36" fill="none"><rect width="36" height="36" rx="9" fill="#006B3D"/><circle cx="15" cy="16.5" r="3" fill="white"/><path d="M10.5 27C10.5 23.96 12.69 21.5 15 21.5C17.31 21.5 19.5 23.96 19.5 27" stroke="white" stroke-width="1.5" stroke-linecap="round" fill="none"/><circle cx="22.5" cy="18.5" r="2.2" fill="white" opacity="0.8"/><path d="M19.5 27C19.5 24.51 20.9 22.5 22.5 22.5C24.1 22.5 25.5 24.51 25.5 27" stroke="white" stroke-width="1.5" stroke-linecap="round" fill="none" opacity="0.8"/><circle cx="19" cy="19.5" r="1" fill="#F5A623"/></svg>
+      <span style="font-family:'Space Grotesk',sans-serif;font-size:1.25rem;font-weight:800;color:var(--navy);letter-spacing:-.03em">cuotela</span>
     </a>
-    <div style="display:flex;gap:32px;align-items:center">
-      <a href="/#servicios">Servicios</a>
-      <a href="/#planes">Planes</a>
-      <a href="/blog/">Blog</a>
-      <a href="/nosotros/" style="color:#fff">Nosotros</a>
-      <a href="/contacto/" class="btn btn-gold" style="padding:10px 20px;font-size:13px;border-radius:10px">Comenzar gratis</a>
+    <nav style="display:none;align-items:center;gap:.25rem" id="desk-nav">
+      <a href="/#servicios" class="nav-link">Servicios</a>
+      <a href="/#asesoria" class="nav-link">Asesoría Jurídica</a>
+      <a href="/#planes" class="nav-link">Planes</a>
+      <a href="/nosotros" class="nav-link" style="color:var(--g700);background:var(--g50)">Nosotros</a>
+      <a href="/blog" class="nav-link">Recursos</a>
+    </nav>
+    <div style="display:none;align-items:center;gap:.75rem" id="desk-cta">
+      <a href="https://app.cuotela.co/login" class="btn-outline">Iniciar sesión</a>
+      <a href="https://app.cuotela.co/registro" class="btn-primary">Crear cuenta gratis</a>
     </div>
-  </nav>
+    <button @click="open=!open" style="display:flex;flex-direction:column;gap:5px;padding:.5rem;cursor:pointer;background:none;border:none" id="mob-btn">
+      <span style="width:22px;height:2px;background:var(--gray700);border-radius:1px;transition:transform .2s" :style="open?'transform:rotate(45deg) translate(5px,5px)':''"></span>
+      <span style="width:22px;height:2px;background:var(--gray700);border-radius:1px;transition:opacity .2s" :style="open?'opacity:0':''"></span>
+      <span style="width:22px;height:2px;background:var(--gray700);border-radius:1px;transition:transform .2s" :style="open?'transform:rotate(-45deg) translate(5px,-5px)':''"></span>
+    </button>
+  </div>
+  <div x-show="open" x-cloak style="border-top:1px solid var(--gray200);padding:1.25rem 1.5rem;background:#fff">
+    <nav style="display:flex;flex-direction:column;gap:.25rem;margin-bottom:1.25rem">
+      <a href="/#servicios" @click="open=false" class="nav-link" style="padding:.75rem">Servicios</a>
+      <a href="/#asesoria" @click="open=false" class="nav-link" style="padding:.75rem">Asesoría Jurídica</a>
+      <a href="/#planes" @click="open=false" class="nav-link" style="padding:.75rem">Planes</a>
+      <a href="/nosotros" class="nav-link" style="padding:.75rem">Nosotros</a>
+      <a href="/blog" class="nav-link" style="padding:.75rem">Recursos</a>
+    </nav>
+    <div style="display:flex;flex-direction:column;gap:.75rem">
+      <a href="https://app.cuotela.co/login" class="btn-outline" style="text-align:center;padding:.75rem">Iniciar sesión</a>
+      <a href="https://app.cuotela.co/registro" class="btn-primary" style="justify-content:center;padding:.75rem">Crear cuenta gratis</a>
+    </div>
+  </div>
+  <style>@media(min-width:768px){#desk-nav{display:flex!important}#desk-cta{display:flex!important}#mob-btn{display:none!important}}</style>
 </header>
 
+
 <!-- HERO -->
-<section class="mesh" style="padding:90px 24px 80px">
-  <div style="max-width:900px;margin:0 auto;text-align:center">
-    <div style="display:inline-flex;align-items:center;gap:8px;padding:6px 16px;border-radius:99px;background:rgba(245,158,11,.12);color:#F59E0B;border:1px solid rgba(245,158,11,.3);font-size:12px;font-weight:700;letter-spacing:.05em;margin-bottom:24px">
-      Nuestra historia
-    </div>
-    <h1 style="font-size:clamp(36px,5vw,64px);font-weight:800;color:#fff;letter-spacing:-.03em;line-height:1.08;margin-bottom:20px">
-      Nació de una necesidad<br/><span class="gold-grad">real. La de un padre.</span>
+<section style="background:linear-gradient(145deg,#003D22 0%,#005530 50%,#006B3D 100%);padding:5rem 1.5rem">
+  <div style="max-width:1100px;margin:0 auto;text-align:center">
+    <div class="chip" style="background:rgba(255,255,255,.12);color:rgba(255,255,255,.9);margin-bottom:1.5rem">Quiénes somos</div>
+    <h1 style="font-size:clamp(2rem,5vw,3.25rem);font-weight:800;color:#fff;letter-spacing:-.03em;line-height:1.1;margin-bottom:1.25rem">
+      Nacimos de la experiencia<br>
+      <span style="color:#F5A623">jurídica real</span>
     </h1>
-    <p style="color:#64748B;font-size:clamp(15px,1.5vw,18px);line-height:1.7;max-width:640px;margin:0 auto">
-      Cuotela existe porque el sistema actual hace difícil hacer lo correcto. Queremos cambiarlo.
+    <p style="font-size:1.1rem;color:rgba(255,255,255,.75);line-height:1.7;max-width:580px;margin:0 auto">
+      Cuotela no es un proyecto tecnológico sin contexto. Es la respuesta a años de ver familias colombianas desorientadas ante los sistemas judiciales, sin acceso a información clara ni herramientas efectivas.
     </p>
   </div>
 </section>
 
+
 <!-- FOUNDER STORY -->
-<section style="padding:80px 24px">
-  <div style="max-width:1100px;margin:0 auto;display:grid;grid-template-columns:1fr 1.4fr;gap:72px;align-items:center">
-    <!-- Avatar / Visual -->
-    <div style="position:relative">
-      <div style="width:100%;aspect-ratio:4/5;max-width:380px;border-radius:28px;background:linear-gradient(135deg,rgba(28,48,96,.6),rgba(20,32,64,.8));border:1px solid rgba(37,99,235,.2);display:flex;align-items:center;justify-content:center;overflow:hidden;position:relative">
-        <!-- Initials avatar -->
-        <div style="text-align:center">
-          <div style="width:120px;height:120px;border-radius:50%;background:linear-gradient(135deg,#1C3060,#142040);border:2px solid rgba(37,99,235,.5);display:flex;align-items:center;justify-content:center;margin:0 auto 20px;font-family:'Space Grotesk',sans-serif;font-weight:800;font-size:40px;color:#60A5FA">FS</div>
-          <div style="font-family:'Space Grotesk',sans-serif;font-weight:700;font-size:20px;color:#fff">Fabián Sorza Cepeda</div>
-          <div style="color:#F59E0B;font-size:13px;font-weight:600;margin-top:6px">Fundador & CEO</div>
-          <div style="color:#475569;font-size:12px;margin-top:4px">Bogotá, Colombia</div>
+<section class="section-py" style="background:#fff">
+  <div style="max-width:1100px;margin:0 auto;padding:0 1.5rem">
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:4rem;align-items:center" class="founder-grid">
+      <!-- Visual -->
+      <div>
+        <div style="background:linear-gradient(145deg,var(--g50) 0%,var(--g100) 100%);border-radius:1.5rem;padding:3rem;text-align:center;position:relative;overflow:hidden">
+          <!-- Abstract portrait placeholder -->
+          <div style="width:140px;height:140px;background:var(--g600);border-radius:50%;margin:0 auto 1.5rem;display:flex;align-items:center;justify-content:center;box-shadow:0 8px 32px rgba(0,107,61,.35)">
+            <svg width="64" height="64" viewBox="0 0 24 24" fill="none" stroke="rgba(255,255,255,.9)" stroke-width="1.5"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+          </div>
+          <h3 style="font-size:1.25rem;font-weight:800;color:var(--navy);margin-bottom:.25rem">Fabián Sorza Cepeda</h3>
+          <p style="font-size:.9rem;color:var(--g700);font-weight:600;margin-bottom:1rem">Fundador y Director Jurídico</p>
+          <div style="display:flex;flex-direction:column;gap:.625rem">
+            <div style="display:flex;align-items:center;gap:.625rem;background:#fff;border-radius:.75rem;padding:.75rem 1rem">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--g600)" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+              <span style="font-size:.82rem;color:var(--gray700);font-weight:500">Abogado · Magíster en DDHH y DIH</span>
+            </div>
+            <div style="display:flex;align-items:center;gap:.625rem;background:#fff;border-radius:.75rem;padding:.75rem 1rem">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--g600)" stroke-width="2"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"/></svg>
+              <span style="font-size:.82rem;color:var(--gray700);font-weight:500">Montcrest &amp; Partners S.A.S.</span>
+            </div>
+            <div style="display:flex;align-items:center;gap:.625rem;background:#fff;border-radius:.75rem;padding:.75rem 1rem">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--g600)" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+              <span style="font-size:.82rem;color:var(--gray700);font-weight:500">Bogotá, D.C., Colombia</span>
+            </div>
+          </div>
         </div>
-        <!-- Decorative corner -->
-        <div style="position:absolute;bottom:0;left:0;right:0;height:4px;background:linear-gradient(90deg,#2563EB,#F59E0B)"></div>
       </div>
-      <!-- Quote card -->
-      <div style="position:absolute;bottom:-24px;right:-20px;background:rgba(13,24,48,.95);border:1px solid rgba(245,158,11,.3);border-radius:16px;padding:18px 22px;max-width:240px;backdrop-filter:blur(12px)">
-        <svg width="24" height="24" viewBox="0 0 24 24" fill="#F59E0B" opacity=".5" style="margin-bottom:8px"><path d="M14.017 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.995 2.151c-2.432.917-3.995 3.638-3.995 5.849h4v10h-9.983zm-14.017 0v-7.391c0-5.704 3.748-9.57 9-10.609l.996 2.151c-2.433.917-3.996 3.638-3.996 5.849h3.983v10h-9.983z"/></svg>
-        <p style="color:#CBD5E1;font-size:13px;line-height:1.6;font-style:italic">Vi cómo padres con voluntad de pagar no sabían cómo hacerlo bien. Cuotela es la solución.</p>
+
+      <!-- Story -->
+      <div>
+        <div class="chip" style="margin-bottom:1.25rem">Historia del fundador</div>
+        <h2 style="font-size:clamp(1.625rem,3.5vw,2.25rem);font-weight:800;color:var(--navy);letter-spacing:-.02em;margin-bottom:1.5rem;line-height:1.2">Más de una década al servicio de las familias colombianas</h2>
+        <div style="display:flex;flex-direction:column;gap:1rem;color:var(--gray500);font-size:.95rem;line-height:1.75">
+          <p>A lo largo de mi carrera como abogado — en la Alcaldía Mayor de Bogotá, la Fiscalía General de la Nación y el ejercicio privado como litigante independiente — vi repetirse el mismo patrón: familias en medio de separaciones, sin saber cuánto debían pagar, cómo hacer cumplir un acuerdo o a dónde acudir cuando el otro padre dejaba de responder.</p>
+          <p>El problema no era la ley. El Código de Infancia y Adolescencia y las normas sobre REDAM son herramientas poderosas. El problema era el <strong style="color:var(--gray700)">acceso</strong>: los procesos parecen inalcanzables, la información es dispersa y la asesoría jurídica de calidad está fuera del alcance de muchas familias.</p>
+          <p>Cuotela nació para cerrar esa brecha. No como un producto de tecnología sin alma, sino como una plataforma construida desde adentro del sistema jurídico, por quienes conocemos sus reglas y sus limitaciones.</p>
+        </div>
+        <div style="margin-top:2rem;padding:1.25rem;background:var(--g50);border-radius:.875rem;border-left:4px solid var(--g600)">
+          <p style="font-style:italic;color:var(--gray700);font-size:.95rem;line-height:1.7">"La cuota alimentaria no es un trámite burocrático. Es el derecho de un hijo a recibir lo que necesita para crecer. Cuotela existe para que ese derecho sea real, no solo una promesa en un papel."</p>
+          <p style="font-size:.82rem;font-weight:600;color:var(--g700);margin-top:.75rem">— Fabián Sorza Cepeda, Fundador</p>
+        </div>
       </div>
     </div>
+  </div>
+  <style>.founder-grid{@media(max-width:768px){grid-template-columns:1fr!important}}</style>
+</section>
 
-    <!-- Story -->
-    <div>
-      <div class="sec-label">El fundador</div>
-      <h2 style="font-size:clamp(26px,3vw,38px);font-weight:800;color:#fff;letter-spacing:-.03em;margin-bottom:24px;line-height:1.2">
-        Fabián Sorza Cepeda<br/><span class="blue-grad">Fundador & CEO</span>
-      </h2>
 
-      <div style="display:flex;flex-direction:column;gap:16px;color:#64748B;font-size:15px;line-height:1.8">
-        <p>Padre, abogado en formación y emprendedor. Fabián entendió de primera mano que el sistema colombiano de obligaciones alimentarias tiene un problema de diseño: penaliza la mora pero no facilita el cumplimiento.</p>
-        <p>Después de estudiar cientos de procesos alimentarios en juzgados de familia bogotanos, identificó que la mayoría de los padres en mora no incumplen por falta de voluntad — incumplen por falta de herramientas: no tienen una forma sencilla de pagar, de ahorrar, de obtener comprobantes legales, de acceder a asesoría jurídica accesible.</p>
-        <p>Cuotela nació en 2025 como respuesta directa a ese vacío. Una plataforma que pone tecnología al servicio del bienestar de los niños colombianos, sin burocracia y sin intermediarios innecesarios.</p>
+<!-- MISSION / VISION / VALUES -->
+<section class="section-py" style="background:var(--gray50)">
+  <div style="max-width:1100px;margin:0 auto;padding:0 1.5rem">
+    <div style="text-align:center;margin-bottom:3.5rem">
+      <div class="chip" style="margin-bottom:1rem">Propósito</div>
+      <h2 style="font-size:clamp(1.875rem,4vw,2.75rem);font-weight:800;color:var(--navy);letter-spacing:-.03em">Lo que nos mueve</h2>
+    </div>
+
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:1.5rem">
+      <div class="card" style="padding:2rem">
+        <div style="width:3rem;height:3rem;background:var(--g100);border-radius:.75rem;display:flex;align-items:center;justify-content:center;margin-bottom:1.25rem">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="var(--g700)" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 8v4l3 3"/></svg>
+        </div>
+        <h3 style="font-size:1.1rem;font-weight:700;color:var(--navy);margin-bottom:.75rem">Misión</h3>
+        <p style="font-size:.9rem;color:var(--gray500);line-height:1.7">Democratizar el acceso a la asesoría jurídica en derecho de familia para que cada padre y madre en Colombia pueda cumplir sus obligaciones, conocer sus derechos y proteger el bienestar de sus hijos sin importar su ubicación o nivel de ingresos.</p>
       </div>
-
-      <div style="display:flex;flex-wrap:wrap;gap:16px;margin-top:36px">
-        <div style="background:rgba(37,99,235,.08);border:1px solid rgba(37,99,235,.2);border-radius:14px;padding:20px 24px;flex:1;min-width:160px">
-          <div style="font-family:'Space Grotesk',sans-serif;font-weight:800;font-size:30px;color:#fff;letter-spacing:-.03em">2025</div>
-          <div style="color:#64748B;font-size:12px;margin-top:4px">Año de fundación</div>
+      <div class="card" style="padding:2rem">
+        <div style="width:3rem;height:3rem;background:var(--g100);border-radius:.75rem;display:flex;align-items:center;justify-content:center;margin-bottom:1.25rem">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="var(--g700)" stroke-width="2"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg>
         </div>
-        <div style="background:rgba(245,158,11,.08);border:1px solid rgba(245,158,11,.2);border-radius:14px;padding:20px 24px;flex:1;min-width:160px">
-          <div style="font-family:'Space Grotesk',sans-serif;font-weight:800;font-size:30px;color:#fff;letter-spacing:-.03em">100%</div>
-          <div style="color:#64748B;font-size:12px;margin-top:4px">Capital colombiano</div>
+        <h3 style="font-size:1.1rem;font-weight:700;color:var(--navy);margin-bottom:.75rem">Visión</h3>
+        <p style="font-size:.9rem;color:var(--gray500);line-height:1.7">Ser la plataforma de referencia en América Latina para la gestión integral de cuota alimentaria, reconocida por la calidad de su asesoría, la transparencia de sus procesos y el impacto real en la vida de las familias que acompañamos.</p>
+      </div>
+      <div class="card" style="padding:2rem">
+        <div style="width:3rem;height:3rem;background:var(--g100);border-radius:.75rem;display:flex;align-items:center;justify-content:center;margin-bottom:1.25rem">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="var(--g700)" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
         </div>
-        <div style="background:rgba(13,148,136,.08);border:1px solid rgba(13,148,136,.2);border-radius:14px;padding:20px 24px;flex:1;min-width:160px">
-          <div style="font-family:'Space Grotesk',sans-serif;font-weight:800;font-size:30px;color:#fff;letter-spacing:-.03em">Bogotá</div>
-          <div style="color:#64748B;font-size:12px;margin-top:4px">Sede principal</div>
-        </div>
+        <h3 style="font-size:1.1rem;font-weight:700;color:var(--navy);margin-bottom:.75rem">Compromiso</h3>
+        <p style="font-size:.9rem;color:var(--gray500);line-height:1.7">Cada familia que llega a Cuotela recibe orientación real, sin tecnicismos innecesarios ni promesas vacías. Nuestro equipo jurídico responde en menos de 24 horas y acompaña cada caso hasta su resolución efectiva.</p>
       </div>
     </div>
   </div>
 </section>
 
-<!-- MISIÓN VISIÓN VALORES -->
-<section style="padding:80px 24px;background:rgba(8,14,26,.7)">
-  <div style="max-width:1100px;margin:0 auto">
-    <div style="text-align:center;margin-bottom:56px">
-      <div class="sec-label">Propósito</div>
-      <h2 style="font-size:clamp(26px,3vw,40px);font-weight:800;color:#fff;letter-spacing:-.03em">Lo que nos mueve cada día</h2>
+
+<!-- VALUES -->
+<section class="section-py" style="background:#fff">
+  <div style="max-width:1100px;margin:0 auto;padding:0 1.5rem">
+    <div style="text-align:center;margin-bottom:3.5rem">
+      <div class="chip" style="margin-bottom:1rem">Valores</div>
+      <h2 style="font-size:clamp(1.875rem,4vw,2.5rem);font-weight:800;color:var(--navy);letter-spacing:-.03em">Principios que guían cada decisión</h2>
     </div>
-    <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:20px">
-      <div class="card" style="padding:36px">
-        <div style="width:48px;height:48px;border-radius:14px;background:rgba(245,158,11,.12);display:flex;align-items:center;justify-content:center;margin-bottom:20px">
-          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#F59E0B" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="10"/><path d="M12 2 L12 6"/><path d="M12 18 L12 22"/><path d="M4.93 4.93 L7.76 7.76"/><path d="M16.24 16.24 L19.07 19.07"/><circle cx="12" cy="12" r="4"/></svg>
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:2rem">
+      <div style="text-align:center">
+        <div style="width:3.5rem;height:3.5rem;background:var(--g50);border-radius:50%;display:flex;align-items:center;justify-content:center;margin:0 auto 1rem;border:2px solid var(--g200)">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="var(--g600)" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>
         </div>
-        <h3 style="font-size:18px;font-weight:700;color:#fff;margin-bottom:12px">Misión</h3>
-        <p style="color:#64748B;font-size:14px;line-height:1.8">Facilitar el cumplimiento de las obligaciones alimentarias en Colombia mediante tecnología accesible, generando certeza legal para los padres y protección real para los menores.</p>
+        <h3 style="font-size:1rem;font-weight:700;color:var(--navy);margin-bottom:.5rem">Transparencia</h3>
+        <p style="font-size:.875rem;color:var(--gray500);line-height:1.6">Sin letra pequeña. Cada proceso, costo y resultado se explica de forma clara y comprensible.</p>
       </div>
-      <div class="card" style="padding:36px">
-        <div style="width:48px;height:48px;border-radius:14px;background:rgba(37,99,235,.12);display:flex;align-items:center;justify-content:center;margin-bottom:20px">
-          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#60A5FA" stroke-width="2" stroke-linecap="round"><path d="M1 6l10.5 10.5L23 6"/><path d="M1 18l10.5-10.5L23 18"/></svg>
+      <div style="text-align:center">
+        <div style="width:3.5rem;height:3.5rem;background:var(--g50);border-radius:50%;display:flex;align-items:center;justify-content:center;margin:0 auto 1rem;border:2px solid var(--g200)">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="var(--g600)" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
         </div>
-        <h3 style="font-size:18px;font-weight:700;color:#fff;margin-bottom:12px">Visión</h3>
-        <p style="color:#64748B;font-size:14px;line-height:1.8">Ser la plataforma de referencia en Latinoamérica para la gestión de obligaciones alimentarias, convirtiendo el cumplimiento en el estándar — no en la excepción.</p>
+        <h3 style="font-size:1rem;font-weight:700;color:var(--navy);margin-bottom:.5rem">Familia primero</h3>
+        <p style="font-size:.875rem;color:var(--gray500);line-height:1.6">El interés superior del menor guía cada recomendación. Los hijos no son parte del conflicto, son la razón de ser del proceso.</p>
       </div>
-      <div class="card" style="padding:36px">
-        <div style="width:48px;height:48px;border-radius:14px;background:rgba(13,148,136,.12);display:flex;align-items:center;justify-content:center;margin-bottom:20px">
-          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#2DD4BF" stroke-width="2" stroke-linecap="round"><path d="M12 2 L22 7 L22 17 C22 21 17 24 12 24 C7 24 2 21 2 17 L2 7 Z"/><path d="M9 12l2 2 4-4"/></svg>
+      <div style="text-align:center">
+        <div style="width:3.5rem;height:3.5rem;background:var(--g50);border-radius:50%;display:flex;align-items:center;justify-content:center;margin:0 auto 1rem;border:2px solid var(--g200)">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="var(--g600)" stroke-width="2"><rect x="2" y="3" width="20" height="14" rx="2"/><line x1="8" x2="16" y1="21" y2="21"/><line x1="12" x2="12" y1="17" y2="21"/></svg>
         </div>
-        <h3 style="font-size:18px;font-weight:700;color:#fff;margin-bottom:12px">Compromiso</h3>
-        <p style="color:#64748B;font-size:14px;line-height:1.8">El 100% de los recursos enviados a través de Cuotela llegan a los gastos del menor. Sin desvíos, sin comisiones ocultas, sin intermediarios que disminuyan el monto.</p>
+        <h3 style="font-size:1rem;font-weight:700;color:var(--navy);margin-bottom:.5rem">Tecnología con propósito</h3>
+        <p style="font-size:.875rem;color:var(--gray500);line-height:1.6">Las herramientas digitales amplifican, no reemplazan, la asesoría jurídica de calidad. La tecnología al servicio de las personas.</p>
+      </div>
+      <div style="text-align:center">
+        <div style="width:3.5rem;height:3.5rem;background:var(--g50);border-radius:50%;display:flex;align-items:center;justify-content:center;margin:0 auto 1rem;border:2px solid var(--g200)">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="var(--g600)" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+        </div>
+        <h3 style="font-size:1rem;font-weight:700;color:var(--navy);margin-bottom:.5rem">Rigor jurídico</h3>
+        <p style="font-size:.875rem;color:var(--gray500);line-height:1.6">Cada recomendación está fundamentada en el marco legal colombiano vigente, con actualización permanente de la jurisprudencia.</p>
       </div>
     </div>
   </div>
 </section>
 
-<!-- ALIANZAS LEGALES -->
-<section style="padding:80px 24px">
-  <div style="max-width:1100px;margin:0 auto">
-    <div style="text-align:center;margin-bottom:56px">
-      <div class="sec-label">Respaldo</div>
-      <h2 style="font-size:clamp(26px,3vw,40px);font-weight:800;color:#fff;letter-spacing:-.03em;margin-bottom:12px">Quiénes nos respaldan</h2>
-      <p style="color:#64748B;font-size:15px;max-width:500px;margin:0 auto">La asesoría jurídica de Cuotela es prestada por profesionales del derecho de familia bajo las normas del Código Civil y el Código de la Infancia y Adolescencia.</p>
+
+<!-- LEGAL FRAMEWORK -->
+<section class="section-py" style="background:var(--gray50)">
+  <div style="max-width:1100px;margin:0 auto;padding:0 1.5rem">
+    <div style="text-align:center;margin-bottom:3rem">
+      <div class="chip" style="margin-bottom:1rem">Marco normativo</div>
+      <h2 style="font-size:clamp(1.75rem,4vw,2.5rem);font-weight:800;color:var(--navy);letter-spacing:-.03em;margin-bottom:.75rem">Respaldo legal certificado</h2>
+      <p style="font-size:1rem;color:var(--gray500);max-width:520px;margin:0 auto">Nuestros servicios están fundamentados en el ordenamiento jurídico colombiano y asesorados por expertos en cada especialidad.</p>
     </div>
 
-    <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:20px">
-      <div class="card" style="padding:28px;display:flex;gap:16px;align-items:flex-start">
-        <div style="width:44px;height:44px;border-radius:12px;background:rgba(37,99,235,.1);border:1px solid rgba(37,99,235,.2);display:flex;align-items:center;justify-content:center;flex-shrink:0">
-          <svg width="20" height="20" fill="none" stroke="#60A5FA" stroke-width="2" stroke-linecap="round" viewBox="0 0 24 24"><path d="M3 21h18M3 10h18M6 6l6-3 6 3M5 10v11M19 10v11M12 10v11"/></svg>
+    <div style="background:#fff;border-radius:1.25rem;overflow:hidden;border:1px solid var(--gray200)">
+      <table style="width:100%;border-collapse:collapse">
+        <thead>
+          <tr style="background:var(--g600)">
+            <th style="padding:1rem 1.5rem;text-align:left;font-family:'Space Grotesk',sans-serif;font-size:.82rem;font-weight:700;color:#fff;letter-spacing:.04em;text-transform:uppercase">Norma</th>
+            <th style="padding:1rem 1.5rem;text-align:left;font-family:'Space Grotesk',sans-serif;font-size:.82rem;font-weight:700;color:#fff;letter-spacing:.04em;text-transform:uppercase">Materia</th>
+            <th style="padding:1rem 1.5rem;text-align:left;font-family:'Space Grotesk',sans-serif;font-size:.82rem;font-weight:700;color:#fff;letter-spacing:.04em;text-transform:uppercase" class="hide-mobile">Aplicación en Cuotela</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr style="border-bottom:1px solid var(--gray200)">
+            <td style="padding:1rem 1.5rem;font-family:'Space Grotesk',sans-serif;font-size:.875rem;font-weight:600;color:var(--g700);white-space:nowrap">Ley 1098/2006</td>
+            <td style="padding:1rem 1.5rem;font-size:.875rem;color:var(--gray700)">Código de Infancia y Adolescencia</td>
+            <td style="padding:1rem 1.5rem;font-size:.875rem;color:var(--gray500)" class="hide-mobile">Base de todos los procesos de cuota, custodia y régimen de visitas</td>
+          </tr>
+          <tr style="border-bottom:1px solid var(--gray200);background:var(--gray50)">
+            <td style="padding:1rem 1.5rem;font-family:'Space Grotesk',sans-serif;font-size:.875rem;font-weight:600;color:var(--g700);white-space:nowrap">Ley 2097/2021</td>
+            <td style="padding:1rem 1.5rem;font-size:.875rem;color:var(--gray700)">REDAM — Deudores Morosos</td>
+            <td style="padding:1rem 1.5rem;font-size:.875rem;color:var(--gray500)" class="hide-mobile">Reporte y consulta de deudores alimentarios, restricciones de pasaporte y crédito</td>
+          </tr>
+          <tr style="border-bottom:1px solid var(--gray200)">
+            <td style="padding:1rem 1.5rem;font-family:'Space Grotesk',sans-serif;font-size:.875rem;font-weight:600;color:var(--g700);white-space:nowrap">Ley 1581/2012</td>
+            <td style="padding:1rem 1.5rem;font-size:.875rem;color:var(--gray700)">Habeas Data — Protección de datos</td>
+            <td style="padding:1rem 1.5rem;font-size:.875rem;color:var(--gray500)" class="hide-mobile">Tratamiento de datos personales de usuarios y menores en la plataforma</td>
+          </tr>
+          <tr style="border-bottom:1px solid var(--gray200);background:var(--gray50)">
+            <td style="padding:1rem 1.5rem;font-family:'Space Grotesk',sans-serif;font-size:.875rem;font-weight:600;color:var(--g700);white-space:nowrap">Ley 294/1996</td>
+            <td style="padding:1rem 1.5rem;font-size:.875rem;color:var(--gray700)">Violencia Intrafamiliar</td>
+            <td style="padding:1rem 1.5rem;font-size:.875rem;color:var(--gray500)" class="hide-mobile">Medidas de protección ante comisarías de familia, coordinación con ICBF</td>
+          </tr>
+          <tr style="border-bottom:1px solid var(--gray200)">
+            <td style="padding:1rem 1.5rem;font-family:'Space Grotesk',sans-serif;font-size:.875rem;font-weight:600;color:var(--g700);white-space:nowrap">Ley 75/1968</td>
+            <td style="padding:1rem 1.5rem;font-size:.875rem;color:var(--gray700)">Alimentos y filiación</td>
+            <td style="padding:1rem 1.5rem;font-size:.875rem;color:var(--gray500)" class="hide-mobile">Normas sobre la obligación alimentaria y el proceso de filiación</td>
+          </tr>
+          <tr>
+            <td style="padding:1rem 1.5rem;font-family:'Space Grotesk',sans-serif;font-size:.875rem;font-weight:600;color:var(--g700);white-space:nowrap">Ley 527/1999</td>
+            <td style="padding:1rem 1.5rem;font-size:.875rem;color:var(--gray700)">Documentos electrónicos</td>
+            <td style="padding:1rem 1.5rem;font-size:.875rem;color:var(--gray500)" class="hide-mobile">Validez jurídica de acuerdos, notificaciones y documentos digitales en la plataforma</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <style>.hide-mobile{@media(max-width:640px){display:none!important}}</style>
+  </div>
+</section>
+
+
+<!-- ALLIES -->
+<section class="section-py" style="background:#fff">
+  <div style="max-width:1100px;margin:0 auto;padding:0 1.5rem">
+    <div style="text-align:center;margin-bottom:3rem">
+      <div class="chip" style="margin-bottom:1rem">Red de aliados</div>
+      <h2 style="font-size:clamp(1.75rem,4vw,2.5rem);font-weight:800;color:var(--navy);letter-spacing:-.03em;margin-bottom:.75rem">Respaldados por expertos</h2>
+      <p style="font-size:1rem;color:var(--gray500);max-width:500px;margin:0 auto">Cuotela opera en alianza con firmas especializadas y profesionales certificados que garantizan la calidad jurídica de cada proceso.</p>
+    </div>
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:1.5rem">
+      <div class="card" style="padding:1.75rem;display:flex;align-items:flex-start;gap:1rem">
+        <div style="width:2.75rem;height:2.75rem;background:var(--navy);border-radius:.625rem;display:flex;align-items:center;justify-content:center;flex-shrink:0">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="rgba(255,255,255,.9)" stroke-width="2"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"/></svg>
         </div>
         <div>
-          <h4 style="font-size:15px;font-weight:700;color:#fff;margin-bottom:6px">Montcrest & Partners S.A.S.</h4>
-          <p style="font-size:13px;color:#64748B;line-height:1.6">Firma de abogados especializada en derecho de familia, infancia y adolescencia. Provee los servicios jurídicos de la plataforma.</p>
+          <h3 style="font-size:1rem;font-weight:700;color:var(--navy);margin-bottom:.375rem">Montcrest &amp; Partners S.A.S.</h3>
+          <p style="font-size:.85rem;color:var(--gray500);line-height:1.6">Firma líder en litigio estratégico, derecho corporativo y consultoría legal especializada. Brazo jurídico principal de Cuotela para casos de alta complejidad.</p>
         </div>
       </div>
-      <div class="card" style="padding:28px;display:flex;gap:16px;align-items:flex-start">
-        <div style="width:44px;height:44px;border-radius:12px;background:rgba(245,158,11,.1);border:1px solid rgba(245,158,11,.2);display:flex;align-items:center;justify-content:center;flex-shrink:0">
-          <svg width="20" height="20" fill="none" stroke="#F59E0B" stroke-width="2" stroke-linecap="round" viewBox="0 0 24 24"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 7V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v2"/><line x1="12" y1="12" x2="12" y2="16"/><line x1="10" y1="14" x2="14" y2="14"/></svg>
+      <div class="card" style="padding:1.75rem;display:flex;align-items:flex-start;gap:1rem">
+        <div style="width:2.75rem;height:2.75rem;background:var(--g600);border-radius:.625rem;display:flex;align-items:center;justify-content:center;flex-shrink:0">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="rgba(255,255,255,.9)" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
         </div>
         <div>
-          <h4 style="font-size:15px;font-weight:700;color:#fff;margin-bottom:6px">Aliados financieros vigilados SFC</h4>
-          <p style="font-size:13px;color:#64748B;line-height:1.6">El crédito de emergencia se canaliza a través de entidades vigiladas por la Superintendencia Financiera de Colombia.</p>
+          <h3 style="font-size:1rem;font-weight:700;color:var(--navy);margin-bottom:.375rem">Red de Conciliadores Certificados</h3>
+          <p style="font-size:.85rem;color:var(--gray500);line-height:1.6">Conciliadores inscritos ante el Ministerio de Justicia y del Derecho para tramitar acuerdos de cuota y custodia con plena validez legal en todo el territorio nacional.</p>
         </div>
       </div>
-      <div class="card" style="padding:28px;display:flex;gap:16px;align-items:flex-start">
-        <div style="width:44px;height:44px;border-radius:12px;background:rgba(13,148,136,.1);border:1px solid rgba(13,148,136,.2);display:flex;align-items:center;justify-content:center;flex-shrink:0">
-          <svg width="20" height="20" fill="none" stroke="#2DD4BF" stroke-width="2" stroke-linecap="round" viewBox="0 0 24 24"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
+      <div class="card" style="padding:1.75rem;display:flex;align-items:flex-start;gap:1rem">
+        <div style="width:2.75rem;height:2.75rem;background:#1565C0;border-radius:.625rem;display:flex;align-items:center;justify-content:center;flex-shrink:0">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="rgba(255,255,255,.9)" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 13a19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 3.6 2.18l3-.01a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 9.91a16 16 0 0 0 6.29 6.29l.91-.91a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
         </div>
         <div>
-          <h4 style="font-size:15px;font-weight:700;color:#fff;margin-bottom:6px">Infraestructura certificada</h4>
-          <p style="font-size:13px;color:#64748B;line-height:1.6">Datos alojados en servidores con certificación ISO 27001. Todos los comprobantes generados bajo Ley 527/1999.</p>
+          <h3 style="font-size:1rem;font-weight:700;color:var(--navy);margin-bottom:.375rem">Psicólogos y Trabajadores Sociales</h3>
+          <p style="font-size:.85rem;color:var(--gray500);line-height:1.6">Equipo interdisciplinario para casos de violencia intrafamiliar, evaluación de entorno familiar y procesos donde el ICBF requiere concepto técnico especializado.</p>
         </div>
       </div>
     </div>
   </div>
 </section>
 
-<!-- MARCO LEGAL -->
-<section style="padding:60px 24px 100px">
-  <div style="max-width:1100px;margin:0 auto">
-    <div style="background:linear-gradient(135deg,rgba(28,48,96,.5),rgba(20,32,64,.3));border:1px solid rgba(37,99,235,.2);border-radius:24px;padding:48px">
-      <div class="sec-label">Marco normativo</div>
-      <h2 style="font-size:clamp(22px,2.5vw,32px);font-weight:800;color:#fff;margin-bottom:32px">Leyes que nos rigen y nos guían</h2>
-      <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(240px,1fr));gap:16px">
-        {[
-          ['Ley 1098/2006','Código de la Infancia y la Adolescencia — base de todas las obligaciones alimentarias.'],
-          ['Ley 1581/2012','Protección de datos personales — Habeas Data y tratamiento responsable.'],
-          ['Ley 527/1999','Documentos electrónicos — validez probatoria de los comprobantes de Cuotela.'],
-          ['Ley 2097/2021','Registro REDAM de alimentarios deudores — consecuencias de la mora.'],
-          ['Ley 75/1968','Filiación — contexto de los derechos del menor frente a ambos progenitores.'],
-          ['Decreto 1727/2008','Reglamentación del REDAM y procedimientos de exclusión.']
-        ].map(([n,d])=>`
-        <div style="padding:16px 20px;background:rgba(255,255,255,.03);border:1px solid rgba(255,255,255,.07);border-radius:14px">
-          <div style="font-family:'Space Grotesk',sans-serif;font-weight:700;font-size:14px;color:#60A5FA;margin-bottom:6px">${n}</div>
-          <div style="font-size:12px;color:#64748B;line-height:1.6">${d}</div>
-        </div>`).join('')}
-      </div>
-    </div>
-  </div>
-</section>
 
 <!-- CTA -->
-<section style="padding:0 24px 100px">
-  <div style="max-width:800px;margin:0 auto;text-align:center">
-    <h2 style="font-size:clamp(28px,3.5vw,44px);font-weight:800;color:#fff;letter-spacing:-.03em;margin-bottom:16px">¿Listo para comenzar?</h2>
-    <p style="color:#64748B;font-size:16px;margin-bottom:36px;line-height:1.7">Cuotela es gratis para empezar. Regístrate hoy y da el primer paso hacia el cumplimiento tranquilo.</p>
-    <div style="display:flex;flex-wrap:wrap;gap:14px;justify-content:center">
-      <a href="/contacto/" class="btn btn-gold">Crear cuenta gratis</a>
-      <a href="/" class="btn btn-outline">Ver todos los servicios</a>
+<section style="background:linear-gradient(135deg,var(--g800) 0%,var(--g600) 100%);padding:5rem 1.5rem;text-align:center">
+  <div style="max-width:580px;margin:0 auto">
+    <h2 style="font-size:clamp(1.75rem,4vw,2.5rem);font-weight:800;color:#fff;letter-spacing:-.03em;margin-bottom:1rem">¿Listo para dar el primer paso?</h2>
+    <p style="font-size:1.05rem;color:rgba(255,255,255,.75);margin-bottom:2rem;line-height:1.7">Crea tu cuenta gratis, accede a la calculadora y programa una consulta con nuestro equipo. Tu situación merece atención real.</p>
+    <div style="display:flex;flex-wrap:wrap;gap:1rem;justify-content:center">
+      <a href="https://app.cuotela.co/registro" style="background:var(--goldb);color:#fff;font-family:'Space Grotesk',sans-serif;font-weight:700;font-size:1rem;padding:.875rem 2rem;border-radius:.625rem;text-decoration:none;transition:background .15s">Crear cuenta gratis</a>
+      <a href="/contacto" style="background:transparent;color:#fff;border:1.5px solid rgba(255,255,255,.4);font-family:'Space Grotesk',sans-serif;font-weight:600;font-size:1rem;padding:.875rem 2rem;border-radius:.625rem;text-decoration:none">Contactar equipo</a>
     </div>
   </div>
 </section>
 
+
 <!-- FOOTER -->
-<footer style="background:var(--navy-950);border-top:1px solid rgba(255,255,255,.06);padding:40px 24px">
-  <div style="max-width:1280px;margin:0 auto;display:flex;flex-wrap:wrap;justify-content:space-between;align-items:center;gap:16px">
-    <a href="/" style="display:flex;align-items:center;gap:10px;text-decoration:none">
-      <svg width="28" height="28" viewBox="0 0 36 36" fill="none"><rect width="36" height="36" rx="10" fill="#0D1830"/><path d="M18 6 L27 10.5 L27 20.5 C27 25.5 23 29.5 18 31.5 C13 29.5 9 25.5 9 20.5 L9 10.5 Z" fill="#1C3060" stroke="#2563EB" stroke-width="1"/><path d="M14.5 20 L17 22.5 L22 17" stroke="#F59E0B" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>
-      <span style="font-family:'Space Grotesk',sans-serif;font-weight:800;font-size:18px;color:#fff">Cuotela</span>
-    </a>
-    <div style="display:flex;gap:24px;flex-wrap:wrap">
-      <a href="/terminos/" style="color:#334155;font-size:13px;text-decoration:none">Términos</a>
-      <a href="/privacidad/" style="color:#334155;font-size:13px;text-decoration:none">Privacidad</a>
-      <a href="/contacto/" style="color:#334155;font-size:13px;text-decoration:none">Contacto</a>
+<footer style="background:var(--gray900);padding:3rem 1.5rem 2rem">
+  <div style="max-width:1100px;margin:0 auto">
+    <div style="display:flex;flex-wrap:wrap;justify-content:space-between;align-items:center;gap:1.5rem;margin-bottom:2rem">
+      <a href="/" style="display:flex;align-items:center;gap:.625rem;text-decoration:none">
+        <svg width="32" height="32" viewBox="0 0 36 36" fill="none"><rect width="36" height="36" rx="9" fill="#006B3D"/><circle cx="15" cy="16.5" r="3" fill="white"/><path d="M10.5 27C10.5 23.96 12.69 21.5 15 21.5C17.31 21.5 19.5 23.96 19.5 27" stroke="white" stroke-width="1.5" stroke-linecap="round" fill="none"/><circle cx="22.5" cy="18.5" r="2.2" fill="white" opacity="0.8"/><path d="M19.5 27C19.5 24.51 20.9 22.5 22.5 22.5C24.1 22.5 25.5 24.51 25.5 27" stroke="white" stroke-width="1.5" stroke-linecap="round" fill="none" opacity="0.8"/><circle cx="19" cy="19.5" r="1" fill="#F5A623"/></svg>
+        <span style="font-family:'Space Grotesk',sans-serif;font-size:1.125rem;font-weight:800;color:#fff">cuotela</span>
+      </a>
+      <div style="display:flex;flex-wrap:wrap;gap:1.5rem">
+        <a href="/" style="font-size:.875rem;color:rgba(255,255,255,.45);text-decoration:none">Inicio</a>
+        <a href="/nosotros" style="font-size:.875rem;color:rgba(255,255,255,.45);text-decoration:none">Nosotros</a>
+        <a href="/contacto" style="font-size:.875rem;color:rgba(255,255,255,.45);text-decoration:none">Contacto</a>
+        <a href="/terminos" style="font-size:.875rem;color:rgba(255,255,255,.45);text-decoration:none">Términos</a>
+        <a href="/privacidad" style="font-size:.875rem;color:rgba(255,255,255,.45);text-decoration:none">Privacidad</a>
+      </div>
     </div>
-    <p style="color:#1E293B;font-size:12px">© 2025 Cuotela S.A.S. — Bogotá, Colombia</p>
+    <div style="border-top:1px solid rgba(255,255,255,.08);padding-top:1.5rem;display:flex;flex-wrap:wrap;justify-content:space-between;gap:.75rem">
+      <p style="font-size:.78rem;color:rgba(255,255,255,.3)">© 2025 Cuotela S.A.S. · Bogotá, Colombia</p>
+      <p style="font-size:.78rem;color:rgba(255,255,255,.25)">Información orientativa · No reemplaza asesoría jurídica profesional</p>
+    </div>
   </div>
 </footer>
+
 </body>
 </html>
