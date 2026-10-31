@@ -151,6 +151,7 @@
     <!-- Desktop nav -->
     <nav class="hide-mobile" style="display:flex;align-items:center;gap:.25rem">
       <a href="#servicios" class="nav-link">Servicios</a>
+      <a href="#alianzas" class="nav-link">Alianzas</a>
       <a href="#planes" class="nav-link">Planes</a>
       <a href="#calculadora" class="nav-link">Calculadora</a>
       <a href="/blog/" class="nav-link">Blog</a>
@@ -180,6 +181,7 @@
   <!-- Mobile menu -->
   <div x-show="open" x-cloak style="border-top:1px solid var(--gray200);padding:1rem;display:flex;flex-direction:column;gap:.5rem">
     <a href="#servicios" class="nav-link" @click="open=false">Servicios</a>
+    <a href="#alianzas" class="nav-link" @click="open=false">Alianzas</a>
     <a href="#planes" class="nav-link" @click="open=false">Planes</a>
     <a href="#calculadora" class="nav-link" @click="open=false">Calculadora</a>
     <a href="/blog/" class="nav-link">Blog</a>
@@ -478,6 +480,186 @@
     </div>
   </div>
 </section>
+
+<!-- ══════════════════════ CATÁLOGO DE ALIANZAS ══════════════════════ -->
+<section id="alianzas" style="background:var(--gray50);padding:5rem 0;overflow:hidden">
+  <div class="inner">
+    <div style="text-align:center;margin-bottom:3rem">
+      <div class="chip chip-gold" style="margin-bottom:1rem">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M6 2L3 6v14a2 2 0 002 2h14a2 2 0 002-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 01-8 0"/></svg>
+        Nuevo · Catálogo de Alianzas
+      </div>
+      <h2 class="section-title">Paga en especie — directamente<br>a la tienda aliada</h2>
+      <p class="section-sub" style="margin:1rem auto 0">El padre custodio elige el producto en el catálogo; quien debe pagar recibe la solicitud, aprueba y el dinero va directo al comercio. Sin efectivo entre partes. Con registro legal automático.</p>
+    </div>
+
+    <!-- Flujo 3 pasos -->
+    <div style="display:grid;grid-template-columns:1fr auto 1fr auto 1fr;gap:1rem;align-items:center;margin-bottom:3rem">
+      <div class="card" style="padding:2rem;text-align:center;border-top:4px solid var(--g600)">
+        <div style="width:3.5rem;height:3.5rem;background:var(--g100);border-radius:50%;display:flex;align-items:center;justify-content:center;margin:0 auto 1rem">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="var(--g600)" stroke-width="2"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+        </div>
+        <div class="chip" style="margin-bottom:.75rem;font-size:.7rem">PASO 1</div>
+        <h3 style="font-size:1.125rem;font-weight:700;margin-bottom:.5rem;color:var(--g700)">Custodio elige</h3>
+        <p style="font-size:.875rem;color:var(--gray500);line-height:1.6">El padre o madre con custodia navega el catálogo y selecciona productos para el hijo — ropa, útiles, recreación, salud.</p>
+      </div>
+      <div style="display:flex;align-items:center;justify-content:center" class="hide-mobile">
+        <svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="var(--goldb)" stroke-width="2.5"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+      </div>
+      <div class="card" style="padding:2rem;text-align:center;border-top:4px solid var(--goldb)">
+        <div style="width:3.5rem;height:3.5rem;background:var(--goldc);border-radius:50%;display:flex;align-items:center;justify-content:center;margin:0 auto 1rem">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="var(--gold)" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>
+        </div>
+        <div class="chip chip-gold" style="margin-bottom:.75rem;font-size:.7rem">PASO 2</div>
+        <h3 style="font-size:1.125rem;font-weight:700;margin-bottom:.5rem;color:var(--gold)">Obligado aprueba</h3>
+        <p style="font-size:.875rem;color:var(--gray500);line-height:1.6">Quien paga recibe una notificación en Cuotela, revisa el carrito y confirma el gasto — o lo negocia antes.</p>
+      </div>
+      <div style="display:flex;align-items:center;justify-content:center" class="hide-mobile">
+        <svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="var(--goldb)" stroke-width="2.5"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+      </div>
+      <div class="card card-green" style="padding:2rem;text-align:center">
+        <div style="width:3.5rem;height:3.5rem;background:rgba(255,255,255,.15);border-radius:50%;display:flex;align-items:center;justify-content:center;margin:0 auto 1rem">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+        </div>
+        <div style="display:inline-flex;align-items:center;gap:.375rem;background:rgba(255,255,255,.15);border-radius:2rem;padding:.3rem .75rem;font-family:'Space Grotesk',sans-serif;font-size:.7rem;font-weight:600;letter-spacing:.06em;text-transform:uppercase;color:rgba(255,255,255,.9);margin-bottom:.75rem">PASO 3</div>
+        <h3 style="font-size:1.125rem;font-weight:700;margin-bottom:.5rem;color:#fff">Pago directo a la marca</h3>
+        <p style="font-size:.875rem;color:rgba(255,255,255,.8);line-height:1.6">El pago va directo al comercio aliado. Nunca pasa entre padres. La compra queda registrada en el expediente jurídico.</p>
+      </div>
+    </div>
+
+    <!-- Beneficios -->
+    <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:1.5rem">
+      <div style="background:#fff;border:1px solid var(--g200);border-radius:1rem;padding:1.5rem;display:flex;gap:1rem;align-items:flex-start">
+        <div class="icon-box icon-box-green" style="flex-shrink:0">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 12l2 2 4-4"/><circle cx="12" cy="12" r="10"/></svg>
+        </div>
+        <div>
+          <h4 style="font-size:.9375rem;font-weight:700;margin-bottom:.35rem">Pago en especie legal</h4>
+          <p style="font-size:.8125rem;color:var(--gray500);line-height:1.6">Art. 133 Ley 1098/2006 — el gasto en especie cuenta como cuota alimentaria cuando queda documentado. Cuotela lo hace automático.</p>
+        </div>
+      </div>
+      <div style="background:#fff;border:1px solid var(--g200);border-radius:1rem;padding:1.5rem;display:flex;gap:1rem;align-items:flex-start">
+        <div class="icon-box icon-box-gold" style="flex-shrink:0">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 7V5a2 2 0 00-2-2h-4a2 2 0 00-2 2v2"/></svg>
+        </div>
+        <div>
+          <h4 style="font-size:.9375rem;font-weight:700;margin-bottom:.35rem">Sin efectivo entre partes</h4>
+          <p style="font-size:.8125rem;color:var(--gray500);line-height:1.6">El dinero nunca pasa de un padre al otro — va directo al proveedor, eliminando conflictos sobre el uso de los recursos del hijo.</p>
+        </div>
+      </div>
+      <div style="background:#fff;border:1px solid var(--g200);border-radius:1rem;padding:1.5rem;display:flex;gap:1rem;align-items:flex-start">
+        <div class="icon-box icon-box-navy" style="flex-shrink:0">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 2L3 6v14a2 2 0 002 2h14a2 2 0 002-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 01-8 0"/></svg>
+        </div>
+        <div>
+          <h4 style="font-size:.9375rem;font-weight:700;margin-bottom:.35rem">Marcas aliadas verificadas</h4>
+          <p style="font-size:.8125rem;color:var(--gray500);line-height:1.6">Ropa, colegios, recreación, salud, tecnología y alimentación — todas con integración de pago certificada y NIT registrado.</p>
+        </div>
+      </div>
+    </div>
+
+    <div style="text-align:center;margin-top:2.5rem">
+      <a href="https://app.cuotela.co/catalogo" class="btn-lg" style="background:var(--g600);color:#fff;display:inline-flex;align-items:center;gap:.5rem">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M6 2L3 6v14a2 2 0 002 2h14a2 2 0 002-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 01-8 0"/></svg>
+        Ver el catálogo de alianzas
+      </a>
+      <p style="margin-top:1rem;font-size:.8125rem;color:var(--gray500)">¿Eres una marca o comercio? <a href="/alianzas/" style="color:var(--g600);font-weight:600">Conviértete en aliado Cuotela →</a></p>
+    </div>
+  </div>
+</section>
+
+
+<!-- ══════════════════════ CERTIFICADO DE CUMPLIMIENTO ══════════════════════ -->
+<section id="certificado-cumplimiento" class="section-white" style="padding:5rem 0">
+  <div class="inner">
+    <div style="display:grid;grid-template-columns:1.1fr 1fr;gap:4rem;align-items:center">
+      <!-- Texto -->
+      <div>
+        <div class="chip" style="margin-bottom:1rem">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="12" cy="8" r="6"/><path d="M15.477 12.89L17 22l-5-3-5 3 1.523-9.11"/></svg>
+          Trazabilidad total
+        </div>
+        <h2 class="section-title" style="margin-bottom:1rem">Cada peso, registrado<br>y certificado</h2>
+        <p style="font-size:.9375rem;color:var(--gray500);line-height:1.75;margin-bottom:1.75rem">Cuotela registra automáticamente cada transacción — ya sea en efectivo o a través del catálogo en especie. Al cierre del mes, el sistema genera un <strong style="color:var(--g700)">Certificado de Cumplimiento</strong> con valor probatorio ante juzgados y comisarías de familia.</p>
+
+        <div style="display:flex;flex-direction:column;gap:.75rem;margin-bottom:2rem">
+          <div style="display:flex;align-items:center;gap:.75rem;padding:.875rem 1rem;background:var(--g50);border:1px solid var(--g100);border-radius:.75rem">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--g600)" stroke-width="2.5"><path d="M9 12l2 2 4-4"/><circle cx="12" cy="12" r="10"/></svg>
+            <span style="font-size:.875rem;color:var(--gray700)">Fecha, monto y categoría de cada transacción</span>
+          </div>
+          <div style="display:flex;align-items:center;gap:.75rem;padding:.875rem 1rem;background:var(--g50);border:1px solid var(--g100);border-radius:.75rem">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--g600)" stroke-width="2.5"><path d="M9 12l2 2 4-4"/><circle cx="12" cy="12" r="10"/></svg>
+            <span style="font-size:.875rem;color:var(--gray700)">Nombre del producto y NIT del proveedor</span>
+          </div>
+          <div style="display:flex;align-items:center;gap:.75rem;padding:.875rem 1rem;background:var(--g50);border:1px solid var(--g100);border-radius:.75rem">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--g600)" stroke-width="2.5"><path d="M9 12l2 2 4-4"/><circle cx="12" cy="12" r="10"/></svg>
+            <span style="font-size:.875rem;color:var(--gray700)">Total acumulado vs. cuota acordada del período</span>
+          </div>
+          <div style="display:flex;align-items:center;gap:.75rem;padding:.875rem 1rem;background:var(--g50);border:1px solid var(--g100);border-radius:.75rem">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--g600)" stroke-width="2.5"><path d="M9 12l2 2 4-4"/><circle cx="12" cy="12" r="10"/></svg>
+            <span style="font-size:.875rem;color:var(--gray700)">PDF descargable con firma digital · Ley 527/1999</span>
+          </div>
+        </div>
+
+        <div style="background:var(--goldc);border:1px solid rgba(200,134,10,.2);border-radius:.75rem;padding:1rem 1.25rem;font-size:.875rem;color:var(--gray700);line-height:1.65">
+          <strong style="color:var(--gold)">Base legal:</strong> Art. 133 Ley 1098/2006 — el pago en especie (bienes o servicios directos al hijo) cuenta como cuota alimentaria cuando queda documentado. Cuotela genera ese certificado automáticamente.
+        </div>
+      </div>
+
+      <!-- Mockup certificado -->
+      <div>
+        <div class="cert-card">
+          <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:1.25rem">
+            <div style="display:flex;align-items:center;gap:.625rem">
+              <svg width="28" height="28" viewBox="0 0 40 40" fill="none"><defs><linearGradient id="lgc" x1="0" y1="0" x2="40" y2="40"><stop offset="0%" stop-color="#004D2E"/><stop offset="100%" stop-color="#007A4D"/></linearGradient></defs><rect width="40" height="40" rx="10" fill="url(#lgc)"/><circle cx="20" cy="12" r="3.5" fill="#F5A623"/><circle cx="11" cy="30" r="2.8" fill="white"/><circle cx="29" cy="30" r="2.8" fill="white"/></svg>
+              <div>
+                <div style="font-family:'Space Grotesk',sans-serif;font-size:.875rem;font-weight:800;color:var(--g700)">Cuotela</div>
+                <div style="font-size:.7rem;color:var(--gray400)">Certificado de Cumplimiento</div>
+              </div>
+            </div>
+            <div style="font-size:.75rem;color:var(--gray400)">Octubre 2026</div>
+          </div>
+          <div style="background:var(--g50);border:1px solid var(--g200);border-radius:.625rem;padding:.75rem 1rem;margin-bottom:1rem;font-size:.8125rem;color:var(--g800)">
+            Carlos M. → Santiago (8 años) · Cuota mensual: <strong>$900.000</strong>
+          </div>
+          <div style="display:flex;flex-direction:column;gap:.5rem;margin-bottom:1rem">
+            <div style="display:flex;justify-content:space-between;align-items:center;padding:.625rem .875rem;background:#fff;border:1px solid var(--gray200);border-radius:.5rem">
+              <div>
+                <div style="font-size:.8125rem;font-weight:600;color:var(--gray900)">Tenis Nike Air Max · Falabella</div>
+                <div style="font-size:.7rem;color:var(--gray400)">Vestuario · catálogo · 4 oct</div>
+              </div>
+              <div style="font-size:.875rem;font-weight:700;color:var(--g700)">$289.000</div>
+            </div>
+            <div style="display:flex;justify-content:space-between;align-items:center;padding:.625rem .875rem;background:#fff;border:1px solid var(--gray200);border-radius:.5rem">
+              <div>
+                <div style="font-size:.8125rem;font-weight:600;color:var(--gray900)">Matrícula segundo semestre · Colegio</div>
+                <div style="font-size:.7rem;color:var(--gray400)">Educación · catálogo · 1 oct</div>
+              </div>
+              <div style="font-size:.875rem;font-weight:700;color:var(--g700)">$680.000</div>
+            </div>
+            <div style="display:flex;justify-content:space-between;align-items:center;padding:.625rem .875rem;background:#fff;border:1px solid var(--gray200);border-radius:.5rem">
+              <div>
+                <div style="font-size:.8125rem;font-weight:600;color:var(--gray900)">Mercado semanal · Rappi</div>
+                <div style="font-size:.7rem;color:var(--gray400)">Alimentación · catálogo · 7 oct</div>
+              </div>
+              <div style="font-size:.875rem;font-weight:700;color:var(--g700)">$145.000</div>
+            </div>
+          </div>
+          <div style="border-top:2px solid var(--g200);padding-top:.875rem;display:flex;justify-content:space-between;align-items:center;margin-bottom:1rem">
+            <span style="font-family:'Space Grotesk',sans-serif;font-size:.875rem;font-weight:700;color:var(--gray700)">Total pagado</span>
+            <span style="font-family:'Space Grotesk',sans-serif;font-size:1.375rem;font-weight:800;color:var(--goldb)">$1.114.000</span>
+          </div>
+          <div style="display:flex;align-items:center;gap:.625rem;background:linear-gradient(135deg,var(--g600),var(--g700));border-radius:.625rem;padding:.75rem 1rem">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2.5"><path d="M9 12l2 2 4-4"/><circle cx="12" cy="12" r="10"/></svg>
+            <span style="font-family:'Space Grotesk',sans-serif;font-size:.875rem;font-weight:700;color:#fff">Cuota del mes: CUMPLIDA ✓</span>
+          </div>
+          <p style="text-align:center;margin-top:1rem;font-size:.75rem;color:var(--gray400)">Documento digital con valor probatorio · Ley 527/1999</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
 
 <!-- ══════════════════════ CATEGORÍAS DE LA CUOTA ══════════════════════ -->
 <section id="categorias" class="section-light" style="padding:5rem 0">
